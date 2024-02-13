@@ -1,0 +1,31 @@
+/* Code imbriqué (nested) */
+header {
+  nav {
+    ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+
+      /* Les svg pour la connexion/déconnexion */
+      li.login-out-link {
+        svg {
+          color: black;
+          font-size: 1.2em;
+        }
+
+        &:hover {
+          svg {
+            color: $primary;
+          }
+        }
+      }
+
+      a {
+        @include button($fc: rgb(22, 52, 52));
+
+
+      }
+    }
+  }
+}
