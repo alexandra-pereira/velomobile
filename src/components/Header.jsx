@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "./../assets/logo-lvf.png";
-import { CiLogout } from "react-icons/ci";
 import { useState } from "react";
-
 
 const Header = ({ isLoggedIn }) => {
   const [openCloseMenuState, setOpenCloseMenuState] = useState("inactive");
@@ -11,7 +9,7 @@ const Header = ({ isLoggedIn }) => {
     if (login) {
       return (
         <>
-          <CiLogout /> <span> Déconnexion</span>
+          <span> Déconnexion</span>
         </>
       );
     } else
@@ -22,18 +20,17 @@ const Header = ({ isLoggedIn }) => {
       );
   }
   function openCloseMenu() {
-    const classAction = openCloseMenu === "inactive" ? "active" : "incactive";
+    const classAction =
+      openCloseMenuState === "inactive" ? "active" : "inactive";
     console.log(`dans openCloseMenu`, classAction);
     setOpenCloseMenuState(classAction);
-    
   }
   return (
     <header>
       <Link to={"/"}>
         <img src={logo} alt="Logo vélomobile - retour accueil" />
       </Link>
-
-      <nav id="nav" className={"Openclose"}>
+      <nav id="nav" className={openCloseMenuState}>
         <ul className="mt-4">
           <li className="products-link" onClick={openCloseMenu}>
             <Link to={`/products`}>
