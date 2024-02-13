@@ -20,6 +20,7 @@ const Formulaire = () => {
             </div>
             <br />
             <button type="submit" className="btn btn-primary">Submit</button>
+            <br />
         </form>
       
     );
