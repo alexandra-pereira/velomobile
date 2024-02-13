@@ -3,8 +3,15 @@ const MagazinePage = () => {
     <>
       <h2>Magazine</h2>
       <ul>
-        <li>UN VELO SOUS LA PLUIE EN TOUTE PROTECTION</li>
-        <li></li>
+        <li>Un vélo sous la pluie en toute protection</li>
+        <li>
+          Comment me protéger de la pluie en vélo sur un trajet long : une
+          approche écologique et confortable
+        </li>
+        <li>
+          Le Vélomobile : Une Alternative Écologique à la Voiture et un Symbole
+          de Mobilité Verte
+        </li>
       </ul>
     </>
   );

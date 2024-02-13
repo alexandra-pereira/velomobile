@@ -16,6 +16,7 @@ import "bootstrap/dist/css/bootstrap.css";
 import "./sass/custom.scss";
 import MagazinePage from "./routes/MagazinePage";
 import ArticleTrajetLongPage from "./routes/ArticleTrajetLongPage";
+import ArticleEcoPage from "./routes/ArticleEcoPage";
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: "article_trajet_long",
         element: <ArticleTrajetLongPage />,
+      },
+      {
+        path: "article_eco",
+        element: <ArticleEcoPage />,
       },
     ],
   },
