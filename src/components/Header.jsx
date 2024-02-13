@@ -9,8 +9,7 @@ const Header = ({ isLoggedIn }) => {
     if (login) {
       return (
         <>
-          {" "}
-          <CiLogout /> <span> Déconnexion</span>{" "}
+          <CiLogout /> <span> Déconnexion</span>
         </>
       );
     } else
@@ -24,6 +23,7 @@ const Header = ({ isLoggedIn }) => {
     const classAction = openCloseMenu === "inactive" ? "active" : "incactive";
     console.log(`dans openCloseMenu`, classAction);
     setOpenCloseMenuState(classAction);
+    
   }
   return (
     <header>
