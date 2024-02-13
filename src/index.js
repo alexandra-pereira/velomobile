@@ -15,6 +15,7 @@ import ArticlePluiePage from "./routes/ArticlePluiePage";
 import "bootstrap/dist/css/bootstrap.css";
 import "./sass/custom.scss";
 import MagazinePage from "./routes/MagazinePage";
+import ArticleTrajetLongPage from "./routes/ArticleTrajetLongPage";
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,10 @@ const router = createBrowserRouter([
       {
         path: "article_pluie",
         element: <ArticlePluiePage />,
+      },
+      {
+        path: "article_trajet_long",
+        element: <ArticleTrajetLongPage />,
       },
     ],
   },

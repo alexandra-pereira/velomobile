@@ -1,7 +1,7 @@
 const HistoryPage = () => {
   return (
     <>
-      <h1>Histoire du Vélo Mobile</h1>
+      <h2>Histoire du Vélo Mobile</h2>
       <article>
         <p>
           L'histoire du vélo-mobile, également appelé vélocar, remonte au début
