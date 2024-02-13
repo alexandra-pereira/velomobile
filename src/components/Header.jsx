@@ -3,7 +3,6 @@ import logo from "./../assets/logo-lvf.png";
 import { CiLogout } from "react-icons/ci";
 import { useState } from "react";
 
-
 const Header = ({ isLoggedIn }) => {
   const [openCloseMenuState, setOpenCloseMenuState] = useState("inactive");
   let pathLogged = isLoggedIn ? "/logout" : "/login";
@@ -25,7 +24,6 @@ const Header = ({ isLoggedIn }) => {
     const classAction = openCloseMenu === "inactive" ? "active" : "incactive";
     console.log(`dans openCloseMenu`, classAction);
     setOpenCloseMenuState(classAction);
-    
   }
   return (
     <header>
