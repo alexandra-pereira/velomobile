@@ -1,8 +1,9 @@
 const ArticlePluiePage = () => {
   return (
     <>
-      <h1>UN VELO SOUS LA PLUIE EN TOUTE PROTECTION</h1>
       <article>
+        <h2>Un vélo sous la pluie en toute protection</h2>
+        <br></br>
         <p>
           Dans le monde en constante évolution de la mobilité, une solution
           écoresponsable émerge pour défier les intempéries tout en offrant une

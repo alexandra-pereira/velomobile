@@ -1,7 +1,7 @@
 const AtelierPage = () => {
   return (
     <>
-      <h1>Atelier</h1>
+      <h2>Atelier</h2>
       <p>ici notre atelier</p>
     </>
   );
