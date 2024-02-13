@@ -35,9 +35,9 @@ const Header = ({ isLoggedIn }) => {
 
       <nav id="nav" className={"Openclose"}>
         <ul className="mt-4">
-          <li className="products-link" onClick={openCloseMenu}>
-            <Link to={`/products`}>
-              <span>Produits</span>
+          <li className="home-link" onClick={openCloseMenu}>
+            <Link to={`/home`}>
+              <span>Home</span>
             </Link>
           </li>
 
