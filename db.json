@@ -4,21 +4,23 @@
       "id": 1,
       "model": "lvf",
       "description": "Le vélo mobile français qui a fait ses preuves",
-      "photo": "vm1.png",
+      "photo": "vmrural.jpeg",
       "weight": 32
     },
     {
       "id": 2,
       "model": "lvq",
       "description": "Le vélo mobile sportif aux performances incroyables",
-      "photo": "vm2.png",
+      "photo": "vmsportif.jpeg",
       "weight": 22
-    }],
+    }
+  ],
 
-    "users": [
-      {
-        "id": 1, 
-        "login": "root",
-        "pwd": "root"
-      }]
+  "users": [
+    {
+      "id": 1,
+      "login": "root",
+      "pwd": "root"
+    }
+  ]
 }
