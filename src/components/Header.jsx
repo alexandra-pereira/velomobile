@@ -34,11 +34,7 @@ const Header = ({ isLoggedIn }) => {
       <Link to={"/"}>
         <img src={logo} alt="Logo vélomobile - retour accueil" />
       </Link>
-<<<<<<< HEAD
-
- {/* ----------menu--------- */}     
-=======
->>>>>>> 9f5a18dda1c4299a28fa064ede9e2ba8095581f7
+ {/* ----------menu--------- */}   
       <nav id="nav" className={openCloseMenuState}>
         <ul className="mt-4">
           <li className="home-link" onClick={openCloseMenu}>
