@@ -1,53 +1,45 @@
 /* Code imbriqué (nested) */
 
 header {
-          nav {
-            ul {
-              list-style: none;
-              display: flex;
-              gap: 20px;
-              justify-content: center;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    font-size: calc(0.5rem + 1.5vw);
 
-              /* Les svg pour la connexion/déconnexion */
-              li.login-out-link {
-                svg {
-                  color: black;
-                  font-size: 1.2em;
-                }
+    ul {
+      display: flex;
+      justify-content: space-between;
+      width: 60%;
+      list-style: none;
+      gap: 20px;
 
-                &:hover {
-                  svg {
-                    color: $primary;
-                  }
-                }
-              }
+      /* Les svg pour la connexion/déconnexion */
+      li.login-out-link {
+        svg {
+          color: black;
+          font-size: 1.2em;
+        }
 
-              a {
-                @include button($fc: rgb(22, 52, 52));
-
-
-              }
-           
+        &:hover {
+          svg {
+            color: $primary;
           }
-  }
-        /**** NAVBAR ****/
-      nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px;
-        font-size: calc(0.5rem + 1.5vw);
+        }
       }
-      nav ul {
-        display: flex;
-        justify-content: space-between;
-        width: 60%;
+
+      /* -----------buton link----------- */
+      a {
+        @include button($fc: rgb(22, 52, 52));
       }
+
+      /* -----------burger changement au clic----------- */
       #icons {
         cursor: pointer;
         display: none;
       }
-
+      /* -----------burger responsive----------- */
       @media (max-width: 650px) {
         #icons {
           display: block;
@@ -77,31 +69,28 @@ header {
         nav.active ul {
           left: 0;
         }
-      }
 
-      /**** div black&white login ****/
-
-      .bwl ul {
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        gap: 0.5em;
+        /* -------div black&white login------*/
+        .bwl ul {
+          display: flex;
+          flex-direction: column;
+          list-style: none;
+          gap: 0.5em;
           li {
             background-color: rgb(175, 175, 175);
             padding: 0.2em;
             border-radius: 1em;
-         
-              a {
-                text-decoration: none; 
-                color: inherit; 
-                
-                }
-              &:hover {
-                color: red;
-                }
-              }
+
+            a {
+              text-decoration: none;
+              color: inherit;
+            }
+            &:hover {
+              color: red;
+            }
+          }
         }
-
-
-
+      }
+    }
+  }
 }
