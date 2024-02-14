@@ -4,15 +4,21 @@
       "id": 1,
       "model": "lvf",
       "description": "Le vélo mobile français qui a fait ses preuves",
-
+<<<<<<< HEAD
       "photo": "vmrural.jpeg",
-
+=======
+      "photo": "vm1.png",
+>>>>>>> parent of bca4ad8 (images velo mobil correctes pour page produit)
+=========
+      "photo": "vmrural.jpeg",
+>>>>>>>>> Temporary merge branch 2
       "weight": 32
     },
     {
       "id": 2,
       "model": "lvq",
       "description": "Le vélo mobile sportif aux performances incroyables",
+<<<<<<< HEAD
       "photo": "vmsportif.jpeg",
       "weight": 22
     }
@@ -25,4 +31,16 @@
       "pwd": "root"
     }
   ]
+=======
+      "photo": "vm2.png",
+      "weight": 22
+    }],
+
+    "users": [
+      {
+        "id": 1, 
+        "login": "root",
+        "pwd": "root"
+      }]
+>>>>>>> parent of bca4ad8 (images velo mobil correctes pour page produit)
 }
