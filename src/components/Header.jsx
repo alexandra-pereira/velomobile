@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "./../assets/logo-lvf.png";
-import { CiLogout } from "react-icons/ci";
 import { useState } from "react";
-
 
 const Header = ({ isLoggedIn }) => {
   const [openCloseMenuState, setOpenCloseMenuState] = useState("inactive");
@@ -11,7 +9,7 @@ const Header = ({ isLoggedIn }) => {
     if (login) {
       return (
         <>
-          <CiLogout /> <span> Déconnexion</span>
+          <span> Déconnexion</span>
         </>
       );
     } else
@@ -21,19 +19,24 @@ const Header = ({ isLoggedIn }) => {
         </>
       );
   }
+
+
   function openCloseMenu() {
-    const classAction = openCloseMenu === "inactive" ? "active" : "incactive";
+    const classAction =
+      openCloseMenuState === "inactive" ? "active" : "inactive";
     console.log(`dans openCloseMenu`, classAction);
     setOpenCloseMenuState(classAction);
-    
   }
   return (
-    <header>
+
+<header className="container-fluid d-flex ">
+{/* ----------logo--------- */}
       <Link to={"/"}>
         <img src={logo} alt="Logo vélomobile - retour accueil" />
       </Link>
 
-      <nav id="nav" className={"Openclose"}>
+ {/* ----------menu--------- */}     
+      <nav id="nav" className={openCloseMenuState}>
         <ul className="mt-4">
           <li className="home-link" onClick={openCloseMenu}>
             <Link to={`/home`}>
@@ -43,19 +46,59 @@ const Header = ({ isLoggedIn }) => {
 
           <li className="products-link" onClick={openCloseMenu}>
             <Link to={`/products`}>
-              <span>Produits</span>
+              <span>VeloMobile</span>
             </Link>
           </li>
 
-          <li className="login-out-link" onClick={openCloseMenu}>
-            <Link to={pathLogged}>
-              {isLoggedIn ? logInOutLink(true) : logInOutLink(false)}
+          <li className="atelier-link" onClick={openCloseMenu}>
+            <Link to={`/atelier`}>
+              <span>Atelier</span>
+            </Link>
+          </li>
+
+          <li className="history-link" onClick={openCloseMenu}>
+            <Link to={`/history`}>
+              <span>Histoire</span>
+            </Link>
+          </li>
+
+          <li className="showroom-link" onClick={openCloseMenu}>
+            <Link to={`/showroom`}>
+              <span>Showroom</span>
+            </Link>
+          </li>
+
+          <li className="magazine-link" onClick={openCloseMenu}>
+            <Link to={`/magazine`}>
+              <span>Magazine</span>
             </Link>
           </li>
         </ul>
+
         <div id="icons" onClick={openCloseMenu}></div>
       </nav>
-      <h1>Vélomobile : l'alternative à la voiture</h1>
+
+
+{/* ----------buton black&white view an buton login--------- */}    
+      <div className="bwl"> 
+        <ul> 
+            <li className="login-out-link" onClick={openCloseMenu}>
+              <Link to={pathLogged}>
+                {isLoggedIn ? logInOutLink(true) : logInOutLink(false)}
+              </Link>
+            </li>
+
+            <li className="bk-wh-link" onClick={openCloseMenu}>
+              <Link to="bla">
+                <span>Eco views</span>
+              </Link>
+            </li>
+        </ul>
+      </div>
+      
+
+    
+ {/*   <h1>Vélomobile : l'alternative à la voiture</h1> */}
     </header>
   );
 };
