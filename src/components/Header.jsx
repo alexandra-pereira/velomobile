@@ -2,6 +2,10 @@ import { Link } from "react-router-dom";
 import logo from "./../assets/logo-lvf.png";
 import { useState } from "react";
 
+/**
+ * 
+ * 
+ */
 const Header = ({ isLoggedIn }) => {
   const [openCloseMenuState, setOpenCloseMenuState] = useState("inactive");
   let pathLogged = isLoggedIn ? "/logout" : "/login";
