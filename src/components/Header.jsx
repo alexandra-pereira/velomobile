@@ -24,7 +24,7 @@ const Header = ({ isLoggedIn }) => {
       );
   }
 
-
+{/* ----------burger close--------- */}
   function openCloseMenu() {
     const classAction =
       openCloseMenuState === "inactive" ? "active" : "inactive";
