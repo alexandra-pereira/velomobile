@@ -20,7 +20,9 @@ const Header = ({ isLoggedIn }) => {
       );
   }
 
-{/* ----------burger close--------- */}
+  {
+    /* ----------burger close--------- */
+  }
   function openCloseMenu() {
     const classAction =
       openCloseMenuState === "inactive" ? "active" : "inactive";
@@ -28,13 +30,12 @@ const Header = ({ isLoggedIn }) => {
     setOpenCloseMenuState(classAction);
   }
   return (
-
-<header className="container-fluid d-flex ">
-{/* ----------logo--------- */}
+    <header className="container-fluid d-flex ">
+      {/* ----------logo--------- */}
       <Link to={"/"}>
         <img src={logo} alt="Logo vélomobile - retour accueil" />
       </Link>
- {/* ----------menu--------- */}   
+      {/* ----------menu--------- */}
       <nav id="nav" className={openCloseMenuState}>
         <ul className="mt-4">
           <li className="home-link" onClick={openCloseMenu}>
@@ -77,27 +78,22 @@ const Header = ({ isLoggedIn }) => {
         <div id="icons" onClick={openCloseMenu}></div>
       </nav>
 
+      {/* ----------buton black&white view an buton login--------- */}
+      <div className="bwl">
+        <ul>
+          <li className="login-out-link" onClick={openCloseMenu}>
+            <Link to={pathLogged}>
+              {isLoggedIn ? logInOutLink(true) : logInOutLink(false)}
+            </Link>
+          </li>
 
-{/* ----------buton black&white view an buton login--------- */}    
-      <div className="bwl"> 
-        <ul> 
-            <li className="login-out-link" onClick={openCloseMenu}>
-              <Link to={pathLogged}>
-                {isLoggedIn ? logInOutLink(true) : logInOutLink(false)}
-              </Link>
-            </li>
-
-            <li className="bk-wh-link" onClick={openCloseMenu}>
-              <Link to="bla">
-                <span>Eco views</span>
-              </Link>
-            </li>
+          <li className="bk-wh-link" onClick={openCloseMenu}>
+            <Link to="bla">
+              <span>Eco views</span>
+            </Link>
+          </li>
         </ul>
       </div>
-      
-
-    
- {/*   <h1>Vélomobile : l'alternative à la voiture</h1> */}
     </header>
   );
 };
