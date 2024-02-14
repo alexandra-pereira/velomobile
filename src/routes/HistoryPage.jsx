@@ -1,8 +1,9 @@
 const HistoryPage = () => {
   return (
     <>
-      <h2>Histoire du Vélo Mobile</h2>
       <article>
+        <h2>Histoire du Vélo Mobile</h2>
+        <br></br>
         <p>
           L'histoire du vélo-mobile, également appelé vélocar, remonte au début
           du XXe siècle, en particulier en France. Le concept d'un véhicule
