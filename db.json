@@ -4,7 +4,9 @@
       "id": 1,
       "model": "lvf",
       "description": "Le vélo mobile français qui a fait ses preuves",
+
       "photo": "vmrural.jpeg",
+
       "weight": 32
     },
     {
