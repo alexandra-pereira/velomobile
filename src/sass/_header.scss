@@ -1,0 +1,164 @@
+/* Code imbriqué (nested) */
+header {
+  nav {
+    font-size: calc(0.5em + 1.5vw);
+    ul {
+    /*  -------Les svg pour la connexion/déconnexion---- 
+      li.login-out-link {
+        svg {
+          color: black;
+          font-size: 1.2em;
+        }
+
+        &:hover {
+          svg {
+            color: $primary;
+          }
+        }
+      }*/
+
+      /* -----------buton link----------- */
+      a {
+        text-decoration: none;
+        color: #a0a0a0;
+
+        &:hover {
+          color: #005cfa;
+          background-color: transparent;
+          border-radius: 4px;
+          border: 2px solid rgb(255, 55, 55);
+          padding: 6px;
+        }
+      }
+
+      /*   -------div black&white login------
+      .bwl ul {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        gap: 0.5em;
+        li {
+          background-color: rgb(175, 175, 175);
+          padding: 0.2em;
+          border-radius: 1em;
+
+          a {
+            text-decoration: none;
+            color: inherit;
+          }
+          &:hover {
+            color: red;
+          }
+        } */
+    }
+  }
+}
+
+/*-----------burger changement au clic----------- */
+  #icons {
+ 
+    cursor: pointer;
+    display: none;
+
+    &:before {
+      content: "\2630";
+    }
+    &.active:before {
+      content: "\2715";
+    }
+  }
+
+  /* -----------burger responsive quand c'est plus petit que 650px-----------*/
+  @media (max-width: 800px) {
+    #icons {
+      display: block;
+      
+    }
+
+    nav ul {
+      position: fixed;
+      left: -100%;
+      top: 5%;
+      color: black;
+      flex-direction: column;
+      background: rgb(125, 129, 131);
+      width: 100%;
+      text-align: center;
+      transition: 0.25s;
+
+      li {
+        padding: 3px 0;
+      }
+      li:hover {
+        background: rgb(252, 252, 252);
+      }
+    }
+
+    nav.active ul {
+      left: 0;
+    }
+  }
+
+/*
+
+-------- Header 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f0f0f0;
+}
+
+------Containers 
+.container {
+  flex: 1;
+}
+
+------Les deux containers sont affichés en colonne, l'un au-dessus de l'autre 
+.navigation
+ {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+.bwl{
+  display: flex;
+  flex-direction: row;
+  align-items: center; 
+}
+
+
+---------Styling pour le menu 
+.menu-container nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-container nav ul li {
+  margin-bottom: 10px;
+}
+
+.menu-container nav ul li a {
+  text-decoration: none;
+  color: #333;
+}
+
+---------Styling pour .bwl 
+.bwl-container ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bwl-container ul li {
+  margin-bottom: 5px;
+}
+
+.bwl-container ul li a {
+  text-decoration: none;
+  color: #333;
+}
+*/

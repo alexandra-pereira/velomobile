@@ -1,4 +1,3 @@
-import "./../sass/formulaire.scss";
 
 const Formulaire = () => {
     return (

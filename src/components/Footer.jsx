@@ -1,11 +1,10 @@
-import "./../sass/footer.scss";
 
 const Footer = () => {
   return (
     <footer className="container-fluid bg-dark-50">
       <div className="row">
         <div className="col-md-4">
-          <h3>A propos</h3>
+          <h2>A propos</h2>
           <ul>
             <li><a href="#">CGU</a></li>
             <li>Conditions Générales de Ventes</li>
@@ -15,7 +14,7 @@ const Footer = () => {
         </div>
 
         <div className="col-md-4">
-          <h3>Site Map</h3>
+          <h2>Site Map</h2>
           <ul>
             <li><a href="home">Home</a></li>
             <li><a href="products">Vélomobile</a></li>
@@ -27,7 +26,7 @@ const Footer = () => {
         </div>
 
         <div className="col-md-4">
-          <h3>Contact</h3>
+          <h2>Contact</h2>
           <ul>
             <li>Le veloMobile Français</li>
             <li>34 av de palavas</li>
