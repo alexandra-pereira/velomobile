@@ -1,22 +1,9 @@
    @import './variables';
    // Import Bootstrap and its default variables
-<<<<<<< HEAD
-   @import '~bootstrap/scss/bootstrap.scss';
-   @import './mixin.scss';
-
- 
-   @import './header.scss';
-   @import './global.scss';
-   @import './footer.scss';
-   @import './formulaire.scss';
-   @import './dark.scss';
-   
-=======
    @import '~bootstrap/scss/bootstrap';
    @import './mixin';
-   @import './global';
    @import './header';
    @import './footer';
-   @import './formulaire'
->>>>>>> 0e0aca3d01ff4f607b3e0e9cd251e1ea5587233c
+   @import './formulaire';
+   @import './dark'
    
