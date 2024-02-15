@@ -13,21 +13,28 @@ import Formulaire from "./components/Formulaire";
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  
+  const [darkMode, setdarkMode] = useState("light");
+  function toggleMode(){
+    if(darkMode === "light") setdarkMode("dark");
+    else setdarkMode("light")
+  }
 
   return (
-    <div className="App container">
-      <Header isLoggedIn={isLoggedIn} />
+   <div className={darkMode}>
+      <div className="App container">
+        <Header isLoggedIn={isLoggedIn} toggleMode={toggleMode}/>
 
-      <main>
-        {/* Outlet indique l'endroit où vont s'afficher les composants définis dans les routes enfants */}
-        <Outlet context={[isLoggedIn, setIsLoggedIn]} />
-        <Formulaire />
-        <br />
-      </main>
+        <main>
+          {/* Outlet indique l'endroit où vont s'afficher les composants définis dans les routes enfants */}
+          <Outlet context={[isLoggedIn, setIsLoggedIn]} />
+          <Formulaire />
+          <br />
+        </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+      </div>
+  
   );
 }
 
