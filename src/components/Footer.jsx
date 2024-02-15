@@ -1,4 +1,3 @@
-import "./../sass/footer.scss";
 
 const Footer = () => {
   return (
