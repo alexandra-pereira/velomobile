@@ -1,8 +1,8 @@
-import histoire1 from "./../assets/history/histoire1.jpg";
-import histoire2 from "./../assets/history/histoire2.jpg";
-import oldvelo3 from "./../assets/history/oldvelo3.jpg";
-import oldvelo5 from "./../assets/history/oldvelo5.jpg";
-import modernvelo from "./../assets/history/modernvelo.jpg";
+import histoire1 from "./../assets/photohistory/histoire1.jpg";
+import histoire2 from "./../assets/photohistory/histoire2.jpg";
+import oldvelo3 from "./../assets/photohistory/oldvelo3.jpg";
+import oldvelo5 from "./../assets/photohistory/oldvelo5.jpg";
+import modernvelo from "./../assets/photohistory/modernvelo.jpg";
 
 const HistoryPage = () => {
   return (
@@ -88,7 +88,13 @@ const HistoryPage = () => {
             <div className="row gx-5">
               <div className="col-sm-4">
                 <div className="p-3">
-                  <img src={modernvelo} className="img-fluid rounded" alt=" " />
+                  {
+                    <img
+                      src={modernvelo}
+                      className="img-fluid rounded"
+                      alt=" "
+                    />
+                  }
                 </div>
               </div>
               <div className="col-sm-8">
