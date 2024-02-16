@@ -3,11 +3,13 @@ import logo from "./../assets/logo-lvf.png";
 import { useState } from "react";
 import { FaUser } from "react-icons/fa";
 import { IoIosLeaf } from "react-icons/io";
+
 /**
  *
- *
+ * header avec props isLoggedIn pour se logger
+ * et props toggleMode pour changer de Mode de visualisation
  */
-const Header = ({ isLoggedIn, toggleMode }) => {
+const Header = ({ isLoggedIn, toggleMode, darkMode }) => {
   const [openCloseMenuState, setOpenCloseMenuState] = useState("inactive");
   let pathLogged = isLoggedIn ? "/logout" : "/login";
   function logInOutLink(login) {
@@ -25,9 +27,10 @@ const Header = ({ isLoggedIn, toggleMode }) => {
       );
   }
 
-  {
-    /* ----------burger close--------- */
-  }
+  /**
+   *
+   * burger fonction ouvrir et fermer
+   */
   function openCloseMenu() {
     const classAction =
       openCloseMenuState === "inactive" ? "active" : "inactive";
@@ -35,28 +38,31 @@ const Header = ({ isLoggedIn, toggleMode }) => {
     setOpenCloseMenuState(classAction);
   }
   return (
-    <header className="header container-fluid ">
+    /* ---------- balise Parent header-------- */
+    <header className="header container-fluid pt-1">
       {/* ---------- button ecoview and loggin-------- */}
       <div className="ecoview-login container d-flex flex-row-reverse">
         <ul className="list-unstyled d-flex align-items-center gap-2">
           <li>
-            <button className="btn btn-white">
+            <button className="btn btn-primary">
               <FaUser />
-              <Link to={pathLogged}>
+              <Link className="text-decoration-none text-white" to={pathLogged}>
                 {isLoggedIn ? logInOutLink(true) : logInOutLink(false)}
               </Link>
             </button>
           </li>
 
           <li>
-            <button
-              className="btn btn-success"
-              onClick={() => {
-                toggleMode()
-              }}
-            >
-              <IoIosLeaf />
-              Eco views
+            <button className="btn btn-success" onClick={toggleMode}>
+              {darkMode === "light" ? (
+                <>
+                  <IoIosLeaf className="mr-" />
+                  Eco View
+                </>
+              ) : (
+                
+                "Defaut View"
+              )}
             </button>
           </li>
         </ul>
@@ -72,7 +78,7 @@ const Header = ({ isLoggedIn, toggleMode }) => {
         </div>
 
         {/* ----------navbar--------- */}
-        <div className="flex-grow-1 d-flex justify-content-center align-item-end">
+        <div className="flex-grow-1 d-flex justify-content-end align-item-start">
           <nav id="nav" className={openCloseMenuState}>
             <ul className="list-unstyled d-flex align-items-center gap-3">
               <li className="home-link" onClick={openCloseMenu}>
@@ -90,16 +96,19 @@ const Header = ({ isLoggedIn, toggleMode }) => {
                   <span>Atelier</span>
                 </Link>
               </li>
+
               <li className="history-link" onClick={openCloseMenu}>
                 <Link to={`/history`}>
                   <span>Histoire</span>
                 </Link>
               </li>
+
               <li className="showroom-link" onClick={openCloseMenu}>
                 <Link to={`/showroom`}>
                   <span>Showroom</span>
                 </Link>
               </li>
+
               <li className="magazine-link" onClick={openCloseMenu}>
                 <Link to={`/magazine`}>
                   <span>Magazine</span>
