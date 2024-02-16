@@ -1,26 +1,13 @@
 /* Code imbriqué (nested) */
 header {
   nav {
+    padding: 10px;
     font-size: calc(0.5em + 1.5vw);
     ul {
-    /*  -------Les svg pour la connexion/déconnexion---- 
-      li.login-out-link {
-        svg {
-          color: black;
-          font-size: 1.2em;
-        }
-
-        &:hover {
-          svg {
-            color: $primary;
-          }
-        }
-      }*/
-
-      /* -----------buton link----------- */
+      /* -----------button link navbar----------- */
       a {
         text-decoration: none;
-        color: #a0a0a0;
+        color: #cdcccc;
 
         &:hover {
           color: #005cfa;
@@ -30,135 +17,59 @@ header {
           padding: 6px;
         }
       }
-
-      /*   -------div black&white login------
-      .bwl ul {
-        display: flex;
-        flex-direction: column;
-        list-style: none;
-        gap: 0.5em;
-        li {
-          background-color: rgb(175, 175, 175);
-          padding: 0.2em;
-          border-radius: 1em;
-
-          a {
-            text-decoration: none;
-            color: inherit;
-          }
-          &:hover {
-            color: red;
-          }
-        } */
     }
   }
 }
+#icons {
+  cursor: pointer;
+  display: none;
+}
 
-/*-----------burger changement au clic----------- */
+/* -----------burger responsive quand c'est plus petit que 800px-----------*/
+@media (max-width: 800px) {
   #icons {
- 
     cursor: pointer;
-    display: none;
-
-    &:before {
-      content: "\2630";
-    }
-    &.active:before {
-      content: "\2715";
-    }
+    display: block;
+    font-size: 2em;
+    padding: 10px;
+  }
+  #icons:before {
+    content: "\2630";
+  }
+  .active #icons::before {
+    content: "\2715";
+    display: block;
   }
 
-  /* -----------burger responsive quand c'est plus petit que 650px-----------*/
-  @media (max-width: 800px) {
-    #icons {
-      display: block;
-      
-    }
-
-    nav ul {
+  nav {
+    ul {
       position: fixed;
       left: -100%;
-      top: 5%;
+      top: 40px;
       color: black;
       flex-direction: column;
-      background: rgb(125, 129, 131);
-      width: 100%;
-      text-align: center;
-      transition: 0.25s;
+      background: rgb(180, 180, 180);
+      width: 60% !important;
+      max-width: 500px !important;
+      text-align: right;
+      transition: 1s;
+      border-radius: 1em;
+      padding-top: 20px;
+      padding-bottom: 20px;
 
       li {
-        padding: 3px 0;
+        padding: 10px 0;
+        a {
+          color: white;
+        }
       }
-      li:hover {
-        background: rgb(252, 252, 252);
-      }
-    }
-
-    nav.active ul {
-      left: 0;
     }
   }
-
-/*
-
--------- Header 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  background-color: #f0f0f0;
+  nav li:hover {
+    background: transparent;
+  }
+  nav.active ul {
+    left: 0;
+    margin-left: 1em;
+  }
 }
-
-------Containers 
-.container {
-  flex: 1;
-}
-
-------Les deux containers sont affichés en colonne, l'un au-dessus de l'autre 
-.navigation
- {
-  display: flex;
-  flex-direction: column;
-  align-items: center; 
-}
-
-.bwl{
-  display: flex;
-  flex-direction: row;
-  align-items: center; 
-}
-
-
----------Styling pour le menu 
-.menu-container nav ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.menu-container nav ul li {
-  margin-bottom: 10px;
-}
-
-.menu-container nav ul li a {
-  text-decoration: none;
-  color: #333;
-}
-
----------Styling pour .bwl 
-.bwl-container ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.bwl-container ul li {
-  margin-bottom: 5px;
-}
-
-.bwl-container ul li a {
-  text-decoration: none;
-  color: #333;
-}
-*/
