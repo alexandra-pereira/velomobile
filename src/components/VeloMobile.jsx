@@ -17,6 +17,14 @@ const VeloMobile = (props) => {
           </button>
 
           <FormPutVeloMobile veloMobile={props.veloMobile} />
+          <button
+            onClick={() => {
+              props.handleClickUpdateVeloMobile(props.veloMobile);
+            }}
+            className="btn btn-warning"
+          >
+            Modifier
+          </button>
         </>
       )}
       <img src={`/images/velosmobiles/${props.veloMobile.photo}`} alt="" />
