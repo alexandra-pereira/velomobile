@@ -3,6 +3,10 @@ header {
   nav {
     padding: 10px;
     font-size: calc(0.5em + 1.5vw);
+
+    position: relative;
+    z-index: 9998; /* Vous pouvez ajuster ce nombre si nécessaire */
+
     ul {
       /* -----------button link navbar----------- */
       a {
@@ -20,9 +24,12 @@ header {
     }
   }
 }
+
 #icons {
   cursor: pointer;
   display: none;
+  position: relative; /* Ajout */
+  z-index: 9999; /* Assurez-vous que le menu burger apparaît au-dessus de l'image */
 }
 
 /* -----------burger responsive quand c'est plus petit que 800px-----------*/

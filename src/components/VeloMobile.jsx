@@ -28,6 +28,14 @@ const VeloMobile = (props) => {
                   Supprimer
                 </button>
                 <FormPutVeloMobile veloMobile={props.veloMobile} />
+                <button
+                  onClick={() => {
+                    props.handleClickUpdateVeloMobile(props.veloMobile);
+                  }}
+                  className="btn btn-warning"
+                >
+                  Modifier
+                </button>
               </>
             ) : (
               <p>Pas Connecté</p>
