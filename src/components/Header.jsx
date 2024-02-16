@@ -3,6 +3,7 @@ import logo from "./../assets/logo-lvf.png";
 import { useState } from "react";
 import { FaUser } from "react-icons/fa";
 import { IoIosLeaf } from "react-icons/io";
+import barre_horizontale from "./../assets/barre_horizontale.png";
 
 /**
  *
@@ -122,6 +123,12 @@ const Header = ({ isLoggedIn, toggleMode, darkMode }) => {
       {/*---------h1-------*/}
       <div className="visually-hidden">
         <h1 className="text-center">Le Velomobile Français</h1>
+      </div>
+      <br >
+      </br>
+      {/*---------barre horizontalefr-------*/}
+      <div className="d-flex justify-content-center align-items-center">
+      <img src={barre_horizontale} className="img-fluid " alt="Responsive image" />
       </div>
     </header>
   );

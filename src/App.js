@@ -16,10 +16,7 @@ function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   /* création de l'etat de darkMode */
   const [darkMode, setdarkMode] = useState("light");
-<<<<<<< HEAD
   /* function togggleMode - switch l'apparence de darkMode */
-=======
->>>>>>> a37d6016fa8232fe6025425da53a8a649a4ea2d4
   function toggleMode() {
     if (darkMode === "light") setdarkMode("dark");
     else setdarkMode("light");
@@ -28,11 +25,7 @@ function App() {
   return (
     <div className={darkMode}>
       <div className="App container">
-<<<<<<< HEAD
         <Header isLoggedIn={isLoggedIn} toggleMode={toggleMode} darkMode={ darkMode} />
-=======
-        <Header isLoggedIn={isLoggedIn} toggleMode={toggleMode} />
->>>>>>> a37d6016fa8232fe6025425da53a8a649a4ea2d4
 
         <main>
           {/* Outlet indique l'endroit où vont s'afficher les composants définis dans les routes enfants */}
