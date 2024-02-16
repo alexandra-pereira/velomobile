@@ -20,11 +20,7 @@ const HistoryPage = () => {
           <div className="container px-4">
             <div className="row gx-5 mb-4">
               <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                <img
-                  src={oldvelo3}
-                  className="img-fluid rounded"
-                  alt="Ancient velomobile"
-                />
+                <img src={oldvelo3} className="img-fluid rounded" alt=" " />
               </div>
               <div className="col-lg-8 col-md-6">
                 <h3 className="mb-3">Concepts Précoces (années 1920-1930)</h3>
@@ -76,20 +72,12 @@ const HistoryPage = () => {
                 </p>
               </div>
               <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                <img
-                  src={oldvelo5}
-                  className="img-fluid rounded"
-                  alt="Old velomobile"
-                />
+                <img src={oldvelo5} className="img-fluid rounded" alt=" " />
               </div>
             </div>
             <div className="row gx-5 mb-4">
               <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                <img
-                  src={modernvelo}
-                  className="img-fluid rounded"
-                  alt="Modern velomobile"
-                />
+                <img src={modernvelo} className="img-fluid rounded" alt=" " />
               </div>
               <div className="col-lg-8 col-md-6">
                 <h3 className="mb-3">

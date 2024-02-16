@@ -6,8 +6,8 @@ import { Link } from "react-router-dom";
 
 const HomePage = () => {
   const images = [
-    { src: vmrural, alt: "Image  1" },
-    { src: vmsportif, alt: "Image  2" },
+    { src: vmrural, alt: " " },
+    { src: vmsportif, alt: " " },
   ];
 
   return (
@@ -56,7 +56,6 @@ const HomePage = () => {
               <span>En savoir plus</span>
             </Link>
           </div>
-          
         </div>
       </div>
     </div>

@@ -1,6 +1,11 @@
 import React, { useEffect } from "react";
 import { Carousel as BootstrapCarousel } from "bootstrap";
 
+//le carousel passe images comme props, useEffect est un hook
+// The useEffect hook takes a function and an array of dependencies. In this case, the array is empty ([]), which means the effect will only run once after the initial render.
+// Inside the effect, you query the DOM for the carousel element using its ID (#carouselExampleIndicators)
+// If the element exists, you create a new instance of BootstrapCarousel, passing the element and an options object with the interval property
+
 const Carousel = ({ images }) => {
   useEffect(() => {
     const carouselElement = document.querySelector(
