@@ -1,7 +1,10 @@
 const Formulaire = () => {
   return (
-    <form className="card p-2">
-      <div className="body-card">
+    <form className="card p-2 bg-light">
+      <div className="body-card ">
+        <h3 class="card-title d-flex justify-content-center align-items-center">
+          Ecrivez nous
+        </h3>
         <label htmlFor="name">Nom</label>
         <input
           type="text"
@@ -22,13 +25,26 @@ const Formulaire = () => {
       </div>
 
       <div className="body-card">
+        <label htmlFor="email">E-mail</label>
+        <input
+          type="text"
+          className="form-control"
+          id="email"
+          placeholder="Entrer votre email"
+        />
+      </div>
+      <br></br>
+      <div className="body-card">
         <label htmlFor="description">Ecrivez nous</label>
         <textarea className="form-control" id="description" rows="3"></textarea>
       </div>
       <br />
-      <button type="submit" className="btn btn-primary">
-        Submit
-      </button>
+      <div className="d-flex justify-content-end">
+        <button type="submit" className="btn btn-primary ">
+          Submit
+        </button>
+      </div>
+
       <br />
     </form>
   );
