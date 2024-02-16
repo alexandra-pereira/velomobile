@@ -2,9 +2,9 @@ const Formulaire = () => {
   return (
     <form className="card p-2 bg-light">
       <div className="body-card ">
-        <h3 class="card-title d-flex justify-content-center align-items-center">
+        <h2 class="card-title d-flex justify-content-center align-items-center">
           Ecrivez nous
-        </h3>
+        </h2>
         <label htmlFor="name">Nom</label>
         <input
           type="text"

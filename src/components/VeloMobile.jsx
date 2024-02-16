@@ -15,7 +15,7 @@ const VeloMobile = (props) => {
         </div>
         <div className="col-md-8">
           <div className="card-body">
-            <h5 className="card-title">{props.veloMobile.model}</h5>
+            <h3 className="card-title">{props.veloMobile.model}</h3>
             <p className="card-text">{props.veloMobile.description}</p>
             {isLoggedIn ? (
               <>
