@@ -1,6 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { Carousel as BootstrapCarousel } from "bootstrap";
 
 const Carousel = ({ images }) => {
+  useEffect(() => {
+    const carouselElement = document.querySelector(
+      "#carouselExampleIndicators"
+    );
+    if (carouselElement) {
+      new BootstrapCarousel(carouselElement, {
+        interval: 2500,
+      });
+    }
+  }, []);
+
   return (
     <div
       id="carouselExampleIndicators"
