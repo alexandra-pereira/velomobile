@@ -1,5 +1,8 @@
+import barre_horizontale from './../assets/barre_horizontale.png';
+
 const Formulaire = () => {
   return (
+    <section> 
     <form className="card p-2 bg-light">
       <div className="body-card ">
         <h2 class="card-title d-flex justify-content-center align-items-center">
@@ -47,6 +50,12 @@ const Formulaire = () => {
 
       <br />
     </form>
+
+    {/*---------barre horizontalefr-------*/}
+    <div className="d-flex justify-content-center align-items-center">
+    <img src={barre_horizontale} className="img-fluid " alt="barre horizontale" />
+    </div>
+    </section>
   );
 };
 
