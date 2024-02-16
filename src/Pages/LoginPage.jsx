@@ -36,9 +36,9 @@ const LoginPage = () => {
         <label htmlFor="pwd">Mot de passe</label>
         <input type="text" id="pwd" name="pwd" />
         <button type="submit">Envoyer</button>
-      </form>
+      </form> <br />
     </section>
-
+    
 
   );
 }

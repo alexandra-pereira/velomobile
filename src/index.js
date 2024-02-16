@@ -3,20 +3,20 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import ProductsPage from "./routes/ProductsPage";
-import HomePage from "./routes/HomePage";
-import ErrorPage from "./routes/ErrorPage";
-import LoginPage from "./routes/LoginPage";
-import LogoutPage from "./routes/LogoutPage";
-import ShowroomPage from "./routes/ShowroomPage";
-import AtelierPage from "./routes/AtelierPage";
-import HistoryPage from "./routes/HistoryPage";
-import ArticlePluiePage from "./routes/ArticlePluiePage";
+import ProductsPage from "./Pages/ProductsPage";
+import HomePage from "./Pages/HomePage";
+import ErrorPage from "./Pages/ErrorPage";
+import LoginPage from "./Pages/LoginPage";
+import LogoutPage from "./Pages/LogoutPage";
+import ShowroomPage from "./Pages/ShowroomPage";
+import AtelierPage from "./Pages/AtelierPage";
+import HistoryPage from "./Pages/HistoryPage";
+import ArticlePluiePage from "./Pages/ArticlePluiePage";
 import "bootstrap/dist/css/bootstrap.css";
 import "./sass/custom.scss";
-import MagazinePage from "./routes/MagazinePage";
-import ArticleTrajetLongPage from "./routes/ArticleTrajetLongPage";
-import ArticleEcoPage from "./routes/ArticleEcoPage";
+import MagazinePage from "./Pages/MagazinePage";
+import ArticleTrajetLongPage from "./Pages/ArticleTrajetLongPage";
+import ArticleEcoPage from "./Pages/ArticleEcoPage";
 
 const router = createBrowserRouter([
   {
