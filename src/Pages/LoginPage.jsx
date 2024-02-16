@@ -5,8 +5,8 @@ const LoginPage = () => {
   const navigate = useNavigate();
   return (
     <section>
-      <h2>Identification</h2>
       <form
+        className="card p-2 bg-light"
         onSubmit={(event) => {
           console.log(`Formulaire soumis`);
           event.preventDefault();
@@ -19,28 +19,42 @@ const LoginPage = () => {
           console.log(`login`, login, "pwd", pwd);
           //event.target.reset();
           // Vérification du l'utilisateur via un service
-          RemoteData.isLogged(login, pwd)
-            .then((data) => {
-              console.log(`data ?`, data);
-              setIsLoggedIn(data);
-              if (data) {
-                console.log(`redirection vers la page d'accueil`);
-                navigate('/products');
-              }
-            });
-
+          RemoteData.isLogged(login, pwd).then((data) => {
+            console.log(`data ?`, data);
+            setIsLoggedIn(data);
+            if (data) {
+              console.log(`redirection vers la page d'accueil`);
+              navigate("/products");
+            }
+          });
         }}
       >
-        <label htmlFor="login">Identifiant</label>
-        <input type="text" id="login" name="login" />
-        <label htmlFor="pwd">Mot de passe</label>
-        <input type="text" id="pwd" name="pwd" />
-        <button type="submit">Envoyer</button>
-      </form> <br />
-    </section>
-    
+        <div className="body-card">
+          <h2 class="card-title d-flex justify-content-center align-items-center">
+            Identification
+          </h2>
+          <label htmlFor="login" placeholder="login">
+            Identifiant{" "}
+          </label>
+          <input type="text" id="login" name="login" placeholder="login" />
+        </div>
 
+        <div className="body-card">
+          <label htmlFor="pwd" placeholder="password">
+            Mot de passe{" "}
+          </label>
+          <input type="text" id="pwd" name="pwd" placeholder="password" />
+        </div>
+
+        <div className="body-card d-flex justify-content-center">
+          <button className="btn btn-primary" type="submit">
+            Envoyer
+          </button>
+        </div>
+      </form>
+      <br />
+    </section>
   );
-}
+};
 
 export default LoginPage;

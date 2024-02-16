@@ -18,7 +18,7 @@ const HomePage = () => {
       <br></br>
       {/*-----------Notre entreprise-----------*/}
       <div className="card bg-light">
-        <h3 class="card-title d-flex justify-content-center align-items-cente">
+        <h3 class="card-title d-flex justify-content-center align-items-center">
           Notre Entreprise
         </h3>
         <div className="car-body m-3">
