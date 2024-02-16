@@ -13,9 +13,9 @@ const MagazinePage = () => {
         <div className="card m-3" style={{ width: "25rem" }}>
           <img src={velorain1} className="card-img-top" alt="..."></img>
           <div className="card-body">
-            <h5 className="card-title">
+            <h3 className="card-title">
               Un vélo sous la pluie en toute protection
-            </h5>
+            </h3>
             <p className="card-text">
               Dans le monde en constante évolution de la mobilité, une solution
               écoresponsable émerge pour défier les intempéries tout en offrant
@@ -33,10 +33,10 @@ const MagazinePage = () => {
         <div className="card m-3" style={{ width: "25rem" }}>
           <img src={velorain2} className="card-img-top" alt="..."></img>
           <div className="card-body">
-            <h5 className="card-title">
+            <h3 className="card-title">
               Comment me protéger de la pluie en vélo sur un trajet long : une
               approche écologique et confortable
-            </h5>
+            </h3>
             <p className="card-text">
               Pédaler sur de longues distances peut être une aventure
               gratifiante, mais les prévisions de pluie peuvent sembler
@@ -53,10 +53,10 @@ const MagazinePage = () => {
         <div className="card m-3" style={{ width: "25rem" }}>
           <img src={veloeco} className="card-img-top" alt="..."></img>
           <div className="card-body">
-            <h5 className="card-title">
+            <h3 className="card-title">
               Le Vélomobile : Une Alternative Écologique à la Voiture et un
               Symbole de Mobilité Verte
-            </h5>
+            </h3>
             <p className="card-text">
               À une époque où la recherche d'alternatives écologiques à la
               voiture est cruciale, le vélomobile émerge comme une solution
