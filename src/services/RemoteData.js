@@ -17,7 +17,7 @@ export default class RemoteData {
         } else
           throw new Error(
             "Problème de serveur dans loadVelosMobiles. Statut de l'erreur : " +
-              response.status
+            response.status
           );
       })
       .then((velosMobiles) => {
@@ -45,7 +45,7 @@ export default class RemoteData {
         } else
           throw new Error(
             "Problème de serveur dans deleteVeloMobile. Statut de l'erreur : " +
-              response.status
+            response.status
           );
       })
       .then((veloMobile) => {
@@ -54,20 +54,20 @@ export default class RemoteData {
       });
   }
   /**
-   * Execute une requête HTTP avele verbe GET
+   * Execute une requête HTTP avec le verbe GET
    * afin récupérer la liste des utilisateur
-   * @returns Promise <Uesers []>
+   * @returns Promise <Users []>
    */
   static loadUsers() {
     return fetch(RemoteData.url + "users")
       .then((response) => {
         console.log(`response.status`, response.status);
-        if (response.status == 200) {
+        if (response.status === 200) {
           return response.json();
         } else
           throw new Error(
             "Problème de serveur dans loadUsers. Statut de l'erreur : " +
-              response.status
+            response.status
           );
       })
       .then((users) => {

@@ -3,12 +3,11 @@ import barre_horizontale from "./../assets/barre_horizontale.png";
 const Formulaire = () => {
   return (
     <section>
-      <div className="d-flex justify-content-center"> 
-      <form className="card p-2 bg-light" style={{ width: "40rem" }}>
+      <form className="card p-2 bg-light">
         <div className="body-card ">
-          <h2 class="card-title d-flex justify-content-center align-items-center">
+          <h3 class="card-title d-flex justify-content-center align-items-center">
             Ecrivez nous
-          </h2>
+          </h3>
           <label htmlFor="name">Nom</label>
           <input
             type="text"
@@ -55,17 +54,15 @@ const Formulaire = () => {
 
         <br />
       </form>
-    </div>
-    
-    {/*---------barre horizontalefr-------*/}
+      {/*---------barre horizontalefr-------*/}
       <div className="d-flex justify-content-center align-items-center">
         <img
           src={barre_horizontale}
           className="img-fluid "
-          alt="barre horizontale"
+          alt="Responsive image"
         />
       </div>
-</section>
+    </section>
   );
 };
 

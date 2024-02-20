@@ -64,7 +64,7 @@ const HomePage = () => {
                 <img src={ vmrural } alt="" style={{ width: "16rem" }} />
               </div>
               <div className="card-body d-flex justify-content-center">
-                <Link className="btn btn-danger" style={{ color: "white" }} to={`/products`}>
+                <Link className="btn btn-danger" style={{ color: "white" }} to={`/Formulaire`}>
                   <span>Nous rejoindre</span>
                 </Link>
               </div>
