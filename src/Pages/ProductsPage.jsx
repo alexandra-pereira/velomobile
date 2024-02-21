@@ -50,12 +50,10 @@ const ProductsPage = () => {
       weight: formData.get("weight"),
       photo: formData.get("photo"),
     };
-    function handleSubmitFormPutVeloMobile(event) {
-    event.preventDefault();
-    console.log(`Formulaire de modification`);
-    
+    // il faut maintenant ajouter un object au state velosMobiles
+    const copyVelosMobiles = [...velosMobiles, newVeloMobile];
 
-    setVelosMobiles(copyVeloMobiles);
+    setVelosMobiles(copyVelosMobiles);
     event.target.reset();
     // Ajout de ce nouvel odjet veloMobile via une requête http POST
     delete newVeloMobile.id;
@@ -87,9 +85,6 @@ const ProductsPage = () => {
         <>
           <FormPostVeloMobile 
             handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile}
-          />
-          <FormPostVeloMobile 
-            handleSubmitFormPutVeloMobile={handleSubmitFormPutVeloMobile}
           />
           
         </>
