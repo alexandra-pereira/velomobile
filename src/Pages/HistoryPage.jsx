@@ -7,17 +7,12 @@ import modernvelo from "./../assets/photohistory/modernvelo.jpg";
 const HistoryPage = () => {
   return (
     <>
-      <div className="container-fluid">
-        <article>
-          <h2 className="mb-4">Histoire du Vélo Mobile</h2>
-          <p className="text-justify mb-4">
-            L'histoire du vélo-mobile, également appelé vélocar, remonte au
-            début du XXe siècle, en particulier en France. Le concept d'un
-            véhicule propulsé par la force humaine et enfermé dans une coque
-            aérodynamique a gagné en popularité comme moyen d'améliorer
-            l'efficacité et de protéger le cycliste des éléments.
-          </p>
-          <div className="container px-4">
+      <section className="container-fluid">
+        <article className="history-content">
+          <header className="container">
+            <h2 className="mb-4">Histoire du Vélo Mobile</h2>
+          </header>
+          <section className="container">
             <div className="row gx-5 mb-4">
               <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
                 <img src={oldvelo3} className="img-fluid rounded" alt=" " />
@@ -76,10 +71,10 @@ const HistoryPage = () => {
               </div>
             </div>
             <div className="row gx-5 mb-4">
-              <div className="col-lg-4 col-md-6 mb-4 mb-lg-0">
+              <div className="col-lg-4 col-md-6 mb-4 mb-lg-0 order-2 order-md-1">
                 <img src={modernvelo} className="img-fluid rounded" alt=" " />
               </div>
-              <div className="col-lg-8 col-md-6">
+              <div className="col-lg-8 col-md-6 order-1 order-md-2">
                 <h3 className="mb-3">
                   Vélo-Mobiles Contemporains (années 2000 à aujourd'hui)
                 </h3>
@@ -95,26 +90,29 @@ const HistoryPage = () => {
                 </p>
               </div>
             </div>
-          </div>
-          <p className="text-justify mb-4">
-            Aujourd'hui, les vélo-mobiles sont toujours utilisés à diverses
-            fins, notamment pour les déplacements, les voyages et les promenades
-            récréatives. Les conceptions continuent d'évoluer avec les avancées
-            dans les matériaux et la technologie, contribuant au développement
-            continu de ces véhicules propulsés par l'homme profilés.
-          </p>
+          </section>
+          <section className="container">
+            <p className="text-justify mb-4">
+              Aujourd'hui, les vélo-mobiles sont toujours utilisés à diverses
+              fins, notamment pour les déplacements, les voyages et les
+              promenades récréatives. Les conceptions continuent d'évoluer avec
+              les avancées dans les matériaux et la technologie, contribuant au
+              développement continu de ces véhicules propulsés par l'homme
+              profilés.
+            </p>
+          </section>
+          <section className="container-fluid d-flex flex-wrap">
+            <div className="row gx-5 mx-auto d-flex align-items-stretch">
+              <div className="col-sm-6 p-3">
+                <img src={histoire1} className="img-fluid h-100 " alt=" " />
+              </div>
+              <div className="col-sm-6 p-3">
+                <img src={histoire2} className="img-fluid h-100" alt=" " />
+              </div>
+            </div>
+          </section>
         </article>
-      </div>
-      <div className="px-4 container-fluid d-flex flex-wrap">
-        <div className="row gx-5 mx-auto d-flex align-items-stretch">
-          <div className="col-sm-6 p-3">
-            <img src={histoire1} className="img-fluid h-100 " alt=" " />
-          </div>
-          <div className="col-sm-6 p-3">
-            <img src={histoire2} className="img-fluid h-100" alt=" " />
-          </div>
-        </div>
-      </div>
+      </section>
     </>
   );
 };
