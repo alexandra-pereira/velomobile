@@ -1,46 +1,65 @@
 import RemoteData from "../services/RemoteData";
+import React, { useState } from "react";
 import { useOutletContext, useNavigate } from "react-router-dom";
-const LoginPage = () => {
+
+const FormulaireConnexion = () => {
   const [isLoggedIn, setIsLoggedIn] = useOutletContext();
   const navigate = useNavigate();
+
+  const [login, setLogin] = useState("");
+  const [motDePasse, setMotDePasse] = useState("");
+
+  const soumettreFormulaire = async (event) => {
+    event.preventDefault();
+    try {
+      // Vérification de l'utilisateur via un service
+      const estConnecte = await RemoteData.isLogged(login, motDePasse);
+      console.log("Est connecté ?", estConnecte);
+      setIsLoggedIn(estConnecte);
+      if (estConnecte) {
+        console.log("Redirection vers la page d'accueil");
+        navigate("/products");
+      }
+    } catch (erreur) {
+      console.error("Erreur :", erreur);
+    }
+  };
+
   return (
     <section>
-      <h2>Identification</h2>
-      <form
-        onSubmit={(event) => {
-          console.log(`Formulaire soumis`);
-          event.preventDefault();
-          // Create a FormData object from the form
-          const formData = new FormData(event.target);
-          console.log(`formData`, formData.entries());
-
-          const login = formData.get("login");
-          const pwd = formData.get("pwd");
-          console.log(`login`, login, "pwd", pwd);
-          //event.target.reset();
-          // Vérification du l'utilisateur via un service
-          RemoteData.isLogged(login, pwd)
-            .then((data) => {
-              console.log(`data ?`, data);
-              setIsLoggedIn(data);
-              if (data) {
-                console.log(`redirection vers la page d'accueil`);
-                navigate('/products');
-              }
-            });
-
-        }}
-      >
-        <label htmlFor="login">Identifiant</label>
-        <input type="text" id="login" name="login" />
-        <label htmlFor="pwd">Mot de passe</label>
-        <input type="text" id="pwd" name="pwd" />
-        <button type="submit">Envoyer</button>
-      </form> <br />
+      <form className="card p-2 bg-light" onSubmit={soumettreFormulaire}>
+        <div className="body-card">
+          <h2 className="card-title d-flex justify-content-center align-items-center">
+            Formulaire de connexion
+          </h2>
+          <label htmlFor="login">Identifiant</label>
+          <input
+            type="text"
+            id="login"
+            className="form-control"
+            value={login}
+            onChange={(e) => setLogin(e.target.value)}
+            required
+          />
+          <label htmlFor="motDePasse">Mot de passe</label>
+          <input
+            type="password"
+            id="motDePasse"
+            className="form-control"
+            value={motDePasse}
+            onChange={(e) => setMotDePasse(e.target.value)}
+            required
+          />
+        </div>
+        <div className="body-card d-flex justify-content-center mt-2">
+          <button className="btn btn-primary" type="submit">
+            Envoyer
+          </button>
+        </div>
+      </form>
+      <br />
     </section>
-    
-
   );
-}
+};
 
-export default LoginPage;
+export default FormulaireConnexion;
