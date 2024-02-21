@@ -3,6 +3,8 @@ import FormPutVeloMobile from "./FormPutVeloMobile";
 
 const VeloMobile = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useOutletContext();
+  
+  
   return (
     <div className="card mb-3">
       <div className="row no-gutters">
@@ -29,9 +31,7 @@ const VeloMobile = (props) => {
                 </button>
                 <FormPutVeloMobile veloMobile={props.veloMobile} />
                 <button
-                  onClick={() => {
-                    props.handleClickUpdateVeloMobile(props.veloMobile);
-                  }}
+                
                   className="btn btn-warning"
                 >
                   Modifier

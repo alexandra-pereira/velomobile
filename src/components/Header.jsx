@@ -47,7 +47,7 @@ const Header = ({ isLoggedIn, toggleMode, darkMode }) => {
           <li>
             <button className="btn btn-primary">
               <FaUser />
-              <Link className="text-decoration-none text-white" to={pathLogged}>
+              <Link className="loggin text-decoration-none text-white" to={pathLogged}>
                 {isLoggedIn ? logInOutLink(true) : logInOutLink(false)}
               </Link>
             </button>

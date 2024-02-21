@@ -50,10 +50,15 @@ const ProductsPage = () => {
       weight: formData.get("weight"),
       photo: formData.get("photo"),
     };
-    // Il faut maintenant ajouter un objet au state velomobiles
-    const copyVeloMobiles = [...velosMobiles, newVeloMobile];
+<<<<<<< HEAD
+    // il faut maintenant ajouter un object au state velosMobiles
+    const copyVelosMobiles = [...velosMobiles, newVeloMobile];
 
-    setVelosMobiles(copyVeloMobiles);
+=======
+    
+    const copyVelosMobiles = [...velosMobiles, newVeloMobile];
+>>>>>>> d7494b57b1eeeb6f81e4337705aa9104ad3c63c4
+    setVelosMobiles(copyVelosMobiles);
     event.target.reset();
     // Ajout de ce nouvel odjet veloMobile via une requête http POST
     delete newVeloMobile.id;
@@ -80,11 +85,18 @@ const ProductsPage = () => {
   return (
     <>
       <h2>Produits</h2>
-      
+
       {isLoggedIn && (
-        <FormPostVeloMobile
-          handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile}
-        />
+        <>
+          <FormPostVeloMobile 
+            handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile}
+          />
+<<<<<<< HEAD
+=======
+       
+>>>>>>> d7494b57b1eeeb6f81e4337705aa9104ad3c63c4
+          
+        </>
       )}
       {errorMsg && <h3 className="text-danger"> {errorMsg}</h3>}
       {/* Affichage de la listes des vélos mobiles sous condition que velosMobiles est "truely" */}
