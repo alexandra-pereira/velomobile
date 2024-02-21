@@ -50,9 +50,14 @@ const ProductsPage = () => {
       weight: formData.get("weight"),
       photo: formData.get("photo"),
     };
+<<<<<<< HEAD
     // il faut maintenant ajouter un object au state velosMobiles
     const copyVelosMobiles = [...velosMobiles, newVeloMobile];
 
+=======
+    
+    const copyVelosMobiles = [...velosMobiles, newVeloMobile];
+>>>>>>> d7494b57b1eeeb6f81e4337705aa9104ad3c63c4
     setVelosMobiles(copyVelosMobiles);
     event.target.reset();
     // Ajout de ce nouvel odjet veloMobile via une requête http POST
@@ -86,6 +91,10 @@ const ProductsPage = () => {
           <FormPostVeloMobile 
             handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile}
           />
+<<<<<<< HEAD
+=======
+       
+>>>>>>> d7494b57b1eeeb6f81e4337705aa9104ad3c63c4
           
         </>
       )}
