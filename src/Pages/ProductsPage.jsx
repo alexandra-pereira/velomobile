@@ -50,8 +50,10 @@ const ProductsPage = () => {
       weight: formData.get("weight"),
       photo: formData.get("photo"),
     };
-    // Il faut maintenant ajouter un objet au state velomobiles
-    const copyVeloMobiles = [...velosMobiles, newVeloMobile];
+    function handleSubmitFormPutVeloMobile(event) {
+    event.preventDefault();
+    console.log(`Formulaire de modification`);
+    
 
     setVelosMobiles(copyVeloMobiles);
     event.target.reset();
@@ -80,11 +82,17 @@ const ProductsPage = () => {
   return (
     <>
       <h2>Produits</h2>
-      
+
       {isLoggedIn && (
-        <FormPostVeloMobile
-          handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile}
-        />
+        <>
+          <FormPostVeloMobile 
+            handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile}
+          />
+          <FormPostVeloMobile 
+            handleSubmitFormPutVeloMobile={handleSubmitFormPutVeloMobile}
+          />
+          
+        </>
       )}
       {errorMsg && <h3 className="text-danger"> {errorMsg}</h3>}
       {/* Affichage de la listes des vélos mobiles sous condition que velosMobiles est "truely" */}
