@@ -3,7 +3,39 @@ import FormPutVeloMobile from "./FormPutVeloMobile";
 
 const VeloMobile = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useOutletContext();
+  
+  
   return (
+<<<<<<< HEAD
+    <section>
+      <h3>{props.veloMobile.model}</h3>
+      {isLoggedIn && (
+        <>
+          <button
+            onClick={() => {
+              props.handleSubmitFormPutVeloMobile(props.veloMobile);
+            }}
+            className="btn btn-warning"
+          >
+            Modifier
+          </button>
+
+          <button
+            onClick={() => {
+              props.handleClickDeleteVeloMobile(props.veloMobile);
+            }}
+            className="btn btn-danger"
+          >
+            Supprimer
+          </button>
+        </>
+      )}
+      <FormPutVeloMobile veloMobile={props.veloMobile} />
+
+      <img src={`/images/velosmobiles/${props.veloMobile.photo}`} alt="" />
+      <p>{props.veloMobile.description}</p>
+    </section>
+=======
     <div className="card mb-3">
       <div className="row no-gutters">
         <div className="col-md-4">
@@ -44,7 +76,12 @@ const VeloMobile = (props) => {
         </div>
       </div>
     </div>
+>>>>>>> 53ac619cee3c900b512bb8489dd090fd31a512eb
   );
 };
 
 export default VeloMobile;
+<<<<<<< HEAD
+
+=======
+>>>>>>> 53ac619cee3c900b512bb8489dd090fd31a512eb
