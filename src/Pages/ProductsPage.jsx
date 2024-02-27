@@ -14,6 +14,8 @@ const ProductsPage = () => {
   const [velosMobiles, setVelosMobiles] = useState([]);
   const [errorMsg, setErrorMsg] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useOutletContext();
+
+ 
   useEffect(() => {
     console.log(`Appel du service qui va aller charger les données`);
     if (errorMsg !== undefined)
@@ -50,14 +52,9 @@ const ProductsPage = () => {
       weight: formData.get("weight"),
       photo: formData.get("photo"),
     };
-<<<<<<< HEAD
     // il faut maintenant ajouter un object au state velosMobiles
     const copyVelosMobiles = [...velosMobiles, newVeloMobile];
 
-=======
-    
-    const copyVelosMobiles = [...velosMobiles, newVeloMobile];
->>>>>>> d7494b57b1eeeb6f81e4337705aa9104ad3c63c4
     setVelosMobiles(copyVelosMobiles);
     event.target.reset();
     // Ajout de ce nouvel odjet veloMobile via une requête http POST
@@ -82,22 +79,17 @@ const ProductsPage = () => {
   // Ce hook (la fonction) va également s'exécuter si l'état eerorMSG est modifier
 
   console.log(`dans ProductsPage`);
-  return (
+return (
     <>
       <h2>Produits</h2>
 
       {isLoggedIn && (
         <>
-          <FormPostVeloMobile 
-            handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile}
-          />
-<<<<<<< HEAD
-=======
-       
->>>>>>> d7494b57b1eeeb6f81e4337705aa9104ad3c63c4
-          
+                  <FormPostVeloMobile   
+                    handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile}
+                  />             
         </>
-      )}
+                  )}         
       {errorMsg && <h3 className="text-danger"> {errorMsg}</h3>}
       {/* Affichage de la listes des vélos mobiles sous condition que velosMobiles est "truely" */}
       {velosMobiles &&
