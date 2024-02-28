@@ -3,9 +3,8 @@ import { createPortal } from "react-dom";
 import ModalContent from "./ModalContent";
 import FormPostVeloMobile from "./FormPostVeloMobile";
 
-
 export default function ModalButton({ handleSubmitFormPostVeloMobile }) {
- const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
  return (
    <>

@@ -9,7 +9,9 @@ import ModalButton from "../components/ModalButton";
   const [velosMobiles, setVelosMobiles] = useState([]);
   const [errorMsg, setErrorMsg] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useOutletContext();
- 
+
+
+
   useEffect(() => {
     console.log(`Appel du service qui va aller charger les données`);
     if (errorMsg !== undefined) {
@@ -35,7 +37,7 @@ import ModalButton from "../components/ModalButton";
     setVelosMobiles(velosMobiles.filter((vm) => vm !== veloMobileToDelete));
     RemoteData.deleteVeloMobile(veloMobileToDelete.id);
   };
-
+{/* handleSubmitFormPostVeloMobile creation de l'evenement créér un produit */}
   const handleSubmitFormPostVeloMobile = (event) => {
     event.preventDefault();
     console.log(`Formulaire d'ajout soumis`);
@@ -48,13 +50,16 @@ import ModalButton from "../components/ModalButton";
       weight: formData.get("weight"),
       photo: formData.get("photo"),
 
-      
     };
 
     const copyVelosMobiles = [...velosMobiles, newVeloMobile];
     setVelosMobiles(copyVelosMobiles);
     event.target.reset();
-
+  
+ 
+  
+  
+{/* delelete suppression d'un produit */}
     delete newVeloMobile.id;
     RemoteData.postVeloMobile(newVeloMobile)
       .then((data) => {
@@ -85,7 +90,6 @@ import ModalButton from "../components/ModalButton";
       )}
 
       {errorMsg && <h3 className="text-danger"> {errorMsg}</h3>}
-
       {velosMobiles &&
         velosMobiles.map((veloMobile) => (
           <VeloMobile

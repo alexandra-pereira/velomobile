@@ -41,19 +41,25 @@ export default function ModalContent({ closeModal, showModal, handleSubmitFormPo
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">Créer un Produit</h5>
+               
+            {/* Fermer la modale */}
             <button
               type="button"
               className="btn-close"
               onClick={closeModal}
             ></button>
           </div>
+
           <div className="modal-body">
             <FormPostVeloMobile
               handleSubmitFormPostVeloMobile={handleFormSubmit}
             />
             {isSubmitted && <p>Formulaire soumis avec succès !</p>}
           </div>
+
           <div className="modal-footer">
+        
+            {/* Fermer la modale */}
             <button
               type="button"
               className="btn btn-secondary"
@@ -65,5 +71,6 @@ export default function ModalContent({ closeModal, showModal, handleSubmitFormPo
         </div>
       </div>
     </>
- );
+  );
 }
+

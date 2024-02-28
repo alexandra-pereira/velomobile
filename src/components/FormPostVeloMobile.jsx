@@ -1,7 +1,6 @@
 const FormPostVeloMobile = ({ handleSubmitFormPostVeloMobile }) => {
   return (
-    <div className="card">
-      <div className="card-header">Créer produit</div>
+    <div className="card" >
       <div className="card-body">
         <form
           onSubmit={(event) => {
