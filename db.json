@@ -3,9 +3,9 @@
     {
       "id": "1",
       "model": "lvf",
-      "description": "Le vélo mobile français qui a fait ses preuves",
-      "photo": "vmrural.jpeg",
-      "weight": 32
+      "description": "Le vélo mobile français qui a fait ses preuv",
+      "weight": "32",
+      "photo": "vmrural.jpeg"
     },
     {
       "id": "a203",
@@ -15,9 +15,30 @@
       "photo": "vmsportif.jpeg"
     },
     {
-      "id": "269a",
+      "id": "ed20",
+      "model": "",
+      "description": "",
+      "weight": null,
+      "photo": "vmrural.jpeg"
+    },
+    {
+      "id": "b3fc",
       "model": "12",
-      "description": "gh",
+      "description": "12",
+      "weight": null,
+      "photo": "vmrural.jpeg"
+    },
+    {
+      "id": "4d2d",
+      "model": "sdvver",
+      "description": "ddv",
+      "weight": null,
+      "photo": "vmrural.jpeg"
+    },
+    {
+      "id": "723c",
+      "model": "as",
+      "description": "as",
       "weight": null,
       "photo": ""
     },
@@ -48,7 +69,13 @@
       "description": "",
       "weight": null,
       "photo": "vmrural.jpeg"
-      "photo": "vmsportif.jpeg"
+    },
+    {
+      "id": "1151",
+      "model": "sdvver",
+      "description": "fdb",
+      "weight": null,
+      "photo": "vmrural.jpeg"
     }
   ],
   "users": [
