@@ -31,7 +31,6 @@ function App() {
         <main>
           {/* Outlet indique l'endroit où vont s'afficher les composants définis dans les routes enfants */}
           <Outlet context={[isLoggedIn, setIsLoggedIn]} />
-      
           <Formulaire />
           <br />
         </main>
