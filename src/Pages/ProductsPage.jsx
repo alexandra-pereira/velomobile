@@ -43,7 +43,7 @@ const ProductsPage = () => {
     const formData = new FormData(event.target);
 
     const newVeloMobile = {
-      id: 100,
+      id: -1,
       model: formData.get("model"),
       description: formData.get("description"),
       weight: formData.get("weight"),
