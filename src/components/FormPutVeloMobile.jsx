@@ -1,4 +1,30 @@
-const FormPutVeloMobile = ({ veloMobile, handleSubmitFormPutVeloMobile }) => {
+import RemoteData from "../services/RemoteData";
+
+const FormPutVeloMobile = ({ veloMobile }) => {
+  function handleSubmitFormPutVeloMobile(event) {
+    event.preventDefault();
+    console.log(`Formaulaire de modification`, veloMobile);
+    // const formData = new FormData(event.target);
+
+    const formData = new FormData(event.target);
+
+    const newVeloMobile = {
+      id: veloMobile.id,
+      model: formData.get("model"),
+      description: formData.get("description"),
+      weight: formData.get("weight"),
+      photo: formData.get("photo"),
+    };
+    console.log(newVeloMobile);
+    //formData form modifé
+    //formdata append id de l'ancien "veloMobile"
+
+    RemoteData.putVeloMobile(newVeloMobile).then((data) => {
+      console.log(`data dans products page `);
+    });
+  }
+
+
   return (
     
     <form
@@ -18,7 +44,7 @@ const FormPutVeloMobile = ({ veloMobile, handleSubmitFormPutVeloMobile }) => {
           id="model"
           name="model"
           className="form-control"
-          value={veloMobile.model}
+          defaultValue={veloMobile.model}
           required
         />
       </div>
@@ -44,12 +70,12 @@ const FormPutVeloMobile = ({ veloMobile, handleSubmitFormPutVeloMobile }) => {
         <input
           type="text"
           id="weight"
-          name="poids"
+          name="weight"
           className="form-control"
-          value={veloMobile.weight}
-          required
+          defaultValue={veloMobile.weight}
         />
       </div>
+
       <div className="mb-3">
         <label htmlFor="photo" className="form-label">
           Photo
@@ -59,7 +85,7 @@ const FormPutVeloMobile = ({ veloMobile, handleSubmitFormPutVeloMobile }) => {
           id="photo"
           name="photo"
           className="form-control"
-          value={veloMobile.photo}
+          defaultValue={veloMobile.photo}
           required
         />
       </div>
@@ -68,6 +94,7 @@ const FormPutVeloMobile = ({ veloMobile, handleSubmitFormPutVeloMobile }) => {
       </button>
     </form>
   );
+
 };
 
 export default FormPutVeloMobile;
