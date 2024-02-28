@@ -3,7 +3,7 @@ import VeloMobile from "../components/VeloMobile";
 import FormPostVeloMobile from "../components/FormPostVeloMobile";
 import RemoteData from "../services/RemoteData";
 import { useOutletContext } from "react-router-dom";
-
+import FormPutVeloMobile from "../components/FormPutVeloMobile";
 /**
  * Composant fonction
  * @returns JSX
@@ -37,6 +37,7 @@ const ProductsPage = () => {
     //Appem du services "RemoData" pour exécuter une requête http avec le verbe DELETE
     RemoteData.deleteVeloMobile(veloMobileToDelete.id);
   }
+  
   function handleSubmitFormPostVeloMobile(event) {
     event.preventDefault();
     console.log(`Formulaire d'ajout soumis`);
@@ -44,20 +45,15 @@ const ProductsPage = () => {
     const formData = new FormData(event.target);
 
     const newVeloMobile = {
-      id: 100,
+      id: -1,
       model: formData.get("model"),
       description: formData.get("description"),
       weight: formData.get("weight"),
       photo: formData.get("photo"),
     };
-<<<<<<< HEAD
     // il faut maintenant ajouter un object au state velosMobiles
     const copyVelosMobiles = [...velosMobiles, newVeloMobile];
 
-=======
-    
-    const copyVelosMobiles = [...velosMobiles, newVeloMobile];
->>>>>>> d7494b57b1eeeb6f81e4337705aa9104ad3c63c4
     setVelosMobiles(copyVelosMobiles);
     event.target.reset();
     // Ajout de ce nouvel odjet veloMobile via une requête http POST
@@ -88,14 +84,9 @@ const ProductsPage = () => {
 
       {isLoggedIn && (
         <>
-          <FormPostVeloMobile 
+          <FormPostVeloMobile
             handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile}
           />
-<<<<<<< HEAD
-=======
-       
->>>>>>> d7494b57b1eeeb6f81e4337705aa9104ad3c63c4
-          
         </>
       )}
       {errorMsg && <h3 className="text-danger"> {errorMsg}</h3>}

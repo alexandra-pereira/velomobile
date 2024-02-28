@@ -31,7 +31,6 @@ const VeloMobile = (props) => {
                 </button>
                 <FormPutVeloMobile veloMobile={props.veloMobile} />
                 <button
-                
                   className="btn btn-warning"
                 >
                   Modifier
