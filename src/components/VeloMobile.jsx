@@ -19,6 +19,7 @@ const VeloMobile = (props) => {
           <div className="card-body">
             <h3 className="card-title">{props.veloMobile.model}</h3>
             <p className="card-text">{props.veloMobile.description}</p>
+            <p className="card-text">{props.veloMobile.weight} kg</p>
             {isLoggedIn ? (
               <>
                 <button
@@ -29,13 +30,16 @@ const VeloMobile = (props) => {
                 >
                   Supprimer
                 </button>
-                <FormPutVeloMobile veloMobile={props.veloMobile} />
+                <FormPutVeloMobile veloMobile={props.veloMobile}  />
                 <button
                 
                   className="btn btn-warning"
                 >
                   Modifier
                 </button>
+
+                
+
               </>
             ) : (
               <p>Pas Connecté</p>
