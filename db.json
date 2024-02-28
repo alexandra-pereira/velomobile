@@ -76,6 +76,20 @@
       "description": "fdb",
       "weight": null,
       "photo": "vmrural.jpeg"
+    },
+    {
+      "id": "02da",
+      "model": "sdvver",
+      "description": "",
+      "weight": null,
+      "photo": "vmrural.jpeg"
+    },
+    {
+      "id": "6077",
+      "model": "sdvver",
+      "description": "",
+      "weight": null,
+      "photo": "vmrural.jpeg"
     }
   ],
   "users": [
