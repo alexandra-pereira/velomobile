@@ -25,7 +25,7 @@ const ShowroomPage = () => {
         <div className="card" style={{ width: "18rem" }}>
           <img className="card-img-top" src={site2} alt="Card image cap"/>
           <div className="card-body">
-            <h3 className="card-title">Site de Nîmes</h3>
+            <h3 className="card-title">Site de Uzes</h3>
             <p className="card-text">Site de Nîmes blabla.....</p>
           </div>
         </div>
@@ -34,7 +34,7 @@ const ShowroomPage = () => {
         <div className="card" style={{ width: "18rem" }}>
           <img className="card-img-top" src={site3} alt="Card image cap"/>
           <div className="card-body">
-            <h3 className="card-title">Site de Nîmes</h3>
+            <h3 className="card-title">Site de Montpellier</h3>
             <p className="card-text">Site de Nîmes blabla.....</p>
           </div>
         </div>
@@ -43,7 +43,7 @@ const ShowroomPage = () => {
         <div className="card" style={{ width: "18rem" }}>
           <img className="card-img-top" src={site4} alt="Card image cap"/>
           <div className="card-body">
-            <h3 className="card-title">Site de Nîmes</h3>
+            <h3 className="card-title">Site de Toulouse</h3>
             <p className="card-text">Site de Nîmes blabla.....</p>
           </div>
         </div>

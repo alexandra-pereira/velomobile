@@ -2,10 +2,10 @@
   "velosMobiles": [
     {
       "id": "1",
-      "model": "Bonjo",
-      "description": "Le vélo mobile français qui a fait ses preuves 12",
-      "weight": "3",
-      "photo": "vmrural.jpeg"
+      "model": "lvf",
+      "description": "Le vélo mobile français qui a fait ses preuves",
+      "photo": "vmrural.jpeg",
+      "weight": 32
     },
     {
       "id": "2",
@@ -15,18 +15,11 @@
       "weight": 22
     },
     {
-      "id": "3ece",
-      "model": "test",
-      "description": "test1",
+      "id": "5bd6",
+      "model": "ghl",
+      "description": "hkukuk",
       "weight": null,
-      "photo": "vmrural.jpeg"
-    },
-    {
-      "id": "c05a",
-      "model": "sdvver",
-      "description": "derhb",
-      "weight": null,
-      "photo": "vmsportif.jpeg"
+      "photo": ""
     }
   ],
   "users": [
