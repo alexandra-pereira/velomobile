@@ -8,20 +8,26 @@ export default function ModalButton({ handleSubmitFormPostVeloMobile }) {
  const [showModal, setShowModal] = useState(false);
 
  return (
-    <>
-      <button
-        className="btn btn-primary mx-auto"
-        onClick={() => setShowModal(true)}
-      >
-        Ouvrir le modal
-      </button>
-      {showModal && createPortal(
-        <div>
-          <ModalContent closeModal={() => setShowModal(false)} />
-          <FormPostVeloMobile handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile} />
-        </div>,
-        document.body
-      )}
-    </>
+   <>
+     <button
+       className="btn btn-primary mx-auto"
+       onClick={() => setShowModal(true)}
+     >
+       Céer un vélomobile
+     </button>
+     {showModal &&
+       createPortal(
+         <div>
+           <ModalContent
+             closeModal={() => setShowModal(false)}
+             handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile}
+           />
+           <FormPostVeloMobile
+             handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile}
+           />
+         </div>,
+         document.body
+       )}
+   </>
  );
 }

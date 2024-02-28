@@ -1,16 +1,15 @@
 import { useEffect, useState } from "react";
 import VeloMobile from "../components/VeloMobile";
-import FormPostVeloMobile from "../components/FormPostVeloMobile";
 import RemoteData from "../services/RemoteData";
 import { useOutletContext } from "react-router-dom";
 import ModalButton from "../components/ModalButton";
 
 
-const ProductsPage = () => {
+  const ProductsPage = () => {
   const [velosMobiles, setVelosMobiles] = useState([]);
   const [errorMsg, setErrorMsg] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useOutletContext();
-
+ 
   useEffect(() => {
     console.log(`Appel du service qui va aller charger les données`);
     if (errorMsg !== undefined) {
@@ -48,6 +47,8 @@ const ProductsPage = () => {
       description: formData.get("description"),
       weight: formData.get("weight"),
       photo: formData.get("photo"),
+
+      
     };
 
     const copyVelosMobiles = [...velosMobiles, newVeloMobile];
@@ -68,18 +69,18 @@ const ProductsPage = () => {
           setErrorMsg("");
         }, 5000);
       });
+      
   };
 
   return (
     <>
-    
       <h2>Produits</h2>
       {isLoggedIn && (
         <>
-         
-          <ModalButton handleOpenModal={handleOpenModal}> 
-          <FormPostVeloMobile handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile} /> 
-        
+          <ModalButton
+            handleOpenModal={handleOpenModal}
+            handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile}
+          />
         </>
       )}
 

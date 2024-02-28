@@ -3,9 +3,9 @@
     {
       "id": "1",
       "model": "lvf",
-      "description": "Le vélo mobile français qui a fait ses preuves",
-      "photo": "vmrural.jpeg",
-      "weight": 32
+      "description": "Le vélo mobile français qui a fait ses preuv",
+      "weight": "32",
+      "photo": "vmrural.jpeg"
     },
     {
       "id": "2",
@@ -15,11 +15,60 @@
       "weight": 22
     },
     {
-      "id": "5bd6",
-      "model": "ghl",
-      "description": "hkukuk",
+      "id": "ed20",
+      "model": "",
+      "description": "",
+      "weight": null,
+      "photo": "vmrural.jpeg"
+    },
+    {
+      "id": "b3fc",
+      "model": "12",
+      "description": "12",
+      "weight": null,
+      "photo": "vmrural.jpeg"
+    },
+    {
+      "id": "4d2d",
+      "model": "sdvver",
+      "description": "ddv",
+      "weight": null,
+      "photo": "vmrural.jpeg"
+    },
+    {
+      "id": "723c",
+      "model": "as",
+      "description": "as",
       "weight": null,
       "photo": ""
+    },
+    {
+      "id": "e3b7",
+      "model": "",
+      "description": "",
+      "weight": null,
+      "photo": "vmrural.jpeg"
+    },
+    {
+      "id": "58a9",
+      "model": "xcvde",
+      "description": "",
+      "weight": null,
+      "photo": "vmrural.jpeg"
+    },
+    {
+      "id": "5d70",
+      "model": "",
+      "description": "",
+      "weight": null,
+      "photo": "vmrural.jpeg"
+    },
+    {
+      "id": "9565",
+      "model": "sdvver",
+      "description": "",
+      "weight": null,
+      "photo": "vmrural.jpeg"
     }
   ],
   "users": [
