@@ -13,6 +13,13 @@
       "description": "Le vélo mobile sportif aux performances incroyables",
       "photo": "vmsportif.jpeg",
       "weight": 22
+    },
+    {
+      "id": "5bd6",
+      "model": "ghl",
+      "description": "hkukuk",
+      "weight": null,
+      "photo": ""
     }
   ],
   "users": [

@@ -1,5 +1,5 @@
 export default class RemoteData {
-  static url = "http://localhost/simplefony/";
+  static url = "http://localhost:3001/";
   /**
    * L'effet global de cette méthode est d'envoyer une requête à un serveur distant,
    * de vérifier si la requête a réussi, d'analyser la réponse au format JSON,
