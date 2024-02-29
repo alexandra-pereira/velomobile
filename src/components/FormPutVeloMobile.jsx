@@ -1,5 +1,6 @@
 import RemoteData from "../services/RemoteData";
 import ValidateData from "../services/ValidateData";
+import Debug from "../services/Debug";
 
 const FormPutVeloMobile = ({ veloMobile }) => {
   function handleSubmitFormPutVeloMobile(event) {
@@ -23,13 +24,13 @@ const FormPutVeloMobile = ({ veloMobile }) => {
     //conditionnel pour la validation du formulaire
     for (const key in newVeloMobile)
     {
-          ValidateData.dd(key !== "id")
+      Debug.dd(key !== "id");
        if (key !== "id")
        { 
  
         if (ValidateData.checkIfEmpty(newVeloMobile[key])) {
           message += "le champs" + key + 'est vide';
-        
+         
         }
       } else
       { 

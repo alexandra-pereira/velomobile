@@ -8,8 +8,5 @@ export default class ValidateData{
         return str === "";
     }
 
-    static dd(params) {
-        console.log(params)
-        alert()
-    }
+   
 }
