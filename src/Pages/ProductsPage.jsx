@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import VeloMobile from "../components/VeloMobile";
 import RemoteData from "../services/RemoteData";
 import { useOutletContext } from "react-router-dom";
-import ModalButton from "../components/ModalButton";
+import ModalButtonCreate from "../components/ModalButton";
 
 
   const ProductsPage = () => {
@@ -49,8 +49,6 @@ import ModalButton from "../components/ModalButton";
       description: formData.get("description"),
       weight: formData.get("weight"),
       photo: formData.get("photo"),
-
-
     };
 
     const copyVelosMobiles = [...velosMobiles, newVeloMobile];
@@ -83,7 +81,7 @@ import ModalButton from "../components/ModalButton";
       <h2>Produits</h2>
       {isLoggedIn && (
         <>
-          <ModalButton handleOpenModal={handleOpenModal} handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile} />
+          <ModalButtonCreate handleOpenModal={handleOpenModal} handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile} />
        
         </>
       )}

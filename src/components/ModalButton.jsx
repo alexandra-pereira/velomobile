@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { createPortal } from "react-dom";
-import ModalContent from "./ModalContent";
+import ModalContentCreate from "./ModalContent";
 import FormPostVeloMobile from "./FormPostVeloMobile";
 
 export default function ModalButton({ handleSubmitFormPostVeloMobile }) {
@@ -12,12 +12,12 @@ export default function ModalButton({ handleSubmitFormPostVeloMobile }) {
        className="btn btn-primary mx-auto"
        onClick={() => setShowModal(true)}
      >
-       Céer un vélomobile
+       Créer un vélomobile
      </button>
      {showModal &&
        createPortal(
          <div>
-           <ModalContent
+           <ModalContentCreate
              closeModal={() => setShowModal(false)}
              handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile}
            />

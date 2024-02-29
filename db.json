@@ -8,88 +8,18 @@
       "photo": "vmrural.jpeg"
     },
     {
-      "id": "a203",
-      "model": "12",
-      "description": "olm",
-      "weight": null,
-      "photo": "vmsportif.jpeg"
-    },
-    {
-      "id": "ed20",
-      "model": "",
+      "id": "b69a",
+      "model": "34",
       "description": "",
-      "weight": null,
-      "photo": "vmrural.jpeg"
-    },
-    {
-      "id": "b3fc",
-      "model": "12",
-      "description": "12",
-      "weight": null,
-      "photo": "vmrural.jpeg"
-    },
-    {
-      "id": "4d2d",
-      "model": "sdvver",
-      "description": "ddv",
-      "weight": null,
-      "photo": "vmrural.jpeg"
-    },
-    {
-      "id": "723c",
-      "model": "as",
-      "description": "as",
       "weight": null,
       "photo": ""
     },
     {
-      "id": "e3b7",
-      "model": "",
+      "id": "cf53",
+      "model": "54",
       "description": "",
       "weight": null,
-      "photo": "vmrural.jpeg"
-    },
-    {
-      "id": "58a9",
-      "model": "xcvde",
-      "description": "",
-      "weight": null,
-      "photo": "vmrural.jpeg"
-    },
-    {
-      "id": "5d70",
-      "model": "",
-      "description": "",
-      "weight": null,
-      "photo": "vmrural.jpeg"
-    },
-    {
-      "id": "9565",
-      "model": "sdvver",
-      "description": "",
-      "weight": null,
-      "photo": "vmrural.jpeg"
-    },
-    {
-      "id": "1151",
-      "model": "sdvver",
-      "description": "fdb",
-      "weight": null,
-      "photo": "vmrural.jpeg"
-    },
-    {
-      "id": "02da",
-      "model": "sdvver",
-      "description": "",
-      "weight": null,
-      "photo": "vmrural.jpeg"
-    },
-    {
-      "id": "6077",
-      "model": "sdvver",
-      "description": "",
-      "weight": null,
-      "photo": "vmrural.jpeg"
+      "photo": ""
     }
   ],
   "users": [

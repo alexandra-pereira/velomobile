@@ -7,8 +7,8 @@ import site4 from '../assets/photo_ateliers/velomobile-site4.jpg'; // Chemin d'i
 
 const ShowroomPage = () => {
   return (
-    <section>
-      <h2>Showroom</h2>
+    <section className="card p-4 mt-4 bg-light">
+      <h2 className="card-header mb-4 border-danger rounded-lg text-primary">Showroom</h2>
       <p>Ici nos points d'exposition des prototypes</p>
       
       <div className="container d-flex justify-content-between mb-3 gap-2">
