@@ -1,8 +1,29 @@
 import barre_horizontale from "./../assets/barre_horizontale.png";
+import vmrural from "../assets/carousel/vmrural.jpeg";
+import { Link } from "react-router-dom";
 
 const Formulaire = () => {
   return (
     <section>
+ {/*-----------Faire une précommande sur liste d'attente-----------*/}
+                    <div className="col-md-5 d-flex align-items-center ml-4">
+                        <div className="card bg-light d-flex justify-content-center p-3">
+                            <h3 className="card-title text-center">
+                                <p> S'inscrire </p>
+                                <p>sur la liste d'attente</p>
+                            </h3>
+                            <div className="card-body d-flex justify-content-center">
+                                <img src={vmrural} alt="" style={{width: "16rem"}}/>
+                            </div>
+                            <div className="card-body d-flex justify-content-center">
+                                <Link className="btn btn-danger" style={{color: "white"}}
+                                      to={`/Formulaire`}>
+                                    <span>Nous rejoindre</span>
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+
       <form className="card p-2 bg-light">
         <div className="body-card ">
           <h3 class="card-title d-flex justify-content-center align-items-center">
