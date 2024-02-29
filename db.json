@@ -1,11 +1,112 @@
 {
   "velosMobiles": [
     {
+<<<<<<< HEAD
+      "id": "2f17",
+      "model": "",
+      "description": "",
+      "weight": "",
+      "photo": ""
+    },
+    {
+      "id": "17e1",
+      "model": "",
+      "description": "",
+      "weight": "",
+=======
       "id": "1",
       "model": "",
       "description": "",
       "weight": "",
       "photo": ""
+<<<<<<< HEAD
+=======
+    },
+    {
+      "id": "0646",
+      "model": "",
+      "description": "",
+      "weight": null,
+      "photo": ""
+    },
+    {
+      "id": "52f8",
+      "model": "",
+      "description": "",
+      "weight": "",
+      "photo": ""
+    },
+    {
+      "id": "0886",
+      "model": "",
+      "description": "",
+      "weight": null,
+      "photo": ""
+    },
+    {
+      "id": "eac4",
+      "model": "",
+      "description": "",
+      "weight": null,
+      "photo": ""
+    },
+    {
+      "id": "865f",
+      "model": "",
+      "description": "",
+      "weight": null,
+      "photo": ""
+    },
+    {
+      "id": "08ad",
+      "model": "",
+      "description": "",
+      "weight": null,
+      "photo": ""
+    },
+    {
+      "id": "f7a8",
+      "model": "",
+      "description": "",
+      "weight": null,
+      "photo": ""
+    },
+    {
+      "id": "80b7",
+      "model": "",
+      "description": "",
+      "weight": null,
+      "photo": ""
+    },
+    {
+      "id": "7275",
+      "model": "",
+      "description": "",
+      "weight": null,
+      "photo": ""
+    },
+    {
+      "id": "574b",
+      "model": "",
+      "description": "",
+      "weight": null,
+      "photo": ""
+    },
+    {
+      "id": "9b47",
+      "model": "",
+      "description": "",
+      "weight": null,
+      "photo": ""
+    },
+    {
+      "id": "2670",
+      "model": "",
+      "description": "",
+      "weight": null,
+>>>>>>> e55dc75a0e75931b51956ac821e7cbd01af283ef
+      "photo": ""
+>>>>>>> 23266c3973847b96d3068442c3f170eabf4c4cf8
     }
   ],
   "users": [

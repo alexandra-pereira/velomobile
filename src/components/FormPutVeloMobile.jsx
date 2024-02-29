@@ -17,6 +17,7 @@ const FormPutVeloMobile = ({ veloMobile }) => {
       weight: formData.get("weight"),
       photo: formData.get("photo"),
     };
+    
     console.log(newVeloMobile);
     //formData form modifé
     //formdata append id de l'ancien "veloMobile"
