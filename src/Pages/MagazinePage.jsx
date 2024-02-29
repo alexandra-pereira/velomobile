@@ -14,7 +14,7 @@ const MagazinePage = () => {
         </h2>
       <div className="d-flex flex-wrap justify-content-around">
         {/*---------card article pluie-------*/}
-        <div className="card m-3" style={{ width: "25rem" }}>
+        <div className="card m-3" style={{ width: "20rem" }}>
           <img src={velorain1} className="card-img-top" alt="..."></img>
           <div className="card-body">
             <h3 className="card-title">
@@ -28,13 +28,13 @@ const MagazinePage = () => {
               français, fabriqué avec soin et pensé pour des longes distances,
               incarne la mobilité verte et durable.
             </p>
-            <Link className="btn btn-primary" to={`/article_pluie`}>
+            <Link className="btn btn-primary mx-auto mt-3 text-center" to={`/article_pluie`}>
               <span>Lire la suite</span>
             </Link>
           </div>
         </div>
         {/*---------card article trajet long-------*/}
-        <div className="card m-3" style={{ width: "25rem" }}>
+        <div className="card m-3" style={{ width: "20rem" }}>
           <img src={velorain2} className="card-img-top" alt="..."></img>
           <div className="card-body">
             <h3 className="card-title">
@@ -54,7 +54,7 @@ const MagazinePage = () => {
           </div>
         </div>
         {/*---------card article eco-------*/}
-        <div className="card m-3" style={{ width: "25rem" }}>
+        <div className="card m-3" style={{ width: "20rem" }}>
           <img src={veloeco} className="card-img-top" alt="..."></img>
           <div className="card-body">
             <h3 className="card-title">

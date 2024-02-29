@@ -3,9 +3,11 @@ import velorain1 from "./../assets/photoarticle/velorain1.jpg";
 const ArticlePluiePage = () => {
   return (
     <>
-      <article>
-        <h2>Magazine</h2>
-        <div className="card bg-light p-3 m-6">
+      <section className="card p-4 mt-4 bg-light">
+        <h2 className="card-header mb-4 border-danger rounded-lg text-primary">
+          Magazine
+        </h2>
+        <div className="card p-3 m-6">
           <h3>Un vélo sous la pluie en toute protection</h3>
           <div className="card-body m-2 p-2">
             <br></br>
@@ -28,7 +30,7 @@ const ArticlePluiePage = () => {
             </p>
             <img
               src={velorain1}
-              className="card-img-top"
+              className="card-img-top p-3 rounded"
               alt="..."
             />
 
@@ -38,9 +40,7 @@ const ArticlePluiePage = () => {
               l'artisanat de qualité. En privilégiant un circuit court, cette
               approche contribue à soutenir l'économie locale tout en offrant un
               produit de haute qualité et éthique.
-            </p>
-
-            <p>
+            
               Le vélomobile français incarne une solution holistique pour les
               passionnés de vélo qui recherchent une alternative à la voiture,
               une mobilité durable, et une protection fiable contre les
@@ -50,23 +50,20 @@ const ArticlePluiePage = () => {
               protection. Adopter le vélomobile, c'est opter pour une mobilité
               responsable, écologique, et profiter pleinement des bienfaits du
               vélo, quel que soit le temps.
-            </p>
-            <p>
+            
               L'histoire du vélomobile remonte à ses débuts en France, avec des
               pionniers tels que Charles Mochet, qui ont repoussé les limites de
               l'innovation pour créer des véhicules propulsés par la force
               humaine, efficaces et protégés des intempéries. Aujourd'hui, le
               vélomobile français, fait main avec une fabrication locale,
               continue de redéfinir la manière dont nous abordons la mobilité.
-            </p>
-            <p>
+        
               Au cœur de cette révolution se trouve une approche écoresponsable.
               Le vélomobile, avec son design aérodynamique, se présente comme
               une alternative écologique à la voiture, contribuant ainsi à
               réduire l'empreinte carbone. La mobilité verte n'a jamais été
               aussi accessible et élégante.
-            </p>
-            <p>
+          
               Contrairement aux idées reçues, le vélomobile n'est pas limité à
               de courts trajets. Grâce à ses caractéristiques de conception
               avancées et à une transmission efficace, il se révèle être un
@@ -75,7 +72,7 @@ const ArticlePluiePage = () => {
             </p>
           </div>
         </div>
-      </article>
+      </section>
     </>
   );
 };
