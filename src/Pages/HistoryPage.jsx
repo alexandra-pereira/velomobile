@@ -115,7 +115,7 @@ const HistoryPage = () => {
               <img
                 src={histoire1}
                 className="img-fluid"
-                style={{ width: "100%", height: "auto" }}
+                style={{ width: "100%", height: "100%" }}
                 alt=" "
               />
             </div>
@@ -123,7 +123,7 @@ const HistoryPage = () => {
               <img
                 src={histoire2}
                 className="img-fluid"
-                style={{ width: "100%", height: "auto" }}
+                style={{ width: "100%", height: "100%" }}
                 alt=" "
               />
             </div>

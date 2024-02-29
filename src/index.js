@@ -17,6 +17,8 @@ import "./sass/custom.scss";
 import MagazinePage from "./Pages/MagazinePage";
 import ArticleTrajetLongPage from "./Pages/ArticleTrajetLongPage";
 import ArticleEcoPage from "./Pages/ArticleEcoPage";
+import CguPage from "./Pages/CguPage";
+import LegalMentionsPage from "./Pages/LegalMentionsPage";
 
 const router = createBrowserRouter([
   {
@@ -72,6 +74,14 @@ const router = createBrowserRouter([
         path: "article_eco",
         element: <ArticleEcoPage />,
       },
+      {
+        path: "cgu_cgv",
+        element: <CguPage />,
+      },
+      {
+        path: "legal_mentions",
+        element: <LegalMentionsPage />
+      }
     ],
   },
 ]);
