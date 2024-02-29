@@ -2,7 +2,6 @@ import RemoteData from "../services/RemoteData";
 import ValidateData from "../services/ValidateData";
 import Debug from "../services/Debug";
 
-const FormPutVeloMobile = ({ veloMobile }) => {
   function handleSubmitFormPutVeloMobile(event) {
     event.preventDefault();
     console.log(`Formulaire de modification`, veloMobile);
@@ -17,33 +16,24 @@ const FormPutVeloMobile = ({ veloMobile }) => {
       weight: formData.get("weight"),
       photo: formData.get("photo"),
     };
-    
     console.log(newVeloMobile);
     //formData form modifé
     //formdata append id de l'ancien "veloMobile"
     let message = "";
     //conditionnel pour la validation du formulaire
-    for (const key in newVeloMobile)
-    {
-      Debug.dd(key !== "id");
-       if (key !== "id")
-       { 
- 
+    for (const key in newVeloMobile) {
+      if (key !== "id")
+      {
         if (ValidateData.checkIfEmpty(newVeloMobile[key])) {
-          message += "le champs" + key + 'est vide';
-         
+          return message += "le champs" + key + 'est vide';  
         }
-      } else
-      { 
-        RemoteData.putVeloMobile(newVeloMobile).then((data) =>
-        {
-        console.log(`data dans products page `);
+
+        RemoteData.putVeloMobile(newVeloMobile).then((data) => {
+          console.log(`data dans products page `);
         });
-      } 
-    }
+      }
   }
-
-
+}
   return (
     
     <form
