@@ -1,4 +1,5 @@
 import RemoteData from "../services/RemoteData";
+import ValidateData from "../services/ValidateData";
 
 const FormPutVeloMobile = ({ veloMobile }) => {
   function handleSubmitFormPutVeloMobile(event) {
@@ -15,6 +16,7 @@ const FormPutVeloMobile = ({ veloMobile }) => {
       weight: formData.get("weight"),
       photo: formData.get("photo"),
     };
+    
     console.log(newVeloMobile);
     //formData form modifé
     //formdata append id de l'ancien "veloMobile"
