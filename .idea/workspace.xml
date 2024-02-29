@@ -5,19 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f25baeed-9d88-4812-a5df-00f344591dfd" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/velosmobiles/histoire1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/velosmobiles/histoire2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/velosmobiles/histoire3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/velosmobiles/oldvelo1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/velosmobiles/oldvelo2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/velosmobiles/oldvelo3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/velosmobiles/oldvelo4.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/velosmobiles/oldvelo5.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/velosmobiles/oldvelo6.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/HistoryPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/HistoryPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/HomePage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/HomePage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pages/ProductsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductsPage.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Carousel.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Carousel.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sass/_carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/_carousel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sass/custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/sass/custom.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +51,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.keymap",
+    "settings.editor.selected.configurable": "watcher.settings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -84,10 +78,34 @@
       <workItem from="1707910609780" duration="1342000" />
       <workItem from="1707916110124" duration="511000" />
       <workItem from="1707916638441" duration="4485000" />
+      <workItem from="1709112695630" duration="23379000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

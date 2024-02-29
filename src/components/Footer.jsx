@@ -6,10 +6,8 @@ const Footer = () => {
         <div className="col-md-4">
           <h2>A propos</h2>
           <ul>
-            <li><a href="#">CGU</a></li>
-            <li>Conditions Générales de Ventes</li>
-            <li>Données personnelles</li>
-            <li>Mentions legales</li>
+            <li><a href="cgu_cgv">CGU</a></li>
+            <li><a href="legal_mentions">Mentions légales</a></li>
           </ul>
         </div>
 
@@ -18,10 +16,10 @@ const Footer = () => {
           <ul>
             <li><a href="home">Home</a></li>
             <li><a href="products">Vélomobile</a></li>
-            <li><a href="#">Atelier</a></li>
-            <li><a href="#">Histoire</a></li>
-            <li><a href="#">Showroom</a></li>
-            <li><a href="#">Magazine</a></li>
+            <li><a href="atelier">Atelier</a></li>
+            <li><a href="history">Histoire</a></li>
+            <li><a href="showroom">Showroom</a></li>
+            <li><a href="magazine">Magazine</a></li>
           </ul>
         </div>
 

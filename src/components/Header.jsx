@@ -30,7 +30,7 @@ const Header = ({ isLoggedIn, toggleMode, darkMode }) => {
 
   /**
    *
-   * burger fonction ouvrir et fermer
+   * burger fonction open/close
    */
   function openCloseMenu() {
     const classAction =
@@ -38,6 +38,16 @@ const Header = ({ isLoggedIn, toggleMode, darkMode }) => {
     console.log(`dans openCloseMenu`, classAction);
     setOpenCloseMenuState(classAction);
   }
+
+  /**
+   *
+   * menu dropdown
+   */
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const toggleDropdown = () => {
+    setIsDropdownOpen(!isDropdownOpen);
+  };
+
   return (
     /* ---------- balise Parent header-------- */
     <header className="header container-fluid pt-1">
@@ -47,7 +57,10 @@ const Header = ({ isLoggedIn, toggleMode, darkMode }) => {
           <li>
             <button className="btn btn-primary">
               <FaUser />
-              <Link className="loggin text-decoration-none text-white" to={pathLogged}>
+              <Link
+                className="loggin text-decoration-none text-white"
+                to={pathLogged}
+              >
                 {isLoggedIn ? logInOutLink(true) : logInOutLink(false)}
               </Link>
             </button>
@@ -61,7 +74,6 @@ const Header = ({ isLoggedIn, toggleMode, darkMode }) => {
                   Eco View
                 </>
               ) : (
-                
                 "Defaut View"
               )}
             </button>
@@ -110,12 +122,35 @@ const Header = ({ isLoggedIn, toggleMode, darkMode }) => {
                 </Link>
               </li>
 
-              <li className="magazine-link" onClick={openCloseMenu}>
-                <Link to={`/magazine`}>
-                  <span>Magazine</span>
-                </Link>
+              <li className="magazine-link nav-item dropdown"
+                onMouseOver={openCloseMenu} onClick={toggleDropdown}>
+                <span
+                  className="nav-link dropdown-toggle"
+                  role="button"
+                  aria-haspopup="true"
+                  aria-expanded={isDropdownOpen ? "true" : "false"}
+                >
+                <Link to={`/magazine`}> <span>Magazine</span></Link> 
+                </span>
+
+                <div className={`dropdown-menu ${isDropdownOpen ? "show" : ""}`}>
+                  <Link to={`/magazine`}>
+                    <span className="dropdown-item">Articles</span>
+                  </Link>
+                  <Link to={`/article_pluie`}>
+                    <span className="dropdown-item">Article Sous la pluie</span>
+                  </Link>
+                  <Link to={`/article_trajet_long`}>
+                    <span className="dropdown-item">Article Trajet long</span>
+                  </Link>
+                   <Link to={`/article_eco`}>
+                    <span className="dropdown-item">Article Écologique</span>
+                  </Link>
+                </div>
               </li>
+
             </ul>
+            
             <div id="icons" onClick={openCloseMenu}></div>
           </nav>
         </div>
@@ -124,11 +159,14 @@ const Header = ({ isLoggedIn, toggleMode, darkMode }) => {
       <div className="visually-hidden">
         <h1 className="text-center">Le Velomobile Français</h1>
       </div>
-      <br >
-      </br>
+      <br></br>
       {/*---------barre horizontalefr-------*/}
       <div className="d-flex justify-content-center align-items-center">
-      <img src={barre_horizontale} className="img-fluid " alt="Responsive image" />
+        <img
+          src={barre_horizontale}
+          className="img-fluid "
+          alt="Responsive image"
+        />
       </div>
     </header>
   );

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import VeloMobile from "../components/VeloMobile";
 import RemoteData from "../services/RemoteData";
 import { useOutletContext } from "react-router-dom";
-import ModalButton from "../components/ModalButton";
+import ModalButtonCreate from "../components/ModalButton";
 
 
   const ProductsPage = () => {
@@ -49,8 +49,6 @@ import ModalButton from "../components/ModalButton";
       description: formData.get("description"),
       weight: formData.get("weight"),
       photo: formData.get("photo"),
-
-
     };
 
     const copyVelosMobiles = [...velosMobiles, newVeloMobile];
@@ -80,11 +78,14 @@ import ModalButton from "../components/ModalButton";
   return (
     <>
     
-      <h2>Produits</h2>
+      <section className="card p-4 mt-4 bg-light">
+
+      <h2 className="card-header mb-4 border-danger rounded-lg text-primary">
+        Produits
+      </h2>
       {isLoggedIn && (
         <>
-          <ModalButton handleOpenModal={handleOpenModal} handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile} />
-       
+          <ModalButtonCreate handleOpenModal={handleOpenModal} handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile} />
         </>
       )}
 
@@ -97,6 +98,7 @@ import ModalButton from "../components/ModalButton";
             handleClickDeleteVeloMobile={handleClickDeleteVeloMobile}
           />
         ))}
+     </section>
     </>
   );
 };

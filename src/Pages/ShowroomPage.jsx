@@ -1,14 +1,14 @@
 import React from "react";
 import carte from '../assets/carte.png'; // Chemin d'importation corrigé
-import site1 from '../assets/photo_ateliers/velomobile-site1.jpg'; // Chemin d'importation corrigé
-import site2 from '../assets/photo_ateliers/velomobile-site2.jpg'; // Chemin d'importation corrigé
-import site3 from '../assets/photo_ateliers/velomobile-site3.jpg'; // Chemin d'importation corrigé
-import site4 from '../assets/photo_ateliers/velomobile-site4.jpg'; // Chemin d'importation corrigé
+import site1 from '../assets/photo_showroom/velomobile-site1.jpg'; // Chemin d'importation corrigé
+import site2 from '../assets/photo_showroom/velomobile-site2.jpg'; // Chemin d'importation corrigé
+import site3 from '../assets/photo_showroom/velomobile-site3.jpg'; // Chemin d'importation corrigé
+import site4 from '../assets/photo_showroom/velomobile-site4.jpg'; // Chemin d'importation corrigé
 
 const ShowroomPage = () => {
   return (
-    <section>
-      <h2>Showroom</h2>
+    <section className="card p-4 mt-4 bg-light">
+      <h2 className="card-header mb-4 border-danger rounded-lg text-primary">Showroom</h2>
       <p>Ici nos points d'exposition des prototypes</p>
       
       <div className="container d-flex justify-content-between mb-3 gap-2">

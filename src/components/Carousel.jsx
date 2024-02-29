@@ -21,7 +21,7 @@ const Carousel = ({ images }) => {
   return (
     <div
       id="carouselExampleIndicators"
-      className="carousel slide"
+      className="carousel slide carousel-fade"
       data-bs-ride="carousel"
     >
       <div className="carousel-indicators">
@@ -43,7 +43,7 @@ const Carousel = ({ images }) => {
             key={index}
             className={`carousel-item ${index === 0 ? "active" : ""}`}
           >
-            <img src={image.src} className="d-block w-100" alt={image.alt} />
+            <img src={image.src} className="d-block" alt={image.alt} />
           </div>
         ))}
       </div>
