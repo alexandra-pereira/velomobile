@@ -1,15 +1,16 @@
 import { useEffect, useState } from "react";
 import VeloMobile from "../components/VeloMobile";
-import FormPostVeloMobile from "../components/FormPostVeloMobile";
 import RemoteData from "../services/RemoteData";
 import { useOutletContext } from "react-router-dom";
-import ModalButton from "../components/ModalButton";
+import ModalButtonCreate from "../components/ModalButton";
 
 
-const ProductsPage = () => {
+  const ProductsPage = () => {
   const [velosMobiles, setVelosMobiles] = useState([]);
   const [errorMsg, setErrorMsg] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useOutletContext();
+
+
 
   useEffect(() => {
     console.log(`Appel du service qui va aller charger les données`);
@@ -36,7 +37,7 @@ const ProductsPage = () => {
     setVelosMobiles(velosMobiles.filter((vm) => vm !== veloMobileToDelete));
     RemoteData.deleteVeloMobile(veloMobileToDelete.id);
   };
-
+{/* handleSubmitFormPostVeloMobile creation de l'evenement créér un produit */}
   const handleSubmitFormPostVeloMobile = (event) => {
     event.preventDefault();
     console.log(`Formulaire d'ajout soumis`);
@@ -53,7 +54,11 @@ const ProductsPage = () => {
     const copyVelosMobiles = [...velosMobiles, newVeloMobile];
     setVelosMobiles(copyVelosMobiles);
     event.target.reset();
-
+  
+ 
+  
+  
+{/* delelete suppression d'un produit */}
     delete newVeloMobile.id;
     RemoteData.postVeloMobile(newVeloMobile)
       .then((data) => {
@@ -73,18 +78,18 @@ const ProductsPage = () => {
   return (
     <>
     
-      <h2>Produits</h2>
+      <section className="card p-4 mt-4 bg-light">
+
+      <h2 className="card-header mb-4 border-danger rounded-lg text-primary">
+        Produits
+      </h2>
       {isLoggedIn && (
         <>
-         
-          <ModalButton handleOpenModal={handleOpenModal}/>
-          <FormPostVeloMobile handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile} /> 
-        
+          <ModalButtonCreate handleOpenModal={handleOpenModal} handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile} />
         </>
       )}
 
       {errorMsg && <h3 className="text-danger"> {errorMsg}</h3>}
-
       {velosMobiles &&
         velosMobiles.map((veloMobile) => (
           <VeloMobile
@@ -93,8 +98,10 @@ const ProductsPage = () => {
             handleClickDeleteVeloMobile={handleClickDeleteVeloMobile}
           />
         ))}
+     </section>
     </>
   );
 };
+
 
 export default ProductsPage;

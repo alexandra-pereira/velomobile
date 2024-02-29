@@ -30,15 +30,7 @@ const VeloMobile = (props) => {
                 >
                   Supprimer
                 </button>
-                <FormPutVeloMobile veloMobile={props.veloMobile}  />
-                <button
-                  className="btn btn-warning"
-                >
-                  Modifier
-                </button>
-
-                
-
+                <FormPutVeloMobile veloMobile={props.veloMobile}/>
               </>
             ) : (
               <p>Pas Connecté</p>

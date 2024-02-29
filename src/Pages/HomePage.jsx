@@ -12,14 +12,17 @@ const HomePage = () => {
 
     return (
         <>
-            <section>
-                <h2>Home page</h2>
+            <section className="card p-4 mt-4 bg-light">
+                <h2 className="card-header mb-4 border-danger rounded-lg text-primary">
+                    Home page
+                </h2>
                 {/*-----------carousel-----------*/}
                 <div className="container carousel-container">
                     <Carousel images={images}/>
                 </div>
                 {/*-----------container-----------*/}
-                <div className="container d-flex justify-content-between align-items-center m-4 row">
+                <div
+                    className="container d-flex justify-content-between align-items-center m-4 row">
 
                     {/*-----------Notre entreprise-----------*/}
                     <div className="col-md-6 d-flex align-items-stretch">
@@ -30,24 +33,33 @@ const HomePage = () => {
                             <div className="card-body m-4 p-2">
                                 <p>
                                     L'entreprise le Velomobile Français est un fabricant de
-                                    vélo-mobiles innovant, spécialisé dans la conception et la
+                                    vélo-mobiles innovant, spécialisé dans la conception et
+                                    la
                                     production de véhicules écologiques et durables pour la
-                                    mobilité urbaine. Avec une passion pour l'innovation et un
-                                    engagement envers la durabilité, notre entreprise s'efforce de
-                                    repousser les limites de la conception et de l'ingénierie pour
-                                    créer des solutions de transport efficaces et respectueuses de
+                                    mobilité urbaine. Avec une passion pour l'innovation et
+                                    un
+                                    engagement envers la durabilité, notre entreprise
+                                    s'efforce de
+                                    repousser les limites de la conception et de
+                                    l'ingénierie pour
+                                    créer des solutions de transport efficaces et
+                                    respectueuses de
                                     l'environnement.{" "}
                                 </p>
                                 <p>
-                                    Nos vélo-mobiles sont conçus pour offrir une expérience de
+                                    Nos vélo-mobiles sont conçus pour offrir une expérience
+                                    de
                                     conduite confortable, pratique et sécurisée. Dotés de
-                                    technologies de pointe et de matériaux de haute qualité, nos
-                                    produits garantissent une performance optimale, une faible
+                                    technologies de pointe et de matériaux de haute qualité,
+                                    nos
+                                    produits garantissent une performance optimale, une
+                                    faible
                                     empreinte carbone et une durabilité à long terme.
                                 </p>
 
                                 <div className="d-flex justify-content-end align-items-end">
-                                    <Link className="btn btn-primary btn-text" to={`/products`}>
+                                    <Link className="btn btn-primary btn-text"
+                                          to={`/products`}>
                                         <span>En savoir plus</span>
                                     </Link>
                                 </div>
@@ -66,13 +78,13 @@ const HomePage = () => {
                                 <img src={vmrural} alt="" style={{width: "16rem"}}/>
                             </div>
                             <div className="card-body d-flex justify-content-center">
-                                <Link className="btn btn-danger" style={{color: "white"}} to={`/Formulaire`}>
+                                <Link className="btn btn-danger" style={{color: "white"}}
+                                      to={`/Formulaire`}>
                                     <span>Nous rejoindre</span>
                                 </Link>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </section>
         </>
