@@ -1,9 +1,9 @@
 import React from "react";
 import carte from '../assets/carte.png'; // Chemin d'importation corrigé
-import site1 from '../assets/photo_ateliers/velomobile-site1.jpg'; // Chemin d'importation corrigé
-import site2 from '../assets/photo_ateliers/velomobile-site2.jpg'; // Chemin d'importation corrigé
-import site3 from '../assets/photo_ateliers/velomobile-site3.jpg'; // Chemin d'importation corrigé
-import site4 from '../assets/photo_ateliers/velomobile-site4.jpg'; // Chemin d'importation corrigé
+import site1 from '../assets/photo_showroom/velomobile-site1.jpg'; // Chemin d'importation corrigé
+import site2 from '../assets/photo_showroom/velomobile-site2.jpg'; // Chemin d'importation corrigé
+import site3 from '../assets/photo_showroom/velomobile-site3.jpg'; // Chemin d'importation corrigé
+import site4 from '../assets/photo_showroom/velomobile-site4.jpg'; // Chemin d'importation corrigé
 
 const ShowroomPage = () => {
   return (
