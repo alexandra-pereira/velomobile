@@ -11,8 +11,10 @@ const HomePage = () => {
   ];
 
   return (
-    <section> 
-      <h2>Home page</h2>
+    <section className="card p-4 mt-4 bg-light"> 
+      <h2 className="card-header mb-4 border-danger rounded-lg text-primary">
+      Home page
+    </h2>
       {/*-----------carousel-----------*/}
       <Carousel images={images} />
 

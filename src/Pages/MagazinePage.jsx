@@ -7,7 +7,11 @@ import veloeco from "./../assets/photoarticle/veloeco.jpeg";
 const MagazinePage = () => {
   return (
     <>
-      <h2>Magazine</h2>
+      
+      <section className="card p-4 mt-4 bg-light">
+        <h2 className="card-header mb-4 border-danger rounded-lg text-primary">
+          Magazine
+        </h2>
       <div className="d-flex flex-wrap justify-content-around">
         {/*---------card article pluie-------*/}
         <div className="card m-3" style={{ width: "25rem" }}>
@@ -70,7 +74,8 @@ const MagazinePage = () => {
             </Link>
           </div>
         </div>
-      </div>
+        </div>
+      </section>
     </>
   );
 };

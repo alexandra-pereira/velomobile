@@ -78,7 +78,11 @@ import ModalButtonCreate from "../components/ModalButton";
   return (
     <>
     
-      <h2>Produits</h2>
+      <section className="card p-4 mt-4 bg-light">
+
+      <h2 className="card-header mb-4 border-danger rounded-lg text-primary">
+        Produits
+      </h2>
       {isLoggedIn && (
         <>
           <ModalButtonCreate handleOpenModal={handleOpenModal} handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile} />
@@ -95,6 +99,7 @@ import ModalButtonCreate from "../components/ModalButton";
             handleClickDeleteVeloMobile={handleClickDeleteVeloMobile}
           />
         ))}
+     </section>
     </>
   );
 };
