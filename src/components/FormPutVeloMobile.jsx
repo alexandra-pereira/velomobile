@@ -1,14 +1,15 @@
 import RemoteData from "../services/RemoteData";
-import ValidateData from "../services/ValidateData";
 import Debug from "../services/Debug";
-
+import ValidateData from "../services/ValidateData";
+ 
+const FormPutVeloMobile = ({ veloMobile }) => {
   function handleSubmitFormPutVeloMobile(event) {
     event.preventDefault();
     console.log(`Formulaire de modification`, veloMobile);
     // const formData = new FormData(event.target);
-
+ 
     const formData = new FormData(event.target);
-
+ 
     const newVeloMobile = {
       id: veloMobile.id,
       model: formData.get("model"),
@@ -16,26 +17,27 @@ import Debug from "../services/Debug";
       weight: formData.get("weight"),
       photo: formData.get("photo"),
     };
+ 
     console.log(newVeloMobile);
     //formData form modifé
     //formdata append id de l'ancien "veloMobile"
     let message = "";
     //conditionnel pour la validation du formulaire
     for (const key in newVeloMobile) {
-      if (key !== "id")
-      {
+    
+      if (key !== "id") {
         if (ValidateData.checkIfEmpty(newVeloMobile[key])) {
-          return message += "le champs" + key + 'est vide';  
+          message += "le champs" + key + "est vide";
         }
-
+      } else {
         RemoteData.putVeloMobile(newVeloMobile).then((data) => {
           console.log(`data dans products page `);
         });
       }
+    }
   }
-}
+ 
   return (
-    
     <form
       onSubmit={(event) => {
         handleSubmitFormPutVeloMobile(event);
@@ -84,7 +86,7 @@ import Debug from "../services/Debug";
           defaultValue={veloMobile.weight}
         />
       </div>
-
+ 
       <div className="mb-3">
         <label htmlFor="photo" className="form-label">
           Photo
@@ -103,7 +105,6 @@ import Debug from "../services/Debug";
       </button>
     </form>
   );
-
 };
-
+ 
 export default FormPutVeloMobile;
