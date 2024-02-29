@@ -77,7 +77,7 @@ const ProductsPage = () => {
       {isLoggedIn && (
         <>
          
-          <ModalButton handleOpenModal={handleOpenModal}> 
+          <ModalButton handleOpenModal={handleOpenModal}/>
           <FormPostVeloMobile handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile} /> 
         
         </>
