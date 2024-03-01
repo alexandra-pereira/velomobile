@@ -1,26 +1,26 @@
-import React, { useState, useEffect } from "react";
-import FormPostVeloMobile from "./FormPostVeloMobile";
+import React, { useState, useEffect } from 'react';
+import FormPostVeloMobile from './FormPostVeloMobile';
 
-export default function ModalContent({
-  closeModal,
-  showModal,
-  handleSubmitFormPostVeloMobile,
-})
+export default function ModalContent({ closeModal, showModal, handleSubmitFormPostVeloMobile }) {
+ const [isSubmitted, setIsSubmitted] = useState(false);
+ const handleFormSubmit = (event) => {
+    event.preventDefault(); // Empêche le rechargement de la page
+    handleSubmitFormPostVeloMobile(event);
+    setIsSubmitted(true); // Indique que le formulaire a été soumis
+ };
 
-{
-  const [msg, setMsg] = useState("");
+ useEffect(() => {
+    if (isSubmitted) {
+      const timer = setTimeout(() => {
+        setIsSubmitted(false); // Réinitialise l'état après 5 secondes
+      }, 5000);
+      return () => clearTimeout(timer); // Nettoyez le timer si le composant est démonté
+    }
+ }, [isSubmitted]);
 
-  // Fonction pour gérer la validation du produit
-  const handleProductValidation = () => {
-    // Mettre à jour le message
-    setMsg("Le produit a été validé avec succès !");
-    // Fermer la modal
-    closeModal();
-  };
-  
-  
-  return (
+ return (
     <>
+      {/* Votre code pour le modal et le formulaire */}
       <div
         onClick={closeModal}
         className="modal-backdrop fade show"
@@ -31,7 +31,7 @@ export default function ModalContent({
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: "rgba(3, 34, 56, 0.5)",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
         }}
       ></div>
       <div
@@ -52,7 +52,7 @@ export default function ModalContent({
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">Créer un Produit</h5>
-               
+
             {/* Fermer la modale */}
             <button
               type="button"
@@ -63,12 +63,13 @@ export default function ModalContent({
 
           <div className="modal-body">
             <FormPostVeloMobile
-              handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile}
+              handleSubmitFormPostVeloMobile={handleFormSubmit}
             />
+            {isSubmitted && <p>Formulaire soumis avec succès !</p>}
           </div>
-          
+
           <div className="modal-footer">
-        
+
             {/* Fermer la modale */}
             <button
               type="button"
