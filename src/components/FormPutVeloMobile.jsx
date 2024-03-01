@@ -16,35 +16,27 @@ const FormPutVeloMobile = ({ veloMobile }) => {
       weight: formData.get("weight"),
       photo: formData.get("photo"),
     };
-    
+
     console.log(newVeloMobile);
     //formData form modifé
     //formdata append id de l'ancien "veloMobile"
     let message = "";
     //conditionnel pour la validation du formulaire
-    for (const key in newVeloMobile)
-    {
-          ValidateData.dd(key !== "id")
-       if (key !== "id")
-       { 
- 
+    for (const key in newVeloMobile) {
+      ValidateData.dd(key !== "id");
+      if (key !== "id") {
         if (ValidateData.checkIfEmpty(newVeloMobile[key])) {
-          message += "le champs" + key + 'est vide';
-        
+          message += "le champs" + key + "est vide";
         }
-      } else
-      { 
-        RemoteData.putVeloMobile(newVeloMobile).then((data) =>
-        {
-        console.log(`data dans products page `);
+      } else {
+        RemoteData.putVeloMobile(newVeloMobile).then((data) => {
+          console.log(`data dans products page `);
         });
-      } 
+      }
     }
   }
 
-
   return (
-    
     <form
       onSubmit={(event) => {
         handleSubmitFormPutVeloMobile(event);
@@ -112,7 +104,6 @@ const FormPutVeloMobile = ({ veloMobile }) => {
       </button>
     </form>
   );
-
 };
 
 export default FormPutVeloMobile;
