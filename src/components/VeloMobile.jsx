@@ -1,9 +1,10 @@
 import { useOutletContext } from "react-router-dom";
 import FormPutVeloMobile from "./FormPutVeloMobile";
+import FormPostVeloMobile from "./FormPostVeloMobile";
+import ModalButtonCreate from "../components/ModalButton";
 
 const VeloMobile = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useOutletContext();
-  
   
   return (
     <div className="card mb-3">
@@ -20,21 +21,35 @@ const VeloMobile = (props) => {
             <h3 className="card-title">{props.veloMobile.model}</h3>
             <p className="card-text">{props.veloMobile.description}</p>
             <p className="card-text">{props.veloMobile.weight} kg</p>
-            {isLoggedIn ? (
-              <>
-                <button
-                  onClick={() => {
-                    props.handleClickDeleteVeloMobile(props.veloMobile);
-                  }}
-                  className="btn btn-danger"
-                >
-                  Supprimer
-                </button>
-                <FormPutVeloMobile veloMobile={props.veloMobile}/>
-              </>
-            ) : (
-              <p>Pas Connecté</p>
-            )}
+
+            {isLoggedIn ?
+              (
+                <>
+                  <div className="row gap-2">
+                    <button
+                      onClick={() => {
+                        props.handleClickDeleteVeloMobile(props.veloMobile);
+                      }}
+                      className="btn btn-danger"
+                    >
+                      Supprimer
+                    </button>
+
+                    <button
+                      onClick={() => {
+                        props.handleClickFormPutVeloMobile(props.veloMobile);
+                      }}
+                      className="btn btn-warning"
+                    >
+                      Modifier
+                    </button>
+
+                  </div>
+                </>
+              ) : (
+                <p>Pas Connecté</p>
+              )
+            }
           </div>
         </div>
       </div>

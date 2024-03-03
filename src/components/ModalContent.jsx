@@ -76,7 +76,7 @@ export default function ModalContent({ closeModal, showModal, handleSubmitFormPo
               className="btn btn-secondary"
               onClick={closeModal}
             >
-              Close
+              Fermer
             </button>
           </div>
         </div>

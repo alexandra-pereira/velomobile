@@ -1,72 +1,30 @@
 {
   "velosMobiles": [
     {
-      "id": 1,
-      "model": "lvf",
-      "description": "Le vélo mobile français qui a fait ses preuves",
-      "photo": "vmrural.jpeg",
-      "weight": 32
-    },
-    {
-      "id": 2,
-      "model": "lvq",
-      "description": "Le vélo mobile sportif aux performances incroyables",
-      "photo": "vmsportif.jpeg",
-      "weight": 22
-    },
-    {
-      "id": "d996",
+      "id": "270b",
       "model": "12",
       "description": "",
+      "weight": null,
+      "photo": ""
+    },
+    {
+      "id": "0a15",
+      "model": "12",
+      "description": "jik",
       "weight": null,
       "photo": "vmsportif.jpeg"
     },
     {
-      "id": "93cc",
+      "id": "d04c",
       "model": "",
       "description": "",
-      "weight": null,
-      "photo": ""
-    },
-    {
-      "id": "f1ff",
-      "model": "",
-      "description": "",
-      "weight": null,
-      "photo": ""
-    },
-    {
-      "id": "1a24",
-      "model": "",
-      "description": "",
-      "weight": null,
-      "photo": ""
-    },
-    {
-      "id": "30be",
-      "model": "",
-      "description": "",
-      "weight": null,
-      "photo": ""
-    },
-    {
-      "id": "abf2",
-      "model": "12",
-      "description": "",
-      "weight": null,
-      "photo": ""
-    },
-    {
-      "id": "a95a",
-      "model": "12",
-      "description": "gh",
       "weight": null,
       "photo": ""
     }
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "login": "root",
       "pwd": "root"
     }
