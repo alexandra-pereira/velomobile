@@ -9,10 +9,10 @@
     },
     {
       "id": "2",
-      "model": "lvq",
+      "model": "dest",
       "description": "Le vélo mobile sportif aux performances incroyables",
-      "photo": "vmsportif.jpeg",
-      "weight": 22
+      "weight": "22",
+      "photo": "vmsportif.jpeg"
     }
   ],
   "users": [
