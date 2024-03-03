@@ -2,10 +2,10 @@
   "velosMobiles": [
     {
       "id": "1",
-      "model": "lvf",
-      "description": "Le vélo mobile français qui a fait ses preuves",
-      "photo": "vmrural.jpeg",
-      "weight": 32
+      "model": "Test",
+      "description": "ok",
+      "weight": "32",
+      "photo": "vmrural.jpeg"
     },
     {
       "id": "2",
@@ -13,13 +13,6 @@
       "description": "Le vélo mobile sportif aux performances incroyables",
       "photo": "vmsportif.jpeg",
       "weight": 22
-    },
-    {
-      "id": "bbf4",
-      "model": "test",
-      "description": "",
-      "weight": null,
-      "photo": "vmrural.jpeg"
     }
   ],
   "users": [

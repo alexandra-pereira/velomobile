@@ -1,11 +1,18 @@
 import RemoteData from "../services/RemoteData";
 import ValidateData from "../services/ValidateData";
+import React, { useState } from "react";
 
 const FormPutVeloMobile = ({ veloMobile }) => {
+  const [errorMessage, setErrorMessage] = useState("");
+  const [emptyFields, setEmptyFields] = useState({});
+  // Fonction qui controle l'état de mon champ
+  const getInputClass = (fieldName) => {
+    return emptyFields[fieldName] ? "input-error" : "";
+  };
+  // Fonction de modification du formaulaire 
   function handleSubmitFormPutVeloMobile(event) {
     event.preventDefault();
     console.log(`Formulaire de modification`, veloMobile);
-    // const formData = new FormData(event.target);
 
     const formData = new FormData(event.target);
 
@@ -18,30 +25,30 @@ const FormPutVeloMobile = ({ veloMobile }) => {
     };
 
     console.log(newVeloMobile);
-    //formData form modifé
-    //formdata append id de l'ancien "veloMobile"
     let message = "";
-    //conditionnel pour la validation du formulaire
+    //conditionnel pour la validation du formulaire des champs vide
     for (const key in newVeloMobile) {
-      ValidateData.dd(key !== "id");
-      if (key !== "id") {
-        if (ValidateData.checkIfEmpty(newVeloMobile[key])) {
-          message += "le champs" + key + "est vide";
-        }
-      } else {
-        RemoteData.putVeloMobile(newVeloMobile).then((data) => {
-          console.log(`data dans products page `);
-        });
+      // Exclure le champ 'id' de la validation
+      if (key !== "id" && ValidateData.checkIfEmpty(newVeloMobile[key])) {
+        message += " le champs " + key + " est vide";
       }
+    }
+
+    if (message === "") {
+      RemoteData.putVeloMobile(newVeloMobile).then((data) => {
+        console.log(`data dans products page `);
+      });
+    } else {
+      setErrorMessage(message); // Message d'erreur du champs vide
+      setEmptyFields(emptyFields); // Mise à jour l'état avec les champs vides
+      console.log(message);
     }
   }
 
+  // Formulaire de modification 
   return (
     <form
-      onSubmit={(event) => {
-        handleSubmitFormPutVeloMobile(event);
-      }}
-      action=""
+      onSubmit={handleSubmitFormPutVeloMobile}
       className="needs-validation"
       noValidate
     >
@@ -53,7 +60,7 @@ const FormPutVeloMobile = ({ veloMobile }) => {
           type="text"
           id="model"
           name="model"
-          className="form-control"
+          className={`form-control ${getInputClass("model")}`}
           defaultValue={veloMobile.model}
           required
         />
@@ -65,7 +72,7 @@ const FormPutVeloMobile = ({ veloMobile }) => {
         <textarea
           name="description"
           id="description"
-          className="form-control"
+          className={`form-control ${getInputClass("description")}`}
           cols="30"
           rows="3"
           required
@@ -81,11 +88,10 @@ const FormPutVeloMobile = ({ veloMobile }) => {
           type="text"
           id="weight"
           name="weight"
-          className="form-control"
+          className={`form-control ${getInputClass("weight")}`}
           defaultValue={veloMobile.weight}
         />
       </div>
-
       <div className="mb-3">
         <label htmlFor="photo" className="form-label">
           Photo
@@ -94,11 +100,16 @@ const FormPutVeloMobile = ({ veloMobile }) => {
           type="text"
           id="photo"
           name="photo"
-          className="form-control"
+          className={`form-control ${getInputClass("photo")}`}
           defaultValue={veloMobile.photo}
           required
         />
       </div>
+      {errorMessage && (
+        <div className="alert alert-danger" role="alert">
+          {errorMessage}
+        </div>
+      )}
       <button type="submit" className="btn btn-primary">
         Envoyer
       </button>
