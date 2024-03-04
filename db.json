@@ -1,25 +1,6 @@
 {
   "velosMobiles": [
     {
-      "id": "270b",
-      "model": "12",
-      "description": "",
-      "weight": null,
-      "photo": ""
-    },
-    {
-      "id": "0a15",
-      "model": "12",
-      "description": "jik",
-      "weight": null,
-      "photo": "vmsportif.jpeg"
-    },
-    {
-      "id": "d04c",
-      "model": "",
-      "description": "",
-      "weight": null,
-      "photo": ""
       "id": "1",
       "model": "Test",
       "description": "ok",
@@ -28,10 +9,31 @@
     },
     {
       "id": "2",
-      "model": "dest",
+      "model": "lvq",
       "description": "Le vélo mobile sportif aux performances incroyables",
-      "weight": "22",
+      "photo": "vmsportif.jpeg",
+      "weight": 22
+    },
+    {
+      "id": "0d3e",
+      "model": "12",
+      "description": "retaz",
+      "weight": null,
       "photo": "vmsportif.jpeg"
+    },
+    {
+      "id": "8182",
+      "model": "12",
+      "description": "klllmmm",
+      "weight": null,
+      "photo": ""
+    },
+    {
+      "id": "7658",
+      "model": "ghl",
+      "description": "klkllklklmmmlml",
+      "weight": null,
+      "photo": ""
     }
   ],
   "users": [
