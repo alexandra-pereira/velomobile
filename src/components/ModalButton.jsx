@@ -9,7 +9,7 @@ export default function ModalButton({ handleSubmitFormPostVeloMobile }) {
  return (
    <>
      <button
-       className="btn btn-primary mx-auto mb-2"
+       className="btn btn-primary mx-auto"
        onClick={() => setShowModal(true)}
      >
        Créer un vélomobile

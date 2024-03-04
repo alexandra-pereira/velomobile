@@ -25,8 +25,6 @@ const FormPutVeloMobile = ({ veloMobile }) => {
     };
 
     console.log(newVeloMobile);
-    //formData form modifé
-    //formdata ajoute l'id de l'ancien "veloMobile"
     let message = "";
     //conditionnel pour la validation du formulaire des champs vide
     for (const key in newVeloMobile) {
@@ -45,24 +43,6 @@ const FormPutVeloMobile = ({ veloMobile }) => {
       setEmptyFields(emptyFields); // Mise à jour l'état avec les champs vides
       console.log(message);
     }
-    //conditionnel pour la validation du formulaire
-    //on boucle sur les key de newVeloMobile et on ne prend pas l'id 
- for (const key in newVeloMobile) {
-   if (key !== "id")
-   {
-     if (ValidateData.checkIfEmpty(newVeloMobile[key]))
-     {
-      message += `Le champ ${key} est vide`;
-      break;
-      }
-   } else{
-     RemoteData.putVeloMobile(newVeloMobile).then((data) =>
-     {
-      console.log(`Data dans la page Products: `, data);
-     }
-    );}
-}
-
   }
 
   // Formulaire de modification 
