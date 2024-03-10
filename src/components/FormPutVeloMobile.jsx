@@ -5,6 +5,7 @@ import React, { useState } from "react";
 const FormPutVeloMobile = ({ veloMobile }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [emptyFields, setEmptyFields] = useState({});
+  const [confirmUpade, setConfirmUpade] = useState("");
   // Fonction qui controle l'état de mon champ
   const getInputClass = (fieldName) => {
     return emptyFields[fieldName] ? "input-error" : "";
@@ -33,15 +34,24 @@ const FormPutVeloMobile = ({ veloMobile }) => {
         message += " le champs " + key + " est vide";
       }
     }
-
+    let valide = ""
     if (message === "") {
       RemoteData.putVeloMobile(newVeloMobile).then((data) => {
         console.log(`data dans products page `);
+        valide += "Le champ a été modifié";
+        setConfirmUpade(valide);
+        setTimeout(() => {
+          setConfirmUpade(""); // Réinitialiser l'état à une chaîne vide
+        }, 5000);
       });
     } else {
       setErrorMessage(message); // Message d'erreur du champs vide
       setEmptyFields(emptyFields); // Mise à jour l'état avec les champs vides
       console.log(message);
+      // Fait disparaitre le message d'erreur aprés 5s
+      setTimeout(() => {
+        setErrorMessage("");
+      }, 5000);
     }
   }
 
@@ -108,6 +118,11 @@ const FormPutVeloMobile = ({ veloMobile }) => {
       {errorMessage && (
         <div className="alert alert-danger" role="alert">
           {errorMessage}
+        </div>
+      )}
+      {confirmUpade && (
+        <div className="alert alert-success" role="alert">
+          {confirmUpade}
         </div>
       )}
       <button type="submit" className="btn btn-primary">
