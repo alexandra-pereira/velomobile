@@ -122,32 +122,18 @@ const Header = ({ isLoggedIn, toggleMode, darkMode }) => {
                 </Link>
               </li>
 
-              <li className="magazine-link nav-item dropdown"
-                onMouseOver={openCloseMenu} onClick={toggleDropdown}>
-                <span
-                  className="nav-link dropdown-toggle"
-                  role="button"
-                  aria-haspopup="true"
-                  aria-expanded={isDropdownOpen ? "true" : "false"}
-                >
-                <Link to={`/magazine`}> <span>Magazine</span></Link> 
-                </span>
+             <li className="magazine-link nav-item dropdown" onClick={toggleDropdown}>
+      <span className="nav-link dropdown-toggle" role="button" aria-haspopup="true" aria-expanded={isDropdownOpen ? "true" : "false"}>
+        <Link to="/magazine">Magazine</Link>
+      </span>
 
-                <div className={`dropdown-menu ${isDropdownOpen ? "show" : ""}`}>
-                  <Link to={`/magazine`}>
-                    <span className="dropdown-item">Articles</span>
-                  </Link>
-                  <Link to={`/article_pluie`}>
-                    <span className="dropdown-item">Article Sous la pluie</span>
-                  </Link>
-                  <Link to={`/article_trajet_long`}>
-                    <span className="dropdown-item">Article Trajet long</span>
-                  </Link>
-                   <Link to={`/article_eco`}>
-                    <span className="dropdown-item">Article Écologique</span>
-                  </Link>
-                </div>
-              </li>
+      <div className={`dropdown-menu ${isDropdownOpen ? "show" : ""}`}>
+        <Link to="/magazine"><span className="dropdown-item">Articles</span></Link>
+        <Link to="/article_pluie"><span className="dropdown-item">Article Sous la pluie</span></Link>
+        <Link to="/article_trajet_long"><span className="dropdown-item">Article Trajet long</span></Link>
+        <Link to="/article_eco"><span className="dropdown-item">Article Écologique</span></Link>
+      </div>
+    </li>
 
             </ul>
             

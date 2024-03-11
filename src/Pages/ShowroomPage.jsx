@@ -1,9 +1,12 @@
 import React from "react";
-import carte from '../assets/carte.png'; // Chemin d'importation corrigé
-import site1 from '../assets/photo_showroom/velomobile-site1.jpg'; // Chemin d'importation corrigé
-import site2 from '../assets/photo_showroom/velomobile-site2.jpg'; // Chemin d'importation corrigé
-import site3 from '../assets/photo_showroom/velomobile-site3.jpg'; // Chemin d'importation corrigé
-import site4 from '../assets/photo_showroom/velomobile-site4.jpg'; // Chemin d'importation corrigé
+// import Map  from "../components/Map";
+
+import carte from '../assets/carte.png'; 
+import site1 from '../assets/photo_showroom/velomobile-site1.jpg'; 
+import site2 from '../assets/photo_showroom/velomobile-site2.jpg'; 
+import site3 from '../assets/photo_showroom/velomobile-site3.jpg'; 
+import site4 from '../assets/photo_showroom/velomobile-site4.jpg'; 
+
 
 const ShowroomPage = () => {
   return (
@@ -50,10 +53,11 @@ const ShowroomPage = () => {
 
       </div>
       
-      {/*-------------Map-------------*/}
+      {/*-------------Map-------------**/}
       <div className="container bg-light w-50 p-3 rounded d-flex justify-content-center mb-3">
-        <img src={carte} alt="Card image cap"/>
-      </div>
+        <img src={Map} alt="Card image cap"/>
+  </div> 
+     
     </section>
   );
 };

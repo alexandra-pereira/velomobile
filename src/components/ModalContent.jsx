@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import FormPostVeloMobile from "./FormPostVeloMobile";
+import Formulaire from './Formulaire';
 
 export default function ModalContent({
   closeModal,
@@ -17,7 +18,19 @@ export default function ModalContent({
     // Fermer la modal
     closeModal();
   };
-  
+
+  useEffect(() => {
+    if (isSubmitted) {
+      const timer = setTimeout(() => {
+        setIsSubmitted(false); // Réinitialise l'état après 5 secondes
+      }, 5000);
+      return () => clearTimeout(timer); // Nettoyez le timer si le composant est démonté
+    }
+ }, [isSubmitted]);
+
+
+
+
   
   return (
     <>

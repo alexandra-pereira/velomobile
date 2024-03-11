@@ -4,7 +4,6 @@
       "id": "1",
       "model": "Test",
       "description": "ok",
-      "weight": "32",
       "photo": "vmrural.jpeg"
     },
     {
@@ -32,6 +31,13 @@
       "id": "7658",
       "model": "ghl",
       "description": "klkllklklmmmlml",
+      "weight": null,
+      "photo": ""
+    },
+    {
+      "id": "4d12",
+      "model": "",
+      "description": "",
       "weight": null,
       "photo": ""
     }

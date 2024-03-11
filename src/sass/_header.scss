@@ -28,8 +28,8 @@ header {
 #icons {
   cursor: pointer;
   display: none;
-  position: relative; /* Ajout */
-  z-index: 2; /* Assurez-vous que le menu burger apparaît au-dessus de l'image */
+  position: relative;
+  z-index: 2; /* le menu burger apparaît au-dessus de l'image */
 }
 
 /* -----------burger responsive quand c'est plus petit que 800px-----------*/
@@ -56,8 +56,9 @@ header {
       color: black;
       flex-direction: column;
       background: rgb(180, 180, 180);
-      width: 60% !important;
+      width: 90% !important;
       max-width: 500px !important;
+      //height : 90%;
       text-align: right;
       transition: 1s;
       border-radius: 1em;
