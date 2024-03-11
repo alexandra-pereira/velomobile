@@ -1,25 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import FormPostVeloMobile from "./FormPostVeloMobile";
 
 export default function ModalContent({
   closeModal,
   showModal,
   handleSubmitFormPostVeloMobile,
-})
+}) {
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
-{
-  const [msg, setMsg] = useState("");
-
-  // Fonction pour gérer la validation du produit
-  const handleProductValidation = () => {
-    // Mettre à jour le message
-    setMsg("Le produit a été validé avec succès !");
-    // Fermer la modal
-    closeModal();
-    
+  const handleFormSubmit = (event) => {
+    event.preventDefault(); // Empêche le rechargement de la page
+    handleSubmitFormPostVeloMobile(event);
+    setIsSubmitted(true); // Indique que le formulaire a été soumis
+    setTimeout(() => {
+      setIsSubmitted("");
+    }, 5000);
   };
-  
-  
+
   return (
     <>
       <div
@@ -53,7 +50,7 @@ export default function ModalContent({
         <div className="modal-content">
           <div className="modal-header">
             <h5 className="modal-title">Créer un Produit</h5>
-               
+
             {/* Fermer la modale */}
             <button
               type="button"
@@ -64,13 +61,16 @@ export default function ModalContent({
 
           <div className="modal-body">
             <FormPostVeloMobile
-              handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile}
+              handleSubmitFormPostVeloMobile={handleFormSubmit}
             />
+            {/* Etat de validation du formulaire */}
+            {isSubmitted && (
+              <div className="alert alert-success" role="alert">
+                <p>Formulaire soumis avec succès !</p>
+              </div>
+            )}
           </div>
-          
           <div className="modal-footer">
-        
-            {/* Fermer la modale */}
             <button
               type="button"
               className="btn btn-secondary"
