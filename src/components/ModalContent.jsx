@@ -17,6 +17,7 @@ export default function ModalContent({
     setMsg("Le produit a été validé avec succès !");
     // Fermer la modal
     closeModal();
+    
   };
 
   useEffect(() => {
