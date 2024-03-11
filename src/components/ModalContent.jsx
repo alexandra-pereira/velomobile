@@ -1,6 +1,5 @@
 import React, { useState} from "react";
 import FormPostVeloMobile from "./FormPostVeloMobile";
-import Formulaire from './Formulaire';
 
 export default function ModalContent({
   closeModal,

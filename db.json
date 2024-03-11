@@ -3,7 +3,8 @@
     {
       "id": "1",
       "model": "Max",
-      "description": "ok",
+      "description": "Max",
+      "weight": "12",
       "photo": "vmrural.jpeg"
     },
     {
@@ -12,20 +13,6 @@
       "description": "Le vélo mobile sportif aux performances incroyables",
       "photo": "vmsportif.jpeg",
       "weight": 22
-    },
-    {
-      "id": "d768",
-      "model": "test",
-      "description": "ok",
-      "weight": null,
-      "photo": "vmrural.jpeg"
-    },
-    {
-      "id": "0dfa",
-      "model": "test",
-      "description": "d",
-      "weight": null,
-      "photo": "vmrural.jpeg"
     }
   ],
   "users": [

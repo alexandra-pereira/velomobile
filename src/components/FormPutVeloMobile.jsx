@@ -10,7 +10,7 @@ const FormPutVeloMobile = ({ veloMobile }) => {
   const getInputClass = (fieldName) => {
     return emptyFields[fieldName] ? "input-error" : "";
   };
-  // Fonction de modification du formaulaire 
+  // Fonction de modification du formaulaire
   function handleSubmitFormPutVeloMobile(event) {
     event.preventDefault();
     console.log(`Formulaire de modification`, veloMobile);
@@ -31,10 +31,50 @@ const FormPutVeloMobile = ({ veloMobile }) => {
     for (const key in newVeloMobile) {
       // Exclure le champ 'id' de la validation
       if (key !== "id" && ValidateData.checkIfEmpty(newVeloMobile[key])) {
-        message += " le champs " + key + " est vide";
+        message += " Vous devez remplir le champs  " + key + "";
+        // Fonction qui vérifie le champs model
+      } else if (key === "model") {
+        if (newVeloMobile[key].length > 20) {
+          message +=
+            " Le champs " + key + " ne doit pas dépasser 20 caractères.";
+        }
+        if (ValidateData.checkCharacter(newVeloMobile[key])) {
+          message +=
+            " Le champs " + key + " contient un caractère non autorisé.";
+        }
+        // Fonction qui vérifie le champs description
+      } else if (key === "description") {
+        if (newVeloMobile[key].length > 500) {
+          message +=
+            " Le champs " + key + " ne doit pas dépasser 500 caractères.";
+        }
+        if (ValidateData.checkCharacter(newVeloMobile[key])) {
+          message +=
+            " Le champs " + key + " contient un caractère non autorisé.";
+        }
+        // Fonction qui vérifie le champs weight
+      } else if (key === "weight") {
+        if (newVeloMobile[key].length > 10) {
+          message += " Le champs " + key + " ne doit pas dépasser 10 chiffres.";
+        }
+        if (ValidateData.checkWeight(newVeloMobile[key])) {
+          message +=
+            " Le champs " + key + " contient un caractère non autorisé.";
+        }
+        // Fonction qui vérifie le champs photo
+      } else if (key === "photo") {
+        if (newVeloMobile[key].length > 20) {
+          message +=
+            " Le champs " + key + " ne doit pas dépasser 500 caractères.";
+        }
+        if (ValidateData.checkCharacter(newVeloMobile[key])) {
+          message +=
+            " Le champs " + key + " contient un caractère non autorisé.";
+        }
       }
     }
-    let valide = ""
+
+    let valide = "";
     if (message === "") {
       RemoteData.putVeloMobile(newVeloMobile).then((data) => {
         console.log(`data dans products page `);
@@ -55,7 +95,7 @@ const FormPutVeloMobile = ({ veloMobile }) => {
     }
   }
 
-  // Formulaire de modification 
+  // Formulaire de modification
   return (
     <form
       onSubmit={handleSubmitFormPutVeloMobile}
