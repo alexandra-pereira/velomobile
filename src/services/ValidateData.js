@@ -13,7 +13,7 @@ export default class ValidateData {
   }
   //Méthode pour controler les caractères autorisé
   static checkCharacter(str) {
-    const regex = /[A-Za-z0-9]*[@#$%^*()_+\=\[\]{}"\\|<>\/?]+[A-Za-z0-9]*/;
+    const regex = /[A-Za-z0-9]*[@#$&%^*()_+\=\[\]{}"\\|<>\/?]+[A-Za-z0-9]*/;
     console.log(regex.test(str));
     return regex.test(str);
   }
