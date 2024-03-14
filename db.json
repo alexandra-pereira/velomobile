@@ -1,18 +1,18 @@
 {
   "velosMobiles": [
     {
-      "id": "1",
-      "model": "Max",
-      "description": "Max",
-      "weight": "12",
-      "photo": "vmrural.jpeg"
+      "id": "2",
+      "model": "lvqaaa",
+      "description": "Le vélo mobile sportif aux performances incroyables",
+      "weight": "22",
+      "photo": "vmsportif.jpeg"
     },
     {
-      "id": "2",
-      "model": "lvq",
-      "description": "Le vélo mobile sportif aux performances incroyables",
-      "photo": "vmsportif.jpeg",
-      "weight": 22
+      "id": "5543",
+      "model": "max",
+      "description": "az",
+      "weight": null,
+      "photo": "vmrural.jpeg"
     }
   ],
   "users": [
