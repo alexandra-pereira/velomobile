@@ -2,22 +2,13 @@ import { useEffect, useState } from "react";
 import VeloMobile from "../components/VeloMobile";
 import RemoteData from "../services/RemoteData";
 import { useOutletContext } from "react-router-dom";
-
 import Modal from "../components/Modal";
-import ValidateData from "../services/ValidateData";
 
 const ProductsPage = () => {
   const [velosMobiles, setVelosMobiles] = useState([]);
   const [errorMsg, setErrorMsg] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useOutletContext();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [emptyFields, setEmptyFields] = useState({});
-  //const [confirmUpade, setConfirmUpade] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
-
-  const getInputClass = (fieldName) => {
-    return emptyFields[fieldName] ? "input-error" : "";
-  };
 
   const openModal = () => {
     setIsModalOpen(true);
@@ -59,7 +50,6 @@ const ProductsPage = () => {
     event.preventDefault();
     console.log(`Formulaire d'ajout soumis`);
     const formData = new FormData(event.target);
-    
 
     const newVeloMobile = {
       id: -1,
@@ -68,55 +58,6 @@ const ProductsPage = () => {
       weight: formData.get("weight"),
       photo: formData.get("photo"),
     };
-
-    let message = "";
-    //conditionnel pour la validation du formulaire des champs vide
-    for (const key in newVeloMobile) {
-      // Exclure le champ 'id' de la validation
-      if (key !== "id" && ValidateData.checkIfEmpty(newVeloMobile[key])) {
-        message += " Vous devez remplir le champ " + key + ". ";
-      } else if (key === "model") {
-        if (newVeloMobile[key].length > 20) {
-          message +=
-            " Le champs " + key + " ne doit pas dépasser 20 caractères.";
-        }
-        if (ValidateData.checkCharacter(newVeloMobile[key])) {
-          message +=
-            " Le champs " + key + " contient un caractère non autorisé.";
-        }} else if (key === "description") {
-        if (newVeloMobile[key].length > 500) {
-          message +=
-            " Le champs " + key + " ne doit pas dépasser 500 caractères.";
-        }
-        if (ValidateData.checkCharacter(newVeloMobile[key])) {
-          message +=
-            " Le champs " + key + " contient un caractère non autorisé.";
-        }
-        // Fonction qui vérifie le champs weight
-      } else if (key === "weight") {
-        if (newVeloMobile[key].length > 10) {
-          message += " Le champs " + key + " ne doit pas dépasser 10 chiffres.";
-        }
-        if (ValidateData.checkWeight(newVeloMobile[key])) {
-          message +=
-            " Le champs " + key + " contient un caractère non autorisé.";
-        }
-        // Fonction qui vérifie le champs photo
-      } else if (key === "photo") {
-        if (newVeloMobile[key].length > 20) {
-          message +=
-            " Le champs " + key + " ne doit pas dépasser 500 caractères.";
-        }
-        if (ValidateData.checkCharacter(newVeloMobile[key])) {
-          message +=
-            " Le champs " + key + " contient un caractère non autorisé.";
-        }
-        if (message !== "") {
-          console.log(message);
-          return;
-        }
-      }
-    }
 
     const copyVelosMobiles = [...velosMobiles, newVeloMobile];
     setVelosMobiles(copyVelosMobiles);
@@ -157,7 +98,9 @@ const ProductsPage = () => {
                 <div className="card">
                   <div className="card-body">
                     <form
-                      onSubmit={handleSubmitFormPostVeloMobile}
+                      onSubmit={(event) => {
+                        handleSubmitFormPostVeloMobile(event);
+                      }}
                       action=""
                       className="needs-validation"
                       noValidate
@@ -170,7 +113,7 @@ const ProductsPage = () => {
                           type="text"
                           id="model"
                           name="model"
-                          className={`form-control ${getInputClass("model")}`}
+                          className="form-control"
                           required
                         />
                       </div>
@@ -181,9 +124,7 @@ const ProductsPage = () => {
                         <textarea
                           name="description"
                           id="description"
-                          className={`form-control ${getInputClass(
-                            "description"
-                          )}`}
+                          className="form-control"
                           cols="30"
                           rows="3"
                           required
@@ -197,7 +138,7 @@ const ProductsPage = () => {
                           type="text"
                           id="weight"
                           name="poids"
-                          className={`form-control ${getInputClass("weight")}`}
+                          className="form-control"
                           required
                         />
                       </div>
@@ -209,7 +150,7 @@ const ProductsPage = () => {
                           type="text"
                           id="photo"
                           name="photo"
-                          className={`form-control ${getInputClass("photo")}`}
+                          className="form-control"
                           required
                         />
                       </div>
@@ -233,16 +174,6 @@ const ProductsPage = () => {
               handleClickDeleteVeloMobile={handleClickDeleteVeloMobile}
             />
           ))}
-        {errorMessage && (
-          <div className="alert alert-danger" role="alert">
-            {errorMessage}
-          </div>
-        )}
-        {/* {confirmUpade && (
-          <div className="alert alert-success" role="alert">
-            {confirmUpade}
-          </div>
-        )} */}
       </section>
     </>
   );
