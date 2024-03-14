@@ -1,25 +1,17 @@
 {
   "velosMobiles": [
     {
-<<<<<<< HEAD
       "id": "531b",
-      "model": "ghkllm",
+      "model": "ghk",
       "description": "dd",
       "weight": "23",
-=======
-      "id": "2",
-      "model": "lvqaaa",
-      "description": "Le vélo mobile sportif aux performances incroyables",
-      "weight": "22",
->>>>>>> c8394c5a33b68fc132d23ac98376beb462d3749c
       "photo": "vmsportif.jpeg"
     },
     {
-      "id": "5543",
-      "model": "max",
-      "description": "az",
+      "id": "6f31",
+      "model": "trez",
+      "description": "hjj",
       "weight": null,
-<<<<<<< HEAD
       "photo": "vmsportif.jpeg"
     },
     {
@@ -28,9 +20,6 @@
       "description": "",
       "weight": null,
       "photo": ""
-=======
-      "photo": "vmrural.jpeg"
->>>>>>> c8394c5a33b68fc132d23ac98376beb462d3749c
     }
   ],
   "users": [
