@@ -1,0 +1,83 @@
+/* Code imbriqué (nested) */
+header {
+  nav {
+    padding: 10px;
+    font-size: calc(0.5em + 1.5vw);
+
+    position: relative;
+    z-index: 1; /* Vous pouvez ajuster ce nombre si nécessaire */
+
+    ul {
+      /* -----------button link navbar----------- */
+      a {
+        text-decoration: none;
+        color: #cdcccc;
+
+        &:hover {
+          color: #005cfa;
+          background-color: transparent;
+          border-radius: 4px;
+          border: 2px solid rgb(255, 55, 55);
+          padding: 6px;
+        }
+      }
+    }
+  }
+}
+
+#icons {
+  cursor: pointer;
+  display: none;
+  position: relative;
+  z-index: 2; /* le menu burger apparaît au-dessus de l'image */
+}
+
+/* -----------burger responsive quand c'est plus petit que 800px-----------*/
+@media (max-width: 800px) {
+  #icons {
+    cursor: pointer;
+    display: block;
+    font-size: 2em;
+    padding: 10px;
+  }
+  #icons:before {
+    content: "\2630";
+  }
+  .active #icons::before {
+    content: "\2715";
+    display: block;
+  }
+
+  nav {
+    ul {
+      position: fixed;
+      left: -100%;
+      top: 40px;
+      color: black;
+      flex-direction: column;
+      background: rgb(180, 180, 180);
+      width: 90% !important;
+      max-width: 500px !important;
+      //height : 90%;
+      text-align: right;
+      transition: 1s;
+      border-radius: 1em;
+      padding-top: 20px;
+      padding-bottom: 20px;
+
+      li {
+        padding: 10px 0;
+        a {
+          color: white;
+        }
+      }
+    }
+  }
+  nav li:hover {
+    background: transparent;
+  }
+  nav.active ul {
+    left: 0;
+    margin-left: 1em;
+  }
+}
