@@ -13,7 +13,10 @@ const openModal = () => {
 
  const closeModal = () => {
     setIsModalOpen(false);
- };
+  };
+
+  
+
   
   return (
     <div className="card mb-3">

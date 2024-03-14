@@ -36,10 +36,6 @@ const openModal = () => {
     }
   }, [errorMsg]);
 
-  const handleOpenModal = () => {
-    console.log("Ouvrir la modal");
-    // Logique pour ouvrir la modal
-  };
 
   const handleClickDeleteVeloMobile = (veloMobileToDelete) => {
     console.log(`Dans DeleteVeloMobile- vélomobile à été supprimé`);
@@ -51,6 +47,7 @@ const openModal = () => {
     event.preventDefault();
     console.log(`Formulaire d'ajout soumis`);
     const formData = new FormData(event.target);
+    
 
     const newVeloMobile = {
       id: -1,
