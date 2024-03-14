@@ -1,9 +1,19 @@
 import { useOutletContext } from "react-router-dom";
+import { useState } from "react";
 import FormPutVeloMobile from "./FormPutVeloMobile";
+import Modal from "./Modal";
 
 const VeloMobile = (props) => {
   const [isLoggedIn, setIsLoggedIn] = useOutletContext();
-  
+   const [isModalOpen, setIsModalOpen] = useState(false);
+
+const openModal = () => {
+    setIsModalOpen(true);
+ };
+
+ const closeModal = () => {
+    setIsModalOpen(false);
+ };
   
   return (
     <div className="card mb-3">
@@ -30,7 +40,13 @@ const VeloMobile = (props) => {
                 >
                   Supprimer
                 </button>
-                <FormPutVeloMobile veloMobile={props.veloMobile}/>
+   <div>
+      <button className="btn btn-war" onClick={openModal}>Modifier</button>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+         <FormPutVeloMobile veloMobile={props.veloMobile}/> 
+      </Modal>
+    </div>
+                 
               </>
             ) : (
               <p>Pas Connecté</p>

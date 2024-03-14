@@ -1,66 +1,11 @@
 {
   "velosMobiles": [
     {
-      "id": "1",
-      "model": "Maxime",
-      "description": "ok",
-      "photo": "vmrural.jpeg"
-    },
-    {
-      "id": "2",
-      "model": "lvq",
-      "description": "Le vélo mobile sportif aux performances incroyables",
-      "photo": "vmsportif.jpeg",
-      "weight": 22
-    },
-    {
-      "id": "17e3",
-      "model": "test",
-      "description": "ok",
-      "weight": null,
-      "photo": "vmrural.jpeg"
-    },
-    {
-      "id": "5176",
-      "model": "sdvver",
-      "description": "c",
-      "weight": null,
-      "photo": "vmrural.jpeg"
-    },
-    {
-      "id": "b26f",
-      "model": "sdvver",
-      "description": "cc",
-      "weight": null,
-      "photo": "d"
-    },
-    {
-      "id": "8a4d",
-      "model": "hj",
-      "description": "jbj",
-      "weight": null,
-      "photo": "151"
-    },
-    {
-      "id": "d225",
-      "model": "sdvver",
-      "description": "jdjds",
-      "weight": null,
-      "photo": "jkjsc"
-    },
-    {
-      "id": "6011",
-      "model": "sdvver",
-      "description": "c",
-      "weight": null,
-      "photo": "gioyg"
-    },
-    {
-      "id": "7b0e",
-      "model": "k,",
-      "description": "b",
-      "weight": null,
-      "photo": "b"
+      "id": "531b",
+      "model": "ghl",
+      "description": "dd",
+      "weight": "23",
+      "photo": "vmsportif.jpeg"
     }
   ],
   "users": [

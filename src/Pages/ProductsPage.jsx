@@ -2,15 +2,24 @@ import { useEffect, useState } from "react";
 import VeloMobile from "../components/VeloMobile";
 import RemoteData from "../services/RemoteData";
 import { useOutletContext } from "react-router-dom";
-import ModalButtonCreate from "../components/ModalButton";
+import FormPostVeloMobile from "../components/FormPostVeloMobile";
+import Modal from "../components/Modal";
+
 
 
   const ProductsPage = () => {
   const [velosMobiles, setVelosMobiles] = useState([]);
   const [errorMsg, setErrorMsg] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useOutletContext();
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
+const openModal = () => {
+    setIsModalOpen(true);
+ };
 
+ const closeModal = () => {
+    setIsModalOpen(false);
+ };
 
   useEffect(() => {
     console.log(`Appel du service qui va aller charger les données`);
@@ -84,8 +93,14 @@ import ModalButtonCreate from "../components/ModalButton";
         Produits
       </h2>
       {isLoggedIn && (
-        <>
-          <ModalButtonCreate handleOpenModal={handleOpenModal} handleSubmitFormPostVeloMobile={handleSubmitFormPostVeloMobile} />
+          <>
+            <div>
+      <button className="btn btn-primary mb-2" onClick={openModal}>Créer un VeloMobile</button>
+      <Modal isOpen={isModalOpen} onClose={closeModal}>
+         <FormPostVeloMobile />
+      </Modal>
+    </div>
+         
         </>
       )}
 
