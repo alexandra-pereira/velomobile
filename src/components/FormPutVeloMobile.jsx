@@ -6,13 +6,15 @@ const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [emptyFields, setEmptyFields] = useState({});
   const [confirmUpade, setConfirmUpade] = useState("");
-  // Fonction qui controle l'état de mon champ
+  const [isvalid, setIsValid] = useState(false);
+
   const getInputClass = (fieldName) => {
     return emptyFields[fieldName] ? "input-error" : "";
   };
   // Fonction de modification du formaulaire
   function handleSubmitFormPutVeloMobile(event) {
     event.preventDefault();
+    let isvalid = true;
     console.log(`Formulaire de modification`, veloMobile);
 
     const formData = new FormData(event.target);
@@ -75,7 +77,12 @@ const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
     }
 
     let valide = "";
+
+// if (message !== "") isvalid = true;
+    if (message !== "") { setIsValid(true); }
+
     if (message === "") {
+      isvalid = false;
       RemoteData.putVeloMobile(updatedVeloMobile).then((data) => {
         console.log(`data dans products page `);
         valide += "Le champ a été modifié"
@@ -111,7 +118,8 @@ const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
           type="text"
           id="model"
           name="model"
-          className={`form-control ${getInputClass("model")}`}
+   className={`form-control ${ isvalid ? "is-invalid" : "is-valid" } ${getInputClass("model")}`}
+
           defaultValue={veloMobile.model}
           required
         />
@@ -123,7 +131,7 @@ const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
         <textarea
           name="description"
           id="description"
-          className={`form-control ${getInputClass("description")}`}
+           className={`form-control ${ isvalid ? "is-invalid" : "is-valid" } ${getInputClass("description")}`}
           cols="30"
           rows="3"
           required
@@ -139,7 +147,7 @@ const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
           type="text"
           id="weight"
           name="weight"
-          className={`form-control ${getInputClass("weight")}`}
+           className={`form-control ${ isvalid ? "is-invalid" : "is-valid" } ${getInputClass("weight")}`}
           defaultValue={veloMobile.weight}
         />
       </div>
@@ -151,7 +159,7 @@ const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
           type="text"
           id="photo"
           name="photo"
-          className={`form-control ${getInputClass("photo")}`}
+           className={`form-control ${ isvalid ? "is-invalid" : "is-valid" } ${getInputClass("photo")}`}
           defaultValue={veloMobile.photo}
           required
         />
