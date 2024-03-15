@@ -2,7 +2,7 @@ import RemoteData from "../services/RemoteData";
 import ValidateData from "../services/ValidateData";
 import React, { useState } from "react";
 
-const FormPutVeloMobile = ({ veloMobile }) => {
+const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [emptyFields, setEmptyFields] = useState({});
   const [confirmUpade, setConfirmUpade] = useState("");
@@ -17,7 +17,7 @@ const FormPutVeloMobile = ({ veloMobile }) => {
 
     const formData = new FormData(event.target);
 
-    const newVeloMobile = {
+    const updatedVeloMobile = {
       id: veloMobile.id,
       model: formData.get("model"),
       description: formData.get("description"),
@@ -25,49 +25,49 @@ const FormPutVeloMobile = ({ veloMobile }) => {
       photo: formData.get("photo"),
     };
 
-    console.log(newVeloMobile);
+    console.log(updatedVeloMobile);
     let message = "";
     //conditionnel pour la validation du formulaire des champs vide
-    for (const key in newVeloMobile) {
+    for (const key in updatedVeloMobile) {
       // Exclure le champ 'id' de la validation
-      if (key !== "id" && ValidateData.checkIfEmpty(newVeloMobile[key])) {
+      if (key !== "id" && ValidateData.checkIfEmpty(updatedVeloMobile[key])) {
         message += " Vous devez remplir le champs  " + key + "";
         // Fonction qui vérifie le champs model
       } else if (key === "model") {
-        if (newVeloMobile[key].length > 20) {
+        if (updatedVeloMobile[key].length > 20) {
           message +=
             " Le champs " + key + " ne doit pas dépasser 20 caractères.";
         }
-        if (ValidateData.checkCharacter(newVeloMobile[key])) {
+        if (ValidateData.checkCharacter(updatedVeloMobile[key])) {
           message +=
             " Le champs " + key + " contient un caractère non autorisé.";
         }
         // Fonction qui vérifie le champs description
       } else if (key === "description") {
-        if (newVeloMobile[key].length > 500) {
+        if (updatedVeloMobile[key].length > 500) {
           message +=
             " Le champs " + key + " ne doit pas dépasser 500 caractères.";
         }
-        if (ValidateData.checkCharacter(newVeloMobile[key])) {
+        if (ValidateData.checkCharacter(updatedVeloMobile[key])) {
           message +=
             " Le champs " + key + " contient un caractère non autorisé.";
         }
         // Fonction qui vérifie le champs weight
       } else if (key === "weight") {
-        if (newVeloMobile[key].length > 10) {
+        if (updatedVeloMobile[key].length > 10) {
           message += " Le champs " + key + " ne doit pas dépasser 10 chiffres.";
         }
-        if (ValidateData.checkWeight(newVeloMobile[key])) {
+        if (ValidateData.checkWeight(updatedVeloMobile[key])) {
           message +=
             " Le champs " + key + " contient un caractère non autorisé.";
         }
         // Fonction qui vérifie le champs photo
       } else if (key === "photo") {
-        if (newVeloMobile[key].length > 20) {
+        if (updatedVeloMobile[key].length > 20) {
           message +=
             " Le champs " + key + " ne doit pas dépasser 500 caractères.";
         }
-        if (ValidateData.checkCharacter(newVeloMobile[key])) {
+        if (ValidateData.checkCharacter(updatedVeloMobile[key])) {
           message +=
             " Le champs " + key + " contient un caractère non autorisé.";
         }
@@ -76,13 +76,14 @@ const FormPutVeloMobile = ({ veloMobile }) => {
 
     let valide = "";
     if (message === "") {
-      RemoteData.putVeloMobile(newVeloMobile).then((data) => {
+      RemoteData.putVeloMobile(updatedVeloMobile).then((data) => {
         console.log(`data dans products page `);
-        valide += "Le champ a été modifié";
+        valide += "Le champ a été modifié"
         setConfirmUpade(valide);
         setTimeout(() => {
           setConfirmUpade(""); // Réinitialiser l'état à une chaîne vide
         }, 5000);
+        onUpdate(data);
       });
     } else {
       setErrorMessage(message); // Message d'erreur du champs vide

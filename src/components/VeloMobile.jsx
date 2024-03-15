@@ -43,7 +43,7 @@ const openModal = () => {
    <div>
       <button className="btn btn-warning mt-2" onClick={openModal}>Modifier</button>
       <Modal isOpen={isModalOpen} onClose={closeModal}>
-         <FormPutVeloMobile veloMobile={props.veloMobile}/> 
+         <FormPutVeloMobile veloMobile={props.veloMobile} onUpdate={props.onUpdate}/>
       </Modal>
     </div>
                  

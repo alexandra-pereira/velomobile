@@ -14,6 +14,14 @@ const ProductsPage = () => {
   //const [confirmUpade, setConfirmUpade] = useState("");
   // const [errorMessage, setErrorMessage] = useState("");
 
+  const handleUpdateVeloMobile = (updatedVeloMobile) => {
+    setVelosMobiles(
+        velosMobiles.map((vm) =>
+            vm.id === updatedVeloMobile.id ? updatedVeloMobile : vm
+        )
+    );
+  };
+
   const getInputClass = (fieldName) => {
     return emptyFields[fieldName] ? "input-error" : "";
   };
@@ -55,7 +63,6 @@ const ProductsPage = () => {
     const formData = new FormData(event.target);
 
     const newVeloMobile = {
-      id: -1,
       model: formData.get("model"),
       description: formData.get("description"),
       weight: formData.get("weight"),
@@ -117,30 +124,24 @@ const ProductsPage = () => {
       return;
     }
 
-
-
-    const copyVelosMobiles = [...velosMobiles, newVeloMobile];
-    setVelosMobiles(copyVelosMobiles);
     event.target.reset();
 
-    {
-      /* delelete suppression d'un produit */
-    }
-    delete newVeloMobile.id;
+    // Attempt to create the velomobile on the server
     RemoteData.postVeloMobile(newVeloMobile)
-      .then((data) => {
-        console.log(`data dans products page `);
-      })
-      .catch((error) => {
-        console.error(error);
-        setErrorMsg(
-          "Une erreur s'est produite lors de l'ajout d'un veloMobile"
-        );
-        setTimeout(() => {
-          setErrorMsg("");
-        }, 5000);
-      });
+        .then((data) => {
+          console.log(`data dans products page `);
+          // Assuming 'data' contains the new velomobile with its ID
+          setVelosMobiles((currentVelosMobiles) => [...currentVelosMobiles, data]);
+        })
+        .catch((error) => {
+          console.error(error);
+          setErrorMsg("Une erreur s'est produite lors de l'ajout d'un veloMobile");
+          setTimeout(() => {
+            setErrorMsg("");
+          }, 5000);
+        });
   };
+
 
   return (
     <>
@@ -232,6 +233,7 @@ const ProductsPage = () => {
               key={veloMobile.id}
               veloMobile={veloMobile}
               handleClickDeleteVeloMobile={handleClickDeleteVeloMobile}
+              onUpdate={handleUpdateVeloMobile}
             />
           ))}
         {/*} {errorMessage && (
