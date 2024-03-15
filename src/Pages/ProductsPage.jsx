@@ -3,7 +3,6 @@ import VeloMobile from "../components/VeloMobile";
 import RemoteData from "../services/RemoteData";
 import { useOutletContext } from "react-router-dom";
 import Modal from "../components/Modal";
-import ValidateData from "../services/ValidateData";
 
 const ProductsPage = () => {
   const [velosMobiles, setVelosMobiles] = useState([]);
@@ -40,6 +39,11 @@ const ProductsPage = () => {
         });
     }
   }, [errorMsg]);
+
+  const handleOpenModal = () => {
+    console.log("Ouvrir la modal");
+    // Logique pour ouvrir la modal
+  };
 
   const handleClickDeleteVeloMobile = (veloMobileToDelete) => {
     console.log(`Dans DeleteVeloMobile- vélomobile à été supprimé`);
@@ -114,7 +118,9 @@ const ProductsPage = () => {
                 <div className="card">
                   <div className="card-body">
                     <form
-                      onSubmit={handleSubmitFormPostVeloMobile}
+                      onSubmit={(event) => {
+                        handleSubmitFormPostVeloMobile(event);
+                      }}
                       action=""
                       className="needs-validation"
                       noValidate
@@ -127,7 +133,7 @@ const ProductsPage = () => {
                           type="text"
                           id="model"
                           name="model"
-                          className={`form-control ${getInputClass("model")}`}
+                          className="form-control"
                           required
                         />
                       </div>
@@ -138,9 +144,7 @@ const ProductsPage = () => {
                         <textarea
                           name="description"
                           id="description"
-                          className={`form-control ${getInputClass(
-                            "description"
-                          )}`}
+                          className="form-control"
                           cols="30"
                           rows="3"
                           required
@@ -154,7 +158,7 @@ const ProductsPage = () => {
                           type="text"
                           id="weight"
                           name="poids"
-                          className={`form-control ${getInputClass("weight")}`}
+                          className="form-control"
                           required
                         />
                       </div>
@@ -166,7 +170,7 @@ const ProductsPage = () => {
                           type="text"
                           id="photo"
                           name="photo"
-                          className={`form-control ${getInputClass("photo")}`}
+                          className="form-control"
                           required
                         />
                       </div>

@@ -2,15 +2,17 @@ import RemoteData from "../services/RemoteData";
 import ValidateData from "../services/ValidateData";
 import React, { useState } from "react";
 
+
 const FormPutVeloMobile = ({ veloMobile }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [emptyFields, setEmptyFields] = useState({});
   const [confirmUpade, setConfirmUpade] = useState("");
+
   // Fonction qui controle l'état de mon champ
   const getInputClass = (fieldName) => {
     return emptyFields[fieldName] ? "input-error" : "";
   };
-  // Fonction de modification du formaulaire
+  // Fonction de modification du formulaire
   function handleSubmitFormPutVeloMobile(event) {
     event.preventDefault();
     console.log(`Formulaire de modification`, veloMobile);
@@ -25,6 +27,7 @@ const FormPutVeloMobile = ({ veloMobile }) => {
       photo: formData.get("photo"),
     };
 
+
     console.log(newVeloMobile);
     let message = "";
     //conditionnel pour la validation du formulaire des champs vide
@@ -32,6 +35,7 @@ const FormPutVeloMobile = ({ veloMobile }) => {
       // Exclure le champ 'id' de la validation
       if (key !== "id" && ValidateData.checkIfEmpty(newVeloMobile[key])) {
         message += " Vous devez remplir le champs  " + key + "";
+        
         // Fonction qui vérifie le champs model
       } else if (key === "model") {
         if (newVeloMobile[key].length > 20) {
@@ -84,6 +88,7 @@ const FormPutVeloMobile = ({ veloMobile }) => {
           setConfirmUpade(""); // Réinitialiser l'état à une chaîne vide
         }, 5000);
       });
+
     } else {
       setErrorMessage(message); // Message d'erreur du champs vide
       setEmptyFields(emptyFields); // Mise à jour l'état avec les champs vides

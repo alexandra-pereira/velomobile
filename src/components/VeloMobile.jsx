@@ -14,7 +14,7 @@ const openModal = () => {
  const closeModal = () => {
     setIsModalOpen(false);
  };
-  
+
   return (
     <div className="card mb-3">
       <div className="row no-gutters">
@@ -46,7 +46,7 @@ const openModal = () => {
          <FormPutVeloMobile veloMobile={props.veloMobile}/> 
       </Modal>
     </div>
-                 
+
               </>
             ) : (
               <p>Pas Connecté</p>
