@@ -3,6 +3,7 @@ import VeloMobile from "../components/VeloMobile";
 import RemoteData from "../services/RemoteData";
 import { useOutletContext } from "react-router-dom";
 import Modal from "../components/Modal";
+import ValidateData from "../services/ValidateData";
 
 const ProductsPage = () => {
   const [velosMobiles, setVelosMobiles] = useState([]);
@@ -40,11 +41,6 @@ const ProductsPage = () => {
     }
   }, [errorMsg]);
 
-  const handleOpenModal = () => {
-    console.log("Ouvrir la modal");
-    // Logique pour ouvrir la modal
-  };
-
   const handleClickDeleteVeloMobile = (veloMobileToDelete) => {
     console.log(`Dans DeleteVeloMobile- vélomobile à été supprimé`);
     setVelosMobiles(velosMobiles.filter((vm) => vm !== veloMobileToDelete));
@@ -72,7 +68,7 @@ const ProductsPage = () => {
       // Exclure le champ 'id' de la validation
       if (key !== "id" && ValidateData.checkIfEmpty(newVeloMobile[key])) {
         message += " Vous devez remplir le champ " + key + ". ";
-         }
+      }
       if (message !== "") {
         console.log(message);
         return;
@@ -118,9 +114,7 @@ const ProductsPage = () => {
                 <div className="card">
                   <div className="card-body">
                     <form
-                      onSubmit={(event) => {
-                        handleSubmitFormPostVeloMobile(event);
-                      }}
+                      onSubmit={handleSubmitFormPostVeloMobile}
                       action=""
                       className="needs-validation"
                       noValidate
@@ -133,7 +127,7 @@ const ProductsPage = () => {
                           type="text"
                           id="model"
                           name="model"
-                          className="form-control"
+                          className={`form-control ${getInputClass("model")}`}
                           required
                         />
                       </div>
@@ -144,7 +138,9 @@ const ProductsPage = () => {
                         <textarea
                           name="description"
                           id="description"
-                          className="form-control"
+                          className={`form-control ${getInputClass(
+                            "description"
+                          )}`}
                           cols="30"
                           rows="3"
                           required
@@ -158,7 +154,7 @@ const ProductsPage = () => {
                           type="text"
                           id="weight"
                           name="poids"
-                          className="form-control"
+                          className={`form-control ${getInputClass("weight")}`}
                           required
                         />
                       </div>
@@ -170,7 +166,7 @@ const ProductsPage = () => {
                           type="text"
                           id="photo"
                           name="photo"
-                          className="form-control"
+                          className={`form-control ${getInputClass("photo")}`}
                           required
                         />
                       </div>
@@ -194,7 +190,7 @@ const ProductsPage = () => {
               handleClickDeleteVeloMobile={handleClickDeleteVeloMobile}
             />
           ))}
-       {/*} {errorMessage && (
+        {/*} {errorMessage && (
           <div className="alert alert-danger" role="alert">
             {errorMessage}
           </div>
