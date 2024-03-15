@@ -12,7 +12,7 @@ const ProductsPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [emptyFields, setEmptyFields] = useState({});
   //const [confirmUpade, setConfirmUpade] = useState("");
-  const [errorMessage, setErrorMessage] = useState("");
+  // const [errorMessage, setErrorMessage] = useState("");
 
   const getInputClass = (fieldName) => {
     return emptyFields[fieldName] ? "input-error" : "";
@@ -68,46 +68,10 @@ const ProductsPage = () => {
       // Exclure le champ 'id' de la validation
       if (key !== "id" && ValidateData.checkIfEmpty(newVeloMobile[key])) {
         message += " Vous devez remplir le champ " + key + ". ";
-      } else if (key === "model") {
-        if (newVeloMobile[key].length > 20) {
-          message +=
-            " Le champs " + key + " ne doit pas dépasser 20 caractères.";
-        }
-        if (ValidateData.checkCharacter(newVeloMobile[key])) {
-          message +=
-            " Le champs " + key + " contient un caractère non autorisé.";
-        }} else if (key === "description") {
-        if (newVeloMobile[key].length > 500) {
-          message +=
-            " Le champs " + key + " ne doit pas dépasser 500 caractères.";
-        }
-        if (ValidateData.checkCharacter(newVeloMobile[key])) {
-          message +=
-            " Le champs " + key + " contient un caractère non autorisé.";
-        }
-        // Fonction qui vérifie le champs weight
-      } else if (key === "weight") {
-        if (newVeloMobile[key].length > 10) {
-          message += " Le champs " + key + " ne doit pas dépasser 10 chiffres.";
-        }
-        if (ValidateData.checkWeight(newVeloMobile[key])) {
-          message +=
-            " Le champs " + key + " contient un caractère non autorisé.";
-        }
-        // Fonction qui vérifie le champs photo
-      } else if (key === "photo") {
-        if (newVeloMobile[key].length > 20) {
-          message +=
-            " Le champs " + key + " ne doit pas dépasser 500 caractères.";
-        }
-        if (ValidateData.checkCharacter(newVeloMobile[key])) {
-          message +=
-            " Le champs " + key + " contient un caractère non autorisé.";
-        }
-        if (message !== "") {
-          console.log(message);
-          return;
-        }
+         }
+      if (message !== "") {
+        console.log(message);
+        return;
       }
     }
 
@@ -226,11 +190,11 @@ const ProductsPage = () => {
               handleClickDeleteVeloMobile={handleClickDeleteVeloMobile}
             />
           ))}
-        {errorMessage && (
+       {/*} {errorMessage && (
           <div className="alert alert-danger" role="alert">
             {errorMessage}
           </div>
-        )}
+        )} */}
         {/* {confirmUpade && (
           <div className="alert alert-success" role="alert">
             {confirmUpade}

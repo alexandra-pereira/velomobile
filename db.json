@@ -13,6 +13,13 @@
       "description": "az",
       "weight": null,
       "photo": "vmrural.jpeg"
+    },
+    {
+      "id": "1a59",
+      "model": "a",
+      "description": "a",
+      "weight": null,
+      "photo": "a"
     }
   ],
   "users": [
