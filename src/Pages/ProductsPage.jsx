@@ -68,13 +68,21 @@ const ProductsPage = () => {
       // Exclure le champ 'id' de la validation
       if (key !== "id" && ValidateData.checkIfEmpty(newVeloMobile[key])) {
         message += " Vous devez remplir le champ " + key + ". ";
-      }
-      if (message !== "") {
-        console.log(message);
-        return;
+      } else if (key === "model") {
+        if (newVeloMobile[key].length > 20) {
+          message +=
+            " Le champs " + key + " ne doit pas dépasser 20 caractères.";
+        }
+        if (ValidateData.checkCharacter(newVeloMobile[key])) {
+          message +=
+            " Le champs " + key + " contient un caractère non autorisé.";
+        }
       }
     }
-
+    if (message !== "") {
+      console.log(message);
+      return;
+    }
     const copyVelosMobiles = [...velosMobiles, newVeloMobile];
     setVelosMobiles(copyVelosMobiles);
     event.target.reset();
