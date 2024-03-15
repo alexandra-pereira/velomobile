@@ -62,12 +62,14 @@ const ProductsPage = () => {
       photo: formData.get("photo"),
     };
 
+      console.log(newVeloMobile);
     let message = "";
     //conditionnel pour la validation du formulaire des champs vide
     for (const key in newVeloMobile) {
       // Exclure le champ 'id' de la validation
       if (key !== "id" && ValidateData.checkIfEmpty(newVeloMobile[key])) {
-        message += " Vous devez remplir le champ " + key + ". ";
+        message += " Vous devez remplir le champs  " + key + "";
+        // Fonction qui vérifie le champs model
       } else if (key === "model") {
         if (newVeloMobile[key].length > 20) {
           message +=
@@ -77,12 +79,46 @@ const ProductsPage = () => {
           message +=
             " Le champs " + key + " contient un caractère non autorisé.";
         }
-      }
+        // Fonction qui vérifie le champs description
+      } else if (key === "description") {
+        if (newVeloMobile[key].length > 500) {
+          message +=
+            " Le champs " + key + " ne doit pas dépasser 500 caractères.";
+        }
+        if (ValidateData.checkCharacter(newVeloMobile[key])) {
+          message +=
+            " Le champs " + key + " contient un caractère non autorisé.";
+        }
+  // Fonction qui vérifie le champs weight
+  } else if (key === "weight") {
+        if (newVeloMobile[key].length > 10) {
+  console.log()
+  message += " Le champs " + key + " ne doit pas dépasser 10 chiffres.";
+  }
+  if (ValidateData.checkWeight(newVeloMobile[key])) {
+  message +=
+  " Le champs " + key + " contient un caractère non autorisé.";
+  }
+        // Fonction qui vérifie le champs photo
+      } else if (key === "photo") {
+        if (newVeloMobile[key].length > 20) {
+          message +=
+            " Le champs " + key + " ne doit pas dépasser 500 caractères.";
+        }
+        if (ValidateData.checkCharacter(newVeloMobile[key])) {
+          message +=
+            " Le champs " + key + " contient un caractère non autorisé.";
+        }
+      
     }
+  }
     if (message !== "") {
       console.log(message);
       return;
     }
+
+
+
     const copyVelosMobiles = [...velosMobiles, newVeloMobile];
     setVelosMobiles(copyVelosMobiles);
     event.target.reset();
@@ -161,7 +197,7 @@ const ProductsPage = () => {
                         <input
                           type="text"
                           id="weight"
-                          name="poids"
+                          name="weight"
                           className={`form-control ${getInputClass("weight")}`}
                           required
                         />
