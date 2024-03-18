@@ -2,11 +2,11 @@ import RemoteData from "../services/RemoteData";
 import ValidateData from "../services/ValidateData";
 import React, { useState } from "react";
 
-const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
+const FormPutVeloMobile = ({ veloMobile }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [emptyFields, setEmptyFields] = useState({});
   const [confirmUpade, setConfirmUpade] = useState("");
-  const [isvalid, setIsValid] = useState(false);
+  const [isvalid, setIsValid] = useState(true);
 
   const getInputClass = (fieldName) => {
     return emptyFields[fieldName] ? "input-error" : "";
@@ -19,7 +19,7 @@ const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
 
     const formData = new FormData(event.target);
 
-    const updatedVeloMobile = {
+    const newVeloMobile = {
       id: veloMobile.id,
       model: formData.get("model"),
       description: formData.get("description"),
@@ -27,49 +27,49 @@ const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
       photo: formData.get("photo"),
     };
 
-    console.log(updatedVeloMobile);
+    console.log(newVeloMobile);
     let message = "";
     //conditionnel pour la validation du formulaire des champs vide
-    for (const key in updatedVeloMobile) {
+    for (const key in newVeloMobile) {
       // Exclure le champ 'id' de la validation
-      if (key !== "id" && ValidateData.checkIfEmpty(updatedVeloMobile[key])) {
+      if (key !== "id" && ValidateData.checkIfEmpty(newVeloMobile[key])) {
         message += " Vous devez remplir le champs  " + key + "";
         // Fonction qui vérifie le champs model
       } else if (key === "model") {
-        if (updatedVeloMobile[key].length > 20) {
+        if (newVeloMobile[key].length > 20) {
           message +=
             " Le champs " + key + " ne doit pas dépasser 20 caractères.";
         }
-        if (ValidateData.checkCharacter(updatedVeloMobile[key])) {
+        if (ValidateData.checkCharacter(newVeloMobile[key])) {
           message +=
             " Le champs " + key + " contient un caractère non autorisé.";
         }
         // Fonction qui vérifie le champs description
       } else if (key === "description") {
-        if (updatedVeloMobile[key].length > 500) {
+        if (newVeloMobile[key].length > 500) {
           message +=
             " Le champs " + key + " ne doit pas dépasser 500 caractères.";
         }
-        if (ValidateData.checkCharacter(updatedVeloMobile[key])) {
+        if (ValidateData.checkCharacter(newVeloMobile[key])) {
           message +=
             " Le champs " + key + " contient un caractère non autorisé.";
         }
         // Fonction qui vérifie le champs weight
       } else if (key === "weight") {
-        if (updatedVeloMobile[key].length > 10) {
+        if (newVeloMobile[key].length > 10) {
           message += " Le champs " + key + " ne doit pas dépasser 10 chiffres.";
         }
-        if (ValidateData.checkWeight(updatedVeloMobile[key])) {
+        if (ValidateData.checkWeight(newVeloMobile[key])) {
           message +=
             " Le champs " + key + " contient un caractère non autorisé.";
         }
         // Fonction qui vérifie le champs photo
       } else if (key === "photo") {
-        if (updatedVeloMobile[key].length > 20) {
+        if (newVeloMobile[key].length > 20) {
           message +=
             " Le champs " + key + " ne doit pas dépasser 500 caractères.";
         }
-        if (ValidateData.checkCharacter(updatedVeloMobile[key])) {
+        if (ValidateData.checkCharacter(newVeloMobile[key])) {
           message +=
             " Le champs " + key + " contient un caractère non autorisé.";
         }
@@ -78,19 +78,20 @@ const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
 
     let valide = "";
 
-// if (message !== "") isvalid = true;
-    if (message !== "") { setIsValid(true); }
+    // if (message !== "") isvalid = true;
+    if (message !== "") {
+      setIsValid(true);
+    }
 
     if (message === "") {
       isvalid = false;
-      RemoteData.putVeloMobile(updatedVeloMobile).then((data) => {
+      RemoteData.putVeloMobile(newVeloMobile).then((data) => {
         console.log(`data dans products page `);
-        valide += "Le champ a été modifié"
+        valide += "Le champ a été modifié";
         setConfirmUpade(valide);
         setTimeout(() => {
           setConfirmUpade(""); // Réinitialiser l'état à une chaîne vide
         }, 5000);
-        onUpdate(data);
       });
     } else {
       setErrorMessage(message); // Message d'erreur du champs vide
@@ -118,8 +119,9 @@ const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
           type="text"
           id="model"
           name="model"
-   className={`form-control ${ isvalid ? "is-invalid" : "is-valid" } ${getInputClass("model")}`}
-
+          className={`form-control ${
+            isvalid ? "is-invalid" : "is-valid"
+          } ${getInputClass("model")}`}
           defaultValue={veloMobile.model}
           required
         />
@@ -131,7 +133,9 @@ const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
         <textarea
           name="description"
           id="description"
-           className={`form-control ${ isvalid ? "is-invalid" : "is-valid" } ${getInputClass("description")}`}
+          className={`form-control ${
+            isvalid ? "is-invalid" : "is-valid"
+          } ${getInputClass("description")}`}
           cols="30"
           rows="3"
           required
@@ -147,7 +151,9 @@ const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
           type="text"
           id="weight"
           name="weight"
-           className={`form-control ${ isvalid ? "is-invalid" : "is-valid" } ${getInputClass("weight")}`}
+          className={`form-control ${
+            isvalid ? "is-invalid" : "is-valid"
+          } ${getInputClass("weight")}`}
           defaultValue={veloMobile.weight}
         />
       </div>
@@ -159,7 +165,9 @@ const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
           type="text"
           id="photo"
           name="photo"
-           className={`form-control ${ isvalid ? "is-invalid" : "is-valid" } ${getInputClass("photo")}`}
+          className={`form-control ${
+            isvalid ? "is-invalid" : "is-valid"
+          } ${getInputClass("photo")}`}
           defaultValue={veloMobile.photo}
           required
         />
