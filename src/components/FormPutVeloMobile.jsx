@@ -77,7 +77,7 @@ const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
           }, 4000);
           onUpdate(data);
           // Réinitialiser l'état de validation pour la soumission
-          setIsFormValid("");
+          setIsFormValid(false);
           // Réinitialiser la ClassList des champs de formulaire
           const formElements = event.target.elements;
           for (let i = 0; i < formElements.length; i++) {

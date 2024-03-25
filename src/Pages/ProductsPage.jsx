@@ -11,7 +11,7 @@ const ProductsPage = () => {
   const [isLoggedIn, setIsLoggedIn] = useOutletContext();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [emptyFields, setEmptyFields] = useState({});
-  const [isFormValid, setIsFormValid] = useState();
+  const [isFormValid, setIsFormValid] = useState(true);
   const [errorMessage, setErrorMessage] = useState("");
   const [creationSuccess, setCreationSuccess] = useState("");
 
@@ -117,7 +117,7 @@ const ProductsPage = () => {
             setCreationSuccess("");
           }, 4000);
           // Réinitialiser l'état de validation
-          setIsFormValid("");
+          setIsFormValid(false);
           // Réinitialiser la ClassList des champs de formulaire pour la soumission
           const formElements = event.target.elements;
           for (let i = 0; i < formElements.length; i++) {
