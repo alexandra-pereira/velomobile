@@ -18,9 +18,18 @@ export default class ValidateData {
     return regex.test(str);
   }
   //Méthode pour controler les chiffres autorisé
+  //static checkWeight(str) {
+  //  const regex = /[0-9]*[!@#$%^&*()_+\-=\[\]{};':"\\|,<>\/?]+[0-9]-[A-Za-z]*/;
+  //  console.log(regex.test(str));
+   // return !regex.test(str);
+  //}
+
   static checkWeight(str) {
-    const regex = /[0-9]*[!@#$%^&*()_+\-=\[\]{};':"\\|,<>\/?]+[0-9]*/;
-    console.log(regex.test(str));
+    // This regex matches a string that starts with one or more digits,
+    // optionally followed by a decimal point and one or more digits.
+    const regex = /^\d+(\.\d+)?$/;
     return regex.test(str);
   }
+
+
 }
