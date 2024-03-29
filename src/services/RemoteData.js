@@ -139,4 +139,25 @@ export default class RemoteData {
         return data;
       });
   }
+
+  static postSubscriber(newSubscriber) {
+    return fetch(`${RemoteData.url}subscribers/`, {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify(newSubscriber),
+    })
+        .then((response) => {
+          console.log(`reponse.status de postSubscriber`, response.status);
+          if (response.status !== 201)
+            throw new Error("Erreur" + response.status);
+          return response.json();
+        })
+        .then((data) => {
+          console.log(`data reçue après le post: `, data);
+          return data;
+        });
+  }
 }

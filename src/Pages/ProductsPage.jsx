@@ -10,10 +10,17 @@ const ProductsPage = () => {
   const [errorMsg, setErrorMsg] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useOutletContext();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [emptyFields, setEmptyFields] = useState({});
-  const [isFormValid, setIsFormValid] = useState(true);
+  const [isFormValid, setIsFormValid] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [creationSuccess, setCreationSuccess] = useState("");
+  // etape 1 : faire un state pour les champs vide
+  const [emptyFields, setEmptyFields] = useState({
+    model: false,
+    description: false,
+    weight: false,
+    photo: false,
+  });
+
 
   const handleUpdateVeloMobile = (updatedVeloMobile) => {
     setVelosMobiles(
@@ -57,13 +64,14 @@ const ProductsPage = () => {
   };
 // pour le changement d'état lorsqu'on ajoute les informations de chaque champ du formulaire de création d'un velo
   const handleInputCreate = (event) => {
+      console.log(event);
     const {name, value} = event.target;
     let isValid = true;
 
     // Effacer l'état de validation précédent
     event.target.classList.remove("is-invalid", "is-valid");
 
-    if (ValidateData.checkCharacter(value) || ValidateData.checkIfEmpty(value) || (name === "weight" && !ValidateData.checkWeight(value))) {
+    if (ValidateData.checkIfEmpty(value) || ValidateData.checkCharacter(value) || (name === "weight" && !ValidateData.checkWeight(value))) {
       isValid = false;
       setErrorMessage(`Le champ ${name} est vide ou contient un caractère non autorisé.`);
       event.target.classList.add("is-invalid");
@@ -85,10 +93,28 @@ const ProductsPage = () => {
       // Réinitialiser le message d'erreur lorsque l'entrée est valide.
       setErrorMessage("");
     }
-    // Mettre à jour l'état de validité du formulaire.
-    setIsFormValid(isValid);
+      Object.keys(emptyFields).forEach((fieldName) => {
+          if (fieldName === name) {
+              emptyFields[fieldName] = isValid
+          }
+      })
+      setEmptyFields(emptyFields)
+// Adjusted code to correctly set isFormValid based on the validity of all fields
+      let isFormValid = true;
+      Object.values(emptyFields).forEach((isValidField) => {
+          if (!isValidField) {
+              isFormValid = false;
+              return false; // This will break out of the forEach loop.
+          }
+      });
+      if (isFormValid) {
+          const inputs = document.querySelectorAll('.create');
+          for (let i = 0; i < inputs.length;  i++) {
+              inputs[i].classList.remove("input-error")
+          }
+      }
+      setIsFormValid(isFormValid);
   };
-
   /* handleSubmitFormPostVeloMobile création de l'événement créer un produit */
   const handleSubmitFormPostVeloMobile = (event) => {
     event.preventDefault();
@@ -121,7 +147,7 @@ const ProductsPage = () => {
           // Réinitialiser la ClassList des champs de formulaire pour la soumission
           const formElements = event.target.elements;
           for (let i = 0; i < formElements.length; i++) {
-            formElements[i].classList.remove("is-invalid", "is-valid");
+            formElements[i].classList.remove("is-invalid", "is-valid", "input-error");
           }
 
         })
@@ -152,8 +178,7 @@ const ProductsPage = () => {
                         <form
                             onSubmit={handleSubmitFormPostVeloMobile}
                             action=""
-                            className="needs-validation"
-                            noValidate
+                            id="form"
                         >
                           {errorMessage && (
                               <div className="alert alert-danger" role="alert">
@@ -168,8 +193,8 @@ const ProductsPage = () => {
                                 type="text"
                                 id="model"
                                 onInput={handleInputCreate}
-                                name="model"
-                                className={`form-control ${getInputClass("model")}`}
+                                name="Modèle"
+                                className={`form-control create ${getInputClass("model")}`}
                                 defaultValue={""}
                                 required
                             />
@@ -179,12 +204,10 @@ const ProductsPage = () => {
                               Description
                             </label>
                             <textarea
-                                name="description"
+                                name="Description"
                                 onInput={handleInputCreate}
                                 id="description"
-                                className={`form-control ${getInputClass(
-                                    "description"
-                                )}`}
+                                className={`form-control create ${getInputClass("description")}`}
                                 cols="30"
                                 rows="3"
                                 required
@@ -198,8 +221,8 @@ const ProductsPage = () => {
                                 type="text"
                                 onInput={handleInputCreate}
                                 id="weight"
-                                name="weight"
-                                className={`form-control ${getInputClass("weight")}`}
+                                name="Poids"
+                                className={`form-control create ${getInputClass("weight")}`}
                                 defaultValue={""}
                                 required
                             />
@@ -212,8 +235,8 @@ const ProductsPage = () => {
                                 type="text"
                                 onInput={handleInputCreate}
                                 id="photo"
-                                name="photo"
-                                className={`form-control ${getInputClass("photo")}`}
+                                name="Photo"
+                                className={`form-control create ${getInputClass("photo")}`}
                                 defaultValue={""}
                                 required
                             />

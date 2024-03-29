@@ -5,7 +5,7 @@ import React, { useState } from "react";
 const FormPutVeloMobile = ({ veloMobile, onUpdate }) => {
   const [errorMessage, setErrorMessage] = useState("");
   const [confirmUpdate, setConfirmUpdate] = useState("");
-  const [isFormValid, setIsFormValid] = useState(true);
+  const [isFormValid, setIsFormValid] = useState(false);
   const [emptyFields, setEmptyFields] = useState({
     model: false,
     description: false,

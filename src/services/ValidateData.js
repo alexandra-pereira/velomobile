@@ -30,6 +30,14 @@ export default class ValidateData {
     const regex = /^\d+(\.\d+)?$/;
     return regex.test(str);
   }
-
-
+  static checkEmail(str) {
+    // This regex matches a string that starts with one or more alphanumeric characters,
+    // optionally followed by a dot, underscore, percent sign, plus sign, or hyphen,
+    // followed by an at symbol,
+    // followed by one or more alphanumeric characters, dots, or hyphens,
+    // followed by a dot,
+    // and ends with two or more alphabetic characters.
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+    return regex.test(str);
+  }
 }

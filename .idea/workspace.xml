@@ -5,12 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f25baeed-9d88-4812-a5df-00f344591dfd" name="Changes" comment="refactorization de delete et update, id reglé, affichage a l'instant resolu">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2024,_10_59_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_15_03_2024__10_59__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Pages/ProductsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductsPage.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/FormPutVeloMobile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormPutVeloMobile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Formulaire.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormContact.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/RemoteData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/RemoteData.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/ValidateData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ValidateData.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,7 +30,7 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.3.1/bin/php" />
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7
@@ -51,7 +52,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "watcher.settings",
+    "settings.editor.selected.configurable": "preferences.keymap",
     "ts.external.directory.path": "/Applications/PhpStorm.app/Contents/plugins/javascript-impl/jsLanguageServicesImpl/external",
     "vue.rearranger.settings.migration": "true"
   }
@@ -86,6 +87,8 @@
       <workItem from="1709196820655" duration="10570000" />
       <workItem from="1710150562401" duration="341000" />
       <workItem from="1710754074135" duration="330000" />
+      <workItem from="1711634479420" duration="68000" />
+      <workItem from="1711703161335" duration="9852000" />
     </task>
     <task id="LOCAL-00001" summary="refactorization de delete et update, id reglé, affichage a l'instant resolu">
       <option name="closed" value="true" />
