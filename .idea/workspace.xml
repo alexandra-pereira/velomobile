@@ -7,12 +7,7 @@
     <list default="true" id="f25baeed-9d88-4812-a5df-00f344591dfd" name="Changes" comment="refactorization de delete et update, id reglé, affichage a l'instant resolu">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pages/ProductsPage.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pages/ProductsPage.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FormPutVeloMobile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormPutVeloMobile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Formulaire.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormContact.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/RemoteData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/RemoteData.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/ValidateData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/ValidateData.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormContact.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FormContact.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +83,7 @@
       <workItem from="1710150562401" duration="341000" />
       <workItem from="1710754074135" duration="330000" />
       <workItem from="1711634479420" duration="68000" />
-      <workItem from="1711703161335" duration="9852000" />
+      <workItem from="1711703161335" duration="15390000" />
     </task>
     <task id="LOCAL-00001" summary="refactorization de delete et update, id reglé, affichage a l'instant resolu">
       <option name="closed" value="true" />
